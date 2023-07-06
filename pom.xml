@@ -64,8 +64,10 @@
                                 <annotationProcessor>edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingChecker</annotationProcessor>
                             </annotationProcessors>
                             <compilerArgs>
-                                <arg>-AannotatedPackages=com.test</arg>
-                                <arg>-AenableCustomCheck=false</arg>
+                                <arg>-AannotatedPackages=co.yiiu</arg>
+                                <arg>-AenableValidationCheck=false</arg>
+                                <arg>-AenableLibraryCheck=true</arg>
+                                <arg>-AenableSanitizationCheck=false</arg>
                                 <!-- <arg>-Awarns</arg> --> <!-- -Awarns turns type-checking errors into warnings. -->
                             </compilerArgs>
                         </configuration>
