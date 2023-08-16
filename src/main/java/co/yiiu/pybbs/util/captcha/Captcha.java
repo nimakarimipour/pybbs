@@ -1,5 +1,7 @@
 package co.yiiu.pybbs.util.captcha;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
+
 import java.awt.*;
 import java.io.OutputStream;
 
@@ -18,7 +20,7 @@ public abstract class Captcha {
     protected int len = 4;  // 验证码随机字符长度
     protected int width = 120;  // 验证码显示跨度
     protected int height = 32;  // 验证码显示高度
-    private String chars = null;  // 随机字符串
+    private @RUntainted String chars = null;  // 随机字符串
 
     /**
      * 生成随机字符数组
@@ -92,7 +94,7 @@ public abstract class Captcha {
      *
      * @return string
      */
-    public String text() {
+    public @RUntainted String text() {
         return chars;
     }
 }
