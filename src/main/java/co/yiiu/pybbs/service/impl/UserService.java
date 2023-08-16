@@ -90,7 +90,7 @@ public class UserService implements IUserService {
      * @return
      */
     @Override
-    public User addUser(String username, String password, String avatar, String email, String bio, String website,
+    public @RUntainted User addUser(String username, String password, String avatar, String email, String bio, String website,
                         boolean needActiveEmail) {
         String token = this.generateToken();
         User user = new User();
