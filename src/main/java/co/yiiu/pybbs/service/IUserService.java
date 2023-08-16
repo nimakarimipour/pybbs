@@ -2,6 +2,7 @@ package co.yiiu.pybbs.service;
 
 import co.yiiu.pybbs.model.User;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public interface IUserService {
     User addUserWithMobile(String mobile);
 
     // 根据用户token查询用户
-    User selectByToken(String token);
+    @RUntainted User selectByToken(String token);
 
     // 根据用户mobile查询用户
     User selectByMobile(String mobile);
@@ -29,7 +30,7 @@ public interface IUserService {
     // 根据用户email查询用户
     User selectByEmail(String email);
 
-    User selectById(Integer id);
+    @RUntainted User selectById(Integer id);
 
     User selectByIdWithoutCache(Integer id);
 

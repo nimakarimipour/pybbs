@@ -10,6 +10,7 @@ import co.yiiu.pybbs.util.bcrypt.BCryptPasswordEncoder;
 import co.yiiu.pybbs.util.identicon.Identicon;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -154,7 +155,7 @@ public class UserService implements IUserService {
 
     // 根据用户token查询用户
     @Override
-    public User selectByToken(String token) {
+    public @RUntainted User selectByToken(String token) {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(User::getToken, token);
         return userMapper.selectOne(wrapper);
@@ -177,7 +178,7 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public User selectById(Integer id) {
+    public @RUntainted User selectById(Integer id) {
         return userMapper.selectById(id);
     }
 
