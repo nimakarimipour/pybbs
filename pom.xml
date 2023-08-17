@@ -65,9 +65,9 @@
                             </annotationProcessors>
                             <compilerArgs>
                                 <arg>-AannotatedPackages=co.yiiu</arg>
-                                <arg>-AenableValidationCheck=false</arg>
-                                <arg>-AenableLibraryCheck=true</arg>
-                                <arg>-AenableSanitizationCheck=false</arg>
+<!--                                <arg>-AenableValidationCheck</arg>-->
+                                <arg>-AenableLibraryCheck</arg>
+                                <arg>-AenableSideEffect</arg>
                                 <!-- <arg>-Awarns</arg> --> <!-- -Awarns turns type-checking errors into warnings. -->
                             </compilerArgs>
                         </configuration>
@@ -78,7 +78,7 @@
                 <dependency>
                     <groupId>org.checkerframework</groupId>
                     <artifactId>checker</artifactId>
-                    <version>3.35.0</version>
+                    <version>3.37.1-SNAPSHOT</version>
                 </dependency>
             </dependencies>
         </profile>
