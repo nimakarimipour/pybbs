@@ -18,7 +18,7 @@ public class SiteConfig implements Serializable {
     private static final long serialVersionUID = -7632268193700036274L;
 
     private String datasource_driver;
-    private String datasource_url;
+    private @RUntainted String datasource_url;
     private @RUntainted String datasource_username;
     private @RUntainted String datasource_password;
 
@@ -30,11 +30,11 @@ public class SiteConfig implements Serializable {
         this.datasource_driver = datasource_driver;
     }
 
-    public String getDatasource_url() {
+    public @RUntainted String getDatasource_url() {
         return datasource_url;
     }
 
-    public void setDatasource_url(String datasource_url) {
+    public void setDatasource_url(@RUntainted String datasource_url) {
         this.datasource_url = datasource_url;
     }
 
