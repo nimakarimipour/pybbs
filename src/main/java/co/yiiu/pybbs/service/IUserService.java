@@ -13,13 +13,13 @@ import java.util.List;
  */
 public interface IUserService {
     // 根据用户名查询用户，用于获取用户的信息比对密码
-    User selectByUsername(String username);
+    @RUntainted User selectByUsername(String username);
 
     @RUntainted User addUser(String username, String password, String avatar, String email, String bio, String website,
                  boolean needActiveEmail);
 
     // 通过手机号登录/注册创建用户
-    User addUserWithMobile(String mobile);
+    @RUntainted User addUserWithMobile(String mobile);
 
     // 根据用户token查询用户
     @RUntainted User selectByToken(String token);

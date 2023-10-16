@@ -57,7 +57,7 @@ public class UserService implements IUserService {
 
     // 根据用户名查询用户，用于获取用户的信息比对密码
     @Override
-    public User selectByUsername(String username) {
+    public @RUntainted User selectByUsername(String username) {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(User::getUsername, username);
         return userMapper.selectOne(wrapper);
@@ -131,7 +131,7 @@ public class UserService implements IUserService {
 
     // 通过手机号登录/注册创建用户
     @Override
-    public User addUserWithMobile(String mobile) {
+    public @RUntainted User addUserWithMobile(String mobile) {
         // 根据手机号查询用户是否注册过
         User user = selectByMobile(mobile);
         if (user == null) {
@@ -163,7 +163,7 @@ public class UserService implements IUserService {
 
     // 根据用户mobile查询用户
     @Override
-    public User selectByMobile(String mobile) {
+    public @RUntainted User selectByMobile(String mobile) {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(User::getMobile, mobile);
         return userMapper.selectOne(wrapper);
