@@ -4,6 +4,7 @@ import co.yiiu.pybbs.mapper.OAuthUserMapper;
 import co.yiiu.pybbs.model.OAuthUser;
 import co.yiiu.pybbs.service.IOAuthUserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -39,7 +40,7 @@ public class OAuthUserService implements IOAuthUserService {
 
     @Override
     public void addOAuthUser(Integer oauthId, String type, String login, String accessToken, String bio, String email,
-                             Integer userId, String refreshToken, String unionId, String openId) {
+                             @RUntainted Integer userId, String refreshToken, String unionId, String openId) {
         OAuthUser oAuthUser = new OAuthUser();
         oAuthUser.setOauthId(oauthId);
         oAuthUser.setType(type);

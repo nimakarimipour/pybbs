@@ -12,7 +12,7 @@ import java.util.Map;
  * https://atjiu.github.io
  */
 public interface ISystemConfigService {
-    Map<String, @RUntainted String> selectAllConfig();
+    @RUntainted Map<String, @RUntainted String> selectAllConfig();
 
     // 根据键取值
     SystemConfig selectByKey(String key);

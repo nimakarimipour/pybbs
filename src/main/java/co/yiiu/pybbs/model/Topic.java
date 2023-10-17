@@ -2,6 +2,7 @@ package co.yiiu.pybbs.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -22,7 +23,7 @@ public class Topic implements Serializable {
     private String content;
     private Date inTime;
     private Date modifyTime;
-    private Integer userId;
+    private @RUntainted Integer userId;
     // 评论数
     private Integer commentCount;
     // 收藏数
@@ -100,11 +101,11 @@ public class Topic implements Serializable {
         this.modifyTime = modifyTime;
     }
 
-    public Integer getUserId() {
+    public @RUntainted Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(@RUntainted Integer userId) {
         this.userId = userId;
     }
 

@@ -42,7 +42,7 @@ public class UserAdminController extends BaseAdminController {
     // 编辑用户
     @RequiresPermissions("user:edit")
     @GetMapping("/edit")
-    public String edit(Integer id, Model model) {
+    public String edit(@RUntainted Integer id, Model model) {
         model.addAttribute("user", userService.selectByIdNoCatch(id));
         return "admin/user/edit";
     }
@@ -68,7 +68,7 @@ public class UserAdminController extends BaseAdminController {
     @RequiresPermissions("user:delete")
     @GetMapping("/delete")
     @ResponseBody
-    public Result delete(Integer id) {
+    public Result delete(@RUntainted Integer id) {
         userService.deleteUser(id);
         return success();
     }
@@ -77,7 +77,7 @@ public class UserAdminController extends BaseAdminController {
     @RequiresPermissions("user:refresh_token")
     @GetMapping("/refreshToken")
     @ResponseBody
-    public Result refreshToken(Integer id) {
+    public Result refreshToken(@RUntainted Integer id) {
         @RUntainted User user = userService.selectByIdNoCatch(id);
         user.setToken(StringUtil.uuid());
         userService.update(user);

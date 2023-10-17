@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -33,7 +34,7 @@ public class OAuthUser implements Serializable {
     private String bio;
     private String email;
     // 本地用户的id
-    private Integer userId;
+    private @RUntainted Integer userId;
     // 刷新token
     private String refreshToken;
     // 只微信里有这个字段，联合登录id
@@ -106,11 +107,11 @@ public class OAuthUser implements Serializable {
         this.email = email;
     }
 
-    public Integer getUserId() {
+    public @RUntainted Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(Integer userId) {
+    public void setUserId(@RUntainted Integer userId) {
         this.userId = userId;
     }
 

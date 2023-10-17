@@ -27,11 +27,11 @@ public class SystemConfigService implements ISystemConfigService {
     @Resource
     private SystemConfigMapper systemConfigMapper;
 
-    private static Map<String, @RUntainted String> SYSTEM_CONFIG;
+    private static @RUntainted Map<String, @RUntainted String> SYSTEM_CONFIG;
     private static Map<String, String> SYSTEM_CONFIG_WITHOUT_PASSWORD;
 
     @Override
-    public Map<String, @RUntainted String> selectAllConfig() {
+    public @RUntainted Map<String, @RUntainted String> selectAllConfig() {
         if (SYSTEM_CONFIG != null) {
             return SYSTEM_CONFIG;
         }

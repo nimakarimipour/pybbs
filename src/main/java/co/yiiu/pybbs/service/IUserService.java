@@ -30,9 +30,9 @@ public interface IUserService {
     // 根据用户email查询用户
     @RUntainted User selectByEmail(String email);
 
-    @RUntainted User selectById(Integer id);
+    @RUntainted User selectById(@RUntainted Integer id);
 
-    @RUntainted User selectByIdWithoutCache(Integer id);
+    @RUntainted User selectByIdWithoutCache(@RUntainted Integer id);
 
     // 查询用户积分榜
     List<User> selectTop(Integer limit);
@@ -42,13 +42,13 @@ public interface IUserService {
 
     IPage<User> selectAll(Integer pageNo, String username);
 
-    @RUntainted User selectByIdNoCatch(Integer id);
+    @RUntainted User selectByIdNoCatch(@RUntainted Integer id);
 
     // 查询今天新增的话题数
     int countToday();
 
     // 删除用户
-    void deleteUser(Integer id);
+    void deleteUser(@RUntainted Integer id);
 
     // 删除redis缓存
     void delRedisUser(User user);

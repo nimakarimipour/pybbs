@@ -36,7 +36,7 @@ import java.util.UUID;
 public class UserService implements IUserService {
 
     @Resource
-    private UserMapper userMapper;
+    private @RUntainted UserMapper userMapper;
     @Resource
     @Lazy
     private ICollectService collectService;
@@ -178,12 +178,12 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public @RUntainted User selectById(Integer id) {
+    public @RUntainted User selectById(@RUntainted Integer id) {
         return userMapper.selectById(id);
     }
 
     @Override
-    public @RUntainted User selectByIdWithoutCache(Integer id) {
+    public @RUntainted User selectByIdWithoutCache(@RUntainted Integer id) {
         return userMapper.selectById(id);
     }
 
@@ -223,7 +223,7 @@ public class UserService implements IUserService {
         return userMapper.selectPage(page, wrapper);
     }
 
-    public @RUntainted User selectByIdNoCatch(Integer id) {
+    public @RUntainted User selectByIdNoCatch(@RUntainted Integer id) {
         return userMapper.selectById(id);
     }
 
@@ -235,7 +235,7 @@ public class UserService implements IUserService {
 
     // 删除用户
     @Override
-    public void deleteUser(Integer id) {
+    public void deleteUser(@RUntainted Integer id) {
         // 删除用户的通知
         notificationService.deleteByUserId(id);
         // 删除用户的收藏

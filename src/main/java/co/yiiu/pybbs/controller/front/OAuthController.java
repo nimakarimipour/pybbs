@@ -7,6 +7,7 @@ import co.yiiu.pybbs.service.IOAuthUserService;
 import co.yiiu.pybbs.service.ISystemConfigService;
 import co.yiiu.pybbs.service.IUserService;
 import co.yiiu.pybbs.util.CookieUtil;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import me.zhyd.oauth.model.AuthCallback;
 import me.zhyd.oauth.model.AuthResponse;
 import me.zhyd.oauth.model.AuthUser;
@@ -42,7 +43,7 @@ public class OAuthController extends BaseController {
     private SocialPlugin socialPlugin;
 
     @GetMapping("/redirect/{type}")
-    public String github(@PathVariable("type") String type, HttpSession session) {
+    public String github(@PathVariable("type") @RUntainted String type, HttpSession session) {
 
         AuthRequest request = socialPlugin.getRequest(type);
 
@@ -50,18 +51,18 @@ public class OAuthController extends BaseController {
     }
 
     @GetMapping("/{type}/callback")
-    public String callback(@PathVariable("type") String type, AuthCallback callback, HttpSession session) {
+    public String callback(@PathVariable("type") @RUntainted String type, @RUntainted AuthCallback callback, HttpSession session) {
 
-        AuthRequest request = socialPlugin.getRequest(type);
+        @RUntainted AuthRequest request = socialPlugin.getRequest(type);
 
-        AuthResponse<AuthUser> response = request.login(callback);
+        @RUntainted AuthResponse<@RUntainted AuthUser> response = request.login(callback);
         if (!response.ok()) {
             throw new IllegalArgumentException(response.getMsg());
         }
-        AuthUser authUser = response.getData();
+        @RUntainted AuthUser authUser = response.getData();
 
         String username = authUser.getUsername();
-        String githubId = authUser.getUuid();
+        @RUntainted String githubId = authUser.getUuid();
 
         // 拿用户信息
         String avatarUrl = authUser.getAvatar();

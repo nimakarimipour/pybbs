@@ -3,6 +3,7 @@ package co.yiiu.pybbs.model;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -17,7 +18,7 @@ public class User implements Serializable {
     private static final long serialVersionUID = -5051120337175047163L;
 
     @TableId(type = IdType.AUTO)
-    private Integer id;
+    private @RUntainted Integer id;
     private String username;
     private String telegramName;
     private String avatar;
@@ -91,11 +92,11 @@ public class User implements Serializable {
         this.bio = bio;
     }
 
-    public Integer getId() {
+    public @RUntainted Integer getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(@RUntainted Integer id) {
         this.id = id;
     }
 

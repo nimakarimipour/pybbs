@@ -35,11 +35,11 @@ public class SocialPlugin {
      * @param source 来源平台
      * @return {@link AuthConfig}
      */
-    private AuthConfig getConfig(String source) {
+    private @RUntainted AuthConfig getConfig(@RUntainted String source) {
         Map config = systemConfigService.selectAllConfig();
-        String clientId = (String) config.get("oauth_" + source + "_client_id");
-        String clientSecret = (String) config.get("oauth_" + source + "_client_secret");
-        String callback = (String) config.get("oauth_" + source + "_callback_url");
+        String clientId = (@RUntainted String) config.get("oauth_" + source + "_client_id");
+        String clientSecret = (@RUntainted String) config.get("oauth_" + source + "_client_secret");
+        String callback = (@RUntainted String) config.get("oauth_" + source + "_callback_url");
 
         Assert.isTrue(!StringUtils.isEmpty(clientId) && !StringUtils.isEmpty(clientSecret) && !StringUtils.isEmpty
                 (callback), source + "登录还没有相关配置，联系站长吧！");
@@ -57,7 +57,7 @@ public class SocialPlugin {
      * @param source 来源平台
      * @return {@link AuthRequest}
      */
-    public AuthRequest getRequest(String source) {
+    public @RUntainted AuthRequest getRequest(@RUntainted String source) {
         AuthConfig config = this.getConfig(source);
         AuthRequest authRequest = null;
         switch (source) {
