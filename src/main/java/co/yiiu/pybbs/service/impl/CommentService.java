@@ -14,6 +14,7 @@ import co.yiiu.pybbs.util.MyPage;
 import co.yiiu.pybbs.util.SensitiveWordUtil;
 import co.yiiu.pybbs.util.StringUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Lazy;
@@ -84,7 +85,7 @@ public class CommentService implements ICommentService {
 
     // 保存评论
     @Override
-    public Comment insert(Comment comment, Topic topic, User user) {
+    public Comment insert(Comment comment, Topic topic, @RUntainted User user) {
         if (systemConfigService.selectAllConfig().get("comment_need_examine").equals("1")) {
             comment.setStatus(false);// 审核中
         } else {
@@ -189,7 +190,7 @@ public class CommentService implements ICommentService {
 
     // 对评论点赞
     @Override
-    public int vote(Comment comment, User user) {
+    public int vote(Comment comment, @RUntainted User user) {
         String upIds = comment.getUpIds();
         // 将点赞用户id的字符串转成集合
         Set<String> strings = StringUtils.commaDelimitedListToSet(upIds);

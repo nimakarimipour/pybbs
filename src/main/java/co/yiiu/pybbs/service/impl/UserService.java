@@ -171,7 +171,7 @@ public class UserService implements IUserService {
 
     // 根据用户email查询用户
     @Override
-    public User selectByEmail(String email) {
+    public @RUntainted User selectByEmail(String email) {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(User::getEmail, email);
         return userMapper.selectOne(wrapper);
@@ -183,7 +183,7 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public User selectByIdWithoutCache(Integer id) {
+    public @RUntainted User selectByIdWithoutCache(Integer id) {
         return userMapper.selectById(id);
     }
 
@@ -197,7 +197,7 @@ public class UserService implements IUserService {
 
     // 更新用户信息
     @Override
-    public void update(User user) {
+    public void update(@RUntainted User user) {
         userMapper.updateById(user);
         
         // 更新session中的用户
@@ -223,7 +223,7 @@ public class UserService implements IUserService {
         return userMapper.selectPage(page, wrapper);
     }
 
-    public User selectByIdNoCatch(Integer id) {
+    public @RUntainted User selectByIdNoCatch(Integer id) {
         return userMapper.selectById(id);
     }
 

@@ -6,6 +6,7 @@ import co.yiiu.pybbs.util.Result;
 import co.yiiu.pybbs.util.StringUtil;
 import co.yiiu.pybbs.util.bcrypt.BCryptPasswordEncoder;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -50,7 +51,7 @@ public class UserAdminController extends BaseAdminController {
     @RequiresPermissions("user:edit")
     @PostMapping("/edit")
     @ResponseBody
-    public Result update(User user) {
+    public Result update(@RUntainted User user) {
         // 如果密码不为空，给加密一下再保存
         if (!StringUtils.isEmpty(user.getPassword())) {
             user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
@@ -77,7 +78,7 @@ public class UserAdminController extends BaseAdminController {
     @GetMapping("/refreshToken")
     @ResponseBody
     public Result refreshToken(Integer id) {
-        User user = userService.selectByIdNoCatch(id);
+        @RUntainted User user = userService.selectByIdNoCatch(id);
         user.setToken(StringUtil.uuid());
         userService.update(user);
         return success(user.getToken());

@@ -5,6 +5,7 @@ import co.yiiu.pybbs.exception.ApiAssert;
 import co.yiiu.pybbs.model.User;
 import co.yiiu.pybbs.service.IUserService;
 import co.yiiu.pybbs.util.Result;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.springframework.util.StringUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -43,13 +44,13 @@ public class BaseApiController extends BaseController {
     }
 
     // 因为大部分地方用到的这个方法都是token必须要传且正确的，所以这里重载一下getApiUser方法，默认传true
-    protected User getApiUser() {
+    protected @RUntainted User getApiUser() {
         return getApiUser(true);
     }
 
     // 接口路由从request里拿token，通过请求UserService获取用户的信息
     // required: boolean 判断是否必须要token，因为有的接口token是非必须的，但如果传了token就可以多返回一些信息
-    protected User getApiUser(boolean required) {
+    protected @RUntainted User getApiUser(boolean required) {
         HttpServletRequest request = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder
                 .getRequestAttributes())).getRequest();
         String token = request.getHeader("token");

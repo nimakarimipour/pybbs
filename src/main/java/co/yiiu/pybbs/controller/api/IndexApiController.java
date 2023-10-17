@@ -215,7 +215,7 @@ public class IndexApiController extends BaseApiController {
                 url = fileUtil.upload(file, "avatar", "avatar/" + user.getUsername());
                 if (url != null) {
                     // 查询当前用户的最新信息
-                    User user1 = userService.selectById(user.getId());
+                    @RUntainted User user1 = userService.selectById(user.getId());
                     user1.setAvatar(url);
                     // 保存用户新的头像
                     userService.update(user1);

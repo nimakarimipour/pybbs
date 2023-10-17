@@ -25,24 +25,24 @@ public interface IUserService {
     @RUntainted User selectByToken(String token);
 
     // 根据用户mobile查询用户
-    User selectByMobile(String mobile);
+    @RUntainted User selectByMobile(String mobile);
 
     // 根据用户email查询用户
-    User selectByEmail(String email);
+    @RUntainted User selectByEmail(String email);
 
     @RUntainted User selectById(Integer id);
 
-    User selectByIdWithoutCache(Integer id);
+    @RUntainted User selectByIdWithoutCache(Integer id);
 
     // 查询用户积分榜
     List<User> selectTop(Integer limit);
 
     // 更新用户信息
-    void update(User user);
+    void update(@RUntainted User user);
 
     IPage<User> selectAll(Integer pageNo, String username);
 
-    User selectByIdNoCatch(Integer id);
+    @RUntainted User selectByIdNoCatch(Integer id);
 
     // 查询今天新增的话题数
     int countToday();
