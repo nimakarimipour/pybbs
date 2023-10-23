@@ -20,6 +20,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -98,7 +99,7 @@ public class TopicService implements ITopicService {
 
     // 保存话题
     @Override
-    public Topic insert(String title, String content, String tags, User user) {
+    public Topic insert(String title, String content, String tags, @RUntainted User user) {
         Topic topic = new Topic();
         topic.setTitle(Jsoup.clean(title, Whitelist.simpleText()));
         topic.setStyle(systemConfigService.selectAllConfig().get("content_style"));
@@ -233,7 +234,7 @@ public class TopicService implements ITopicService {
     // ---------------------------- api ----------------------------
 
     @Override
-    public int vote(Topic topic, User user) {
+    public int vote(Topic topic, @RUntainted User user) {
         String upIds = topic.getUpIds();
         // 将点赞用户id的字符串转成集合
         Set<String> strings = StringUtils.commaDelimitedListToSet(upIds);

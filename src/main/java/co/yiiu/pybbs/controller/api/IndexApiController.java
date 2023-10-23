@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.*;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -156,7 +157,7 @@ public class IndexApiController extends BaseApiController {
     //  }
 
     // 登录成功后，处理的逻辑一样，这里提取出来封装一个方法处理
-    private Result doUserStorage(HttpSession session, User user) {
+    private Result doUserStorage(HttpSession session, @RUntainted User user) {
         // 将用户信息写session
         if (session != null) {
             session.setAttribute("_user", user);
@@ -214,7 +215,7 @@ public class IndexApiController extends BaseApiController {
                 url = fileUtil.upload(file, "avatar", "avatar/" + user.getUsername());
                 if (url != null) {
                     // 查询当前用户的最新信息
-                    User user1 = userService.selectById(user.getId());
+                    @RUntainted User user1 = userService.selectById(user.getId());
                     user1.setAvatar(url);
                     // 保存用户新的头像
                     userService.update(user1);

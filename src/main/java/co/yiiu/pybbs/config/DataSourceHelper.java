@@ -11,6 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -28,11 +29,11 @@ public class DataSourceHelper {
         if (siteConfig == null) siteConfig = SpringContextUtil.getBean(SiteConfig.class);
         try {
             Class.forName(siteConfig.getDatasource_driver());
-            URI uri = new URI(siteConfig.getDatasource_url().replace("jdbc:", ""));
-            String host = uri.getHost();
-            int port = uri.getPort();
+            @RUntainted URI uri = new URI(siteConfig.getDatasource_url().replace("jdbc:", ""));
+            @RUntainted String host = uri.getHost();
+            @RUntainted int port = uri.getPort();
             String path = uri.getPath();
-            String query = uri.getQuery();
+            @RUntainted String query = uri.getQuery();
             Connection connection = DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "?" + query,
                     siteConfig.getDatasource_username(), siteConfig.getDatasource_password());
             Statement statement = connection.createStatement();

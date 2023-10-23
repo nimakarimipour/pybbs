@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.Map;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -48,7 +49,7 @@ public class SettingsApiController extends BaseApiController {
         user1.setEmailNotification(emailNotification);
         userService.update(user1);
 
-        User user2 = getUser();
+        @RUntainted User user2 = getUser();
         if (user2 != null) {
             user2.setBio(bio);
             session.setAttribute("_user", user2);
@@ -114,7 +115,7 @@ public class SettingsApiController extends BaseApiController {
         if (!user1.getActive()) user1.setActive(true);
         userService.update(user1);
         // 更新session中的用户信息
-        User _user = getUser();
+        @RUntainted User _user = getUser();
         _user.setEmail(email);
         session.setAttribute("_user", _user);
         return success();
@@ -123,7 +124,7 @@ public class SettingsApiController extends BaseApiController {
     // 修改密码
     @PutMapping("/updatePassword")
     public Result updatePassword(@RequestBody Map<String, String> body) {
-        User user = getApiUser();
+        @RUntainted User user = getApiUser();
         user = userService.selectByIdWithoutCache(user.getId());
 
         String oldPassword = body.get("oldPassword");
@@ -142,12 +143,12 @@ public class SettingsApiController extends BaseApiController {
     // 刷新token
     @GetMapping("/refreshToken")
     public Result refreshToken(HttpSession session) {
-        User user = getApiUser();
+        @RUntainted User user = getApiUser();
         String token = StringUtil.uuid();
         user.setToken(token);
         userService.update(user);
         // 更新session中的用户信息
-        User _user = getUser();
+        @RUntainted User _user = getUser();
         _user.setToken(token);
         session.setAttribute("_user", _user);
         return success(token);
