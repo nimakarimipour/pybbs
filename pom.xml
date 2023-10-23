@@ -78,7 +78,7 @@
                 <dependency>
                     <groupId>org.checkerframework</groupId>
                     <artifactId>checker</artifactId>
-                    <version>3.37.1-SNAPSHOT</version>
+                    <version>3.39.1-SNAPSHOT</version>
                 </dependency>
             </dependencies>
         </profile>
@@ -154,7 +154,7 @@
         <dependency>
             <groupId>org.checkerframework</groupId>
             <artifactId>checker-qual</artifactId>
-            <version>3.35.0</version>
+            <version>3.39.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.google.errorprone</groupId>
