@@ -1,2 +1,2 @@
 rm -rvf target
-mvn clean compile
+mvn compile

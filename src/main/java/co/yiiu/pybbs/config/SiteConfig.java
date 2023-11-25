@@ -4,7 +4,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 import java.io.Serializable;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -34,7 +33,7 @@ public class SiteConfig implements Serializable {
         return datasource_url;
     }
 
-    public void setDatasource_url(@RUntainted String datasource_url) {
+    public void setDatasource_url(String datasource_url) {
         this.datasource_url = datasource_url;
     }
 
