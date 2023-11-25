@@ -27,7 +27,7 @@ def run_annotator():
     commands += ['-cn', 'UCRTaint']
     commands += ["--depth", "7"]
     # Uncomment to see build output
-    # commands += ['-rboserr']
+    commands += ['-rboserr']
     # Uncomment to disable outer loop
     # commands += ['-dol']
     # Uncomment to disable parallel processing
