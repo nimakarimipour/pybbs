@@ -28,6 +28,10 @@ def run_annotator():
     commands += ["--depth", "7"]
     # Uncomment to see build output
     commands += ['-rboserr']
+    # Comment to inject root at a time
+    commands += ['-ch']
+    # Uncomment to disable cache
+    # commands += ['-dc']
     # Uncomment to disable outer loop
     # commands += ['-dol']
     # Uncomment to disable parallel processing
