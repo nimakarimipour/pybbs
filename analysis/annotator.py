@@ -31,7 +31,7 @@ def run_annotator():
     # Comment to inject root at a time
     commands += ['-ch']
     # Uncomment to disable cache
-    # commands += ['-dc']
+    commands += ['-dc']
     # Uncomment to disable outer loop
     # commands += ['-dol']
     # Uncomment to disable parallel processing
