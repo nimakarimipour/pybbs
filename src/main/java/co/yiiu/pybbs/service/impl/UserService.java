@@ -35,7 +35,7 @@ import java.util.UUID;
 public class UserService implements IUserService {
 
     @Resource
-    private UserMapper<User> userMapper;
+    private UserMapper userMapper;
     @Resource
     @Lazy
     private ICollectService collectService;
