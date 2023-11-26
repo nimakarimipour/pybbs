@@ -10,6 +10,6 @@ import org.apache.ibatis.annotations.Mapper;
  * https://atjiu.github.io
  */
 @Mapper
-public interface UserMapper extends BaseMapper<User> {
+public interface UserMapper<T> extends BaseMapper<T> {
     int countToday();
 }

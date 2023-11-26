@@ -1,0 +1,1204 @@
+removed directory 'target/generated-sources/annotations'
+removed directory 'target/generated-sources'
+removed 'target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst'
+removed 'target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst'
+removed directory 'target/maven-status/maven-compiler-plugin/compile/default-compile'
+removed directory 'target/maven-status/maven-compiler-plugin/compile'
+removed directory 'target/maven-status/maven-compiler-plugin'
+removed directory 'target/maven-status'
+removed 'target/classes/application-docker.yml'
+removed 'target/classes/application-dev.yml'
+removed 'target/classes/i18n/message_en_US.properties'
+removed 'target/classes/i18n/message.properties'
+removed 'target/classes/i18n/message_zh_CN.properties'
+removed directory 'target/classes/i18n'
+removed 'target/classes/application-prod.yml'
+removed 'target/classes/db/migration/V1.6__add_permission_about_sensitive_word.sql'
+removed 'target/classes/db/migration/V1.8__add_sms_region_id.sql'
+removed 'target/classes/db/migration/V1.15__modify_content_character.sql'
+removed 'target/classes/db/migration/V1.17__add_cloud_storage.sql'
+removed 'target/classes/db/migration/V1.9__update_system_config_ws.sql'
+removed 'target/classes/db/migration/V1.16__add_column_content_style.sql'
+removed 'target/classes/db/migration/V1.18__add_tgbot.sql'
+removed 'target/classes/db/migration/V1.2__update_system_config_default_theme.sql'
+removed 'target/classes/db/migration/V1.4__alter_code.sql'
+removed 'target/classes/db/migration/V1__initialize.sql'
+removed 'target/classes/db/migration/V1.12__add_indexes.sql'
+removed 'target/classes/db/migration/V1.11__update_system_config_key.sql'
+removed 'target/classes/db/migration/V1.14__add_system_config_user_need_active.sql'
+removed 'target/classes/db/migration/V1.10__delete_system_config_search.sql'
+removed 'target/classes/db/migration/V1.7__alter_oauth_user.sql'
+removed 'target/classes/db/migration/V1.3__delete_system_config_redis_ssl.sql'
+removed 'target/classes/db/migration/V1.5__add_sensitive_word.sql'
+removed 'target/classes/db/migration/V1.13__add_social_config.sql'
+removed 'target/classes/db/migration/V1.1__user_add_field.sql'
+removed directory 'target/classes/db/migration'
+removed directory 'target/classes/db'
+removed 'target/classes/application.yml'
+removed 'target/classes/templates/theme/default/user/settings.ftl'
+removed 'target/classes/templates/theme/default/user/collects.ftl'
+removed 'target/classes/templates/theme/default/user/comments.ftl'
+removed 'target/classes/templates/theme/default/user/topics.ftl'
+removed 'target/classes/templates/theme/default/user/profile.ftl'
+removed directory 'target/classes/templates/theme/default/user'
+removed 'target/classes/templates/theme/default/comment/edit.ftl'
+removed directory 'target/classes/templates/theme/default/comment'
+removed 'target/classes/templates/theme/default/index.ftl'
+removed 'target/classes/templates/theme/default/login.ftl'
+removed 'target/classes/templates/theme/default/components/websocket.ftl'
+removed 'target/classes/templates/theme/default/components/author.ftl'
+removed 'target/classes/templates/theme/default/components/upload.ftl'
+removed 'target/classes/templates/theme/default/components/user_topics.ftl'
+removed 'target/classes/templates/theme/default/components/user_info.ftl'
+removed 'target/classes/templates/theme/default/components/notification.ftl'
+removed 'target/classes/templates/theme/default/components/paginate.ftl'
+removed 'target/classes/templates/theme/default/components/create_topic_guide.ftl'
+removed 'target/classes/templates/theme/default/components/editor.ftl'
+removed 'target/classes/templates/theme/default/components/welcome.ftl'
+removed 'target/classes/templates/theme/default/components/topics.ftl'
+removed 'target/classes/templates/theme/default/components/markdown_guide.ftl'
+removed 'target/classes/templates/theme/default/components/github_repos.ftl'
+removed 'target/classes/templates/theme/default/components/mobile_login.ftl'
+removed 'target/classes/templates/theme/default/components/score.ftl'
+removed 'target/classes/templates/theme/default/components/topic_comments.ftl'
+removed 'target/classes/templates/theme/default/components/other_topic.ftl'
+removed 'target/classes/templates/theme/default/components/forget_password.ftl'
+removed 'target/classes/templates/theme/default/components/user_comments.ftl'
+removed 'target/classes/templates/theme/default/components/token.ftl'
+removed directory 'target/classes/templates/theme/default/components'
+removed 'target/classes/templates/theme/default/register.ftl'
+removed 'target/classes/templates/theme/default/search.ftl'
+removed 'target/classes/templates/theme/default/top100.ftl'
+removed 'target/classes/templates/theme/default/notifications.ftl'
+removed 'target/classes/templates/theme/default/error.ftl'
+removed 'target/classes/templates/theme/default/topic/create.ftl'
+removed 'target/classes/templates/theme/default/topic/detail.ftl'
+removed 'target/classes/templates/theme/default/topic/edit.ftl'
+removed directory 'target/classes/templates/theme/default/topic'
+removed 'target/classes/templates/theme/default/tag/tag.ftl'
+removed 'target/classes/templates/theme/default/tag/tags.ftl'
+removed directory 'target/classes/templates/theme/default/tag'
+removed 'target/classes/templates/theme/default/layout/header.ftl'
+removed 'target/classes/templates/theme/default/layout/layout.ftl'
+removed 'target/classes/templates/theme/default/layout/footer.ftl'
+removed directory 'target/classes/templates/theme/default/layout'
+removed directory 'target/classes/templates/theme/default'
+removed directory 'target/classes/templates/theme'
+removed 'target/classes/templates/admin/user/list.ftl'
+removed 'target/classes/templates/admin/user/edit.ftl'
+removed directory 'target/classes/templates/admin/user'
+removed 'target/classes/templates/admin/comment/list.ftl'
+removed 'target/classes/templates/admin/comment/edit.ftl'
+removed directory 'target/classes/templates/admin/comment'
+removed 'target/classes/templates/admin/admin_user/add.ftl'
+removed 'target/classes/templates/admin/admin_user/list.ftl'
+removed 'target/classes/templates/admin/admin_user/edit.ftl'
+removed directory 'target/classes/templates/admin/admin_user'
+removed 'target/classes/templates/admin/role/add.ftl'
+removed 'target/classes/templates/admin/role/list.ftl'
+removed 'target/classes/templates/admin/role/edit.ftl'
+removed directory 'target/classes/templates/admin/role'
+removed 'target/classes/templates/admin/index.ftl'
+removed 'target/classes/templates/admin/login.ftl'
+removed 'target/classes/templates/admin/system/edit.ftl'
+removed directory 'target/classes/templates/admin/system'
+removed 'target/classes/templates/admin/permission/list.ftl'
+removed directory 'target/classes/templates/admin/permission'
+removed 'target/classes/templates/admin/topic/list.ftl'
+removed 'target/classes/templates/admin/topic/edit.ftl'
+removed directory 'target/classes/templates/admin/topic'
+removed 'target/classes/templates/admin/tag/list.ftl'
+removed 'target/classes/templates/admin/tag/edit.ftl'
+removed directory 'target/classes/templates/admin/tag'
+removed 'target/classes/templates/admin/layout/header.ftl'
+removed 'target/classes/templates/admin/layout/layout.ftl'
+removed 'target/classes/templates/admin/layout/paginate.ftl'
+removed 'target/classes/templates/admin/layout/footer.ftl'
+removed 'target/classes/templates/admin/layout/menu.ftl'
+removed directory 'target/classes/templates/admin/layout'
+removed 'target/classes/templates/admin/sensitive_word/list.ftl'
+removed directory 'target/classes/templates/admin/sensitive_word'
+removed directory 'target/classes/templates/admin'
+removed directory 'target/classes/templates'
+removed 'target/classes/co/yiiu/pybbs/mapper/CommentMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/AdminUserMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/SystemConfigMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/TagMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/NotificationMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/TopicMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/CollectMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/UserMapper.xml'
+removed directory 'target/classes/co/yiiu/pybbs/mapper'
+removed directory 'target/classes/co/yiiu/pybbs'
+removed directory 'target/classes/co/yiiu'
+removed directory 'target/classes/co'
+removed 'target/classes/logback-spring.xml'
+removed 'target/classes/static/theme/default/css/app.css'
+removed directory 'target/classes/static/theme/default/css'
+removed 'target/classes/static/theme/default/libs/layer/mobile/layer.js'
+removed 'target/classes/static/theme/default/libs/layer/mobile/need/layer.css'
+removed directory 'target/classes/static/theme/default/libs/layer/mobile/need'
+removed directory 'target/classes/static/theme/default/libs/layer/mobile'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/loading-1.gif'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/loading-2.gif'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/icon.png'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/layer.css'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/icon-ext.png'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/loading-0.gif'
+removed directory 'target/classes/static/theme/default/libs/layer/theme/default'
+removed 'target/classes/static/theme/default/libs/layer/theme/moon/default.png'
+removed 'target/classes/static/theme/default/libs/layer/theme/moon/style.css'
+removed directory 'target/classes/static/theme/default/libs/layer/theme/moon'
+removed directory 'target/classes/static/theme/default/libs/layer/theme'
+removed 'target/classes/static/theme/default/libs/layer/layer.js'
+removed directory 'target/classes/static/theme/default/libs/layer'
+removed directory 'target/classes/static/theme/default/libs'
+removed 'target/classes/static/theme/default/js/codemirror.js'
+removed 'target/classes/static/theme/default/js/app.js'
+removed directory 'target/classes/static/theme/default/js'
+removed directory 'target/classes/static/theme/default'
+removed directory 'target/classes/static/theme'
+removed 'target/classes/static/admin/js/app.min.js'
+removed directory 'target/classes/static/admin/js'
+removed directory 'target/classes/static/admin'
+removed directory 'target/classes/static'
+removed 'target/classes/banner.txt'
+removed directory 'target/classes'
+removed directory 'target'
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------------< co.yiiu:pybbs >----------------------------
+[INFO] Building pybbs 5.2.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ pybbs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 8 resources
+[INFO] Copying 108 resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ pybbs ---
+[WARNING] Parameter 'compilerArguments' is deprecated: use compilerArgs instead.
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 179 source files with javac [forked debug target 1.8] to target/classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] [options] bootstrap class path not set in conjunction with -source 8
+[INFO] 1 warning
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR]  Library Check Activation: true, Validation Check Activation: false, Side Effect Activation: false
+/home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/CommonInterceptor.java:[54,50] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 1
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/UserInterceptor.java:[40,46] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 2
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[32,92] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+  found   : @RTainted String
+  required: @RUntainted String, index: 3
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[59,25] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+  found   : @RTainted String
+  required: @RUntainted String, index: 4
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/service/impl/UserService.java:[206,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 5
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[54,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 6
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[119,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 7
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[152,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 8
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[162,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 9
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[222,71] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 10
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/OAuthController.java:[92,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 11
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/CommonController.java:[34,41] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted String
+  required: @RUntainted Object, index: 12
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[36,106] error: [argument] incompatible argument for parameter url of DriverManager.getConnection.
+  found   : @RTainted String
+  required: @RUntainted String, index: 13
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,53] error: [argument] incompatible argument for parameter user of DriverManager.getConnection.
+  found   : @RTainted String
+  required: @RUntainted String, index: 14
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,90] error: [argument] incompatible argument for parameter password of DriverManager.getConnection.
+  found   : @RTainted String
+  required: @RUntainted String, index: 15
+[INFO] 15 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.101 s
+[INFO] Finished at: 2023-11-26T00:12:42-08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project pybbs: Compilation failure: Compilation failure: 
+[ERROR]  Library Check Activation: true, Validation Check Activation: false, Side Effect Activation: false
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/CommonInterceptor.java:[54,50] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 1
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/UserInterceptor.java:[40,46] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 2
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[32,92] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 3
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[59,25] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 4
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/service/impl/UserService.java:[206,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 5
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[54,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 6
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[119,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 7
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[152,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 8
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[162,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 9
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[222,71] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 10
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/OAuthController.java:[92,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 11
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/CommonController.java:[34,41] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted Object, index: 12
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[36,106] error: [argument] incompatible argument for parameter url of DriverManager.getConnection.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 13
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,53] error: [argument] incompatible argument for parameter user of DriverManager.getConnection.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 14
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,90] error: [argument] incompatible argument for parameter password of DriverManager.getConnection.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 15
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+Preprocessing...
+Max Depth level: 0
+removed directory 'target/generated-sources/annotations'
+removed directory 'target/generated-sources'
+removed 'target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst'
+removed 'target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst'
+removed directory 'target/maven-status/maven-compiler-plugin/compile/default-compile'
+removed directory 'target/maven-status/maven-compiler-plugin/compile'
+removed directory 'target/maven-status/maven-compiler-plugin'
+removed directory 'target/maven-status'
+removed 'target/classes/application-docker.yml'
+removed 'target/classes/application-dev.yml'
+removed 'target/classes/i18n/message_en_US.properties'
+removed 'target/classes/i18n/message.properties'
+removed 'target/classes/i18n/message_zh_CN.properties'
+removed directory 'target/classes/i18n'
+removed 'target/classes/application-prod.yml'
+removed 'target/classes/db/migration/V1.6__add_permission_about_sensitive_word.sql'
+removed 'target/classes/db/migration/V1.8__add_sms_region_id.sql'
+removed 'target/classes/db/migration/V1.15__modify_content_character.sql'
+removed 'target/classes/db/migration/V1.17__add_cloud_storage.sql'
+removed 'target/classes/db/migration/V1.9__update_system_config_ws.sql'
+removed 'target/classes/db/migration/V1.16__add_column_content_style.sql'
+removed 'target/classes/db/migration/V1.18__add_tgbot.sql'
+removed 'target/classes/db/migration/V1.2__update_system_config_default_theme.sql'
+removed 'target/classes/db/migration/V1.4__alter_code.sql'
+removed 'target/classes/db/migration/V1__initialize.sql'
+removed 'target/classes/db/migration/V1.12__add_indexes.sql'
+removed 'target/classes/db/migration/V1.11__update_system_config_key.sql'
+removed 'target/classes/db/migration/V1.14__add_system_config_user_need_active.sql'
+removed 'target/classes/db/migration/V1.10__delete_system_config_search.sql'
+removed 'target/classes/db/migration/V1.7__alter_oauth_user.sql'
+removed 'target/classes/db/migration/V1.3__delete_system_config_redis_ssl.sql'
+removed 'target/classes/db/migration/V1.5__add_sensitive_word.sql'
+removed 'target/classes/db/migration/V1.13__add_social_config.sql'
+removed 'target/classes/db/migration/V1.1__user_add_field.sql'
+removed directory 'target/classes/db/migration'
+removed directory 'target/classes/db'
+removed 'target/classes/application.yml'
+removed 'target/classes/templates/theme/default/user/settings.ftl'
+removed 'target/classes/templates/theme/default/user/collects.ftl'
+removed 'target/classes/templates/theme/default/user/comments.ftl'
+removed 'target/classes/templates/theme/default/user/topics.ftl'
+removed 'target/classes/templates/theme/default/user/profile.ftl'
+removed directory 'target/classes/templates/theme/default/user'
+removed 'target/classes/templates/theme/default/comment/edit.ftl'
+removed directory 'target/classes/templates/theme/default/comment'
+removed 'target/classes/templates/theme/default/index.ftl'
+removed 'target/classes/templates/theme/default/login.ftl'
+removed 'target/classes/templates/theme/default/components/websocket.ftl'
+removed 'target/classes/templates/theme/default/components/author.ftl'
+removed 'target/classes/templates/theme/default/components/upload.ftl'
+removed 'target/classes/templates/theme/default/components/user_topics.ftl'
+removed 'target/classes/templates/theme/default/components/user_info.ftl'
+removed 'target/classes/templates/theme/default/components/notification.ftl'
+removed 'target/classes/templates/theme/default/components/paginate.ftl'
+removed 'target/classes/templates/theme/default/components/create_topic_guide.ftl'
+removed 'target/classes/templates/theme/default/components/editor.ftl'
+removed 'target/classes/templates/theme/default/components/welcome.ftl'
+removed 'target/classes/templates/theme/default/components/topics.ftl'
+removed 'target/classes/templates/theme/default/components/markdown_guide.ftl'
+removed 'target/classes/templates/theme/default/components/github_repos.ftl'
+removed 'target/classes/templates/theme/default/components/mobile_login.ftl'
+removed 'target/classes/templates/theme/default/components/score.ftl'
+removed 'target/classes/templates/theme/default/components/topic_comments.ftl'
+removed 'target/classes/templates/theme/default/components/other_topic.ftl'
+removed 'target/classes/templates/theme/default/components/forget_password.ftl'
+removed 'target/classes/templates/theme/default/components/user_comments.ftl'
+removed 'target/classes/templates/theme/default/components/token.ftl'
+removed directory 'target/classes/templates/theme/default/components'
+removed 'target/classes/templates/theme/default/register.ftl'
+removed 'target/classes/templates/theme/default/search.ftl'
+removed 'target/classes/templates/theme/default/top100.ftl'
+removed 'target/classes/templates/theme/default/notifications.ftl'
+removed 'target/classes/templates/theme/default/error.ftl'
+removed 'target/classes/templates/theme/default/topic/create.ftl'
+removed 'target/classes/templates/theme/default/topic/detail.ftl'
+removed 'target/classes/templates/theme/default/topic/edit.ftl'
+removed directory 'target/classes/templates/theme/default/topic'
+removed 'target/classes/templates/theme/default/tag/tag.ftl'
+removed 'target/classes/templates/theme/default/tag/tags.ftl'
+removed directory 'target/classes/templates/theme/default/tag'
+removed 'target/classes/templates/theme/default/layout/header.ftl'
+removed 'target/classes/templates/theme/default/layout/layout.ftl'
+removed 'target/classes/templates/theme/default/layout/footer.ftl'
+removed directory 'target/classes/templates/theme/default/layout'
+removed directory 'target/classes/templates/theme/default'
+removed directory 'target/classes/templates/theme'
+removed 'target/classes/templates/admin/user/list.ftl'
+removed 'target/classes/templates/admin/user/edit.ftl'
+removed directory 'target/classes/templates/admin/user'
+removed 'target/classes/templates/admin/comment/list.ftl'
+removed 'target/classes/templates/admin/comment/edit.ftl'
+removed directory 'target/classes/templates/admin/comment'
+removed 'target/classes/templates/admin/admin_user/add.ftl'
+removed 'target/classes/templates/admin/admin_user/list.ftl'
+removed 'target/classes/templates/admin/admin_user/edit.ftl'
+removed directory 'target/classes/templates/admin/admin_user'
+removed 'target/classes/templates/admin/role/add.ftl'
+removed 'target/classes/templates/admin/role/list.ftl'
+removed 'target/classes/templates/admin/role/edit.ftl'
+removed directory 'target/classes/templates/admin/role'
+removed 'target/classes/templates/admin/index.ftl'
+removed 'target/classes/templates/admin/login.ftl'
+removed 'target/classes/templates/admin/system/edit.ftl'
+removed directory 'target/classes/templates/admin/system'
+removed 'target/classes/templates/admin/permission/list.ftl'
+removed directory 'target/classes/templates/admin/permission'
+removed 'target/classes/templates/admin/topic/list.ftl'
+removed 'target/classes/templates/admin/topic/edit.ftl'
+removed directory 'target/classes/templates/admin/topic'
+removed 'target/classes/templates/admin/tag/list.ftl'
+removed 'target/classes/templates/admin/tag/edit.ftl'
+removed directory 'target/classes/templates/admin/tag'
+removed 'target/classes/templates/admin/layout/header.ftl'
+removed 'target/classes/templates/admin/layout/layout.ftl'
+removed 'target/classes/templates/admin/layout/paginate.ftl'
+removed 'target/classes/templates/admin/layout/footer.ftl'
+removed 'target/classes/templates/admin/layout/menu.ftl'
+removed directory 'target/classes/templates/admin/layout'
+removed 'target/classes/templates/admin/sensitive_word/list.ftl'
+removed directory 'target/classes/templates/admin/sensitive_word'
+removed directory 'target/classes/templates/admin'
+removed directory 'target/classes/templates'
+removed 'target/classes/co/yiiu/pybbs/mapper/CommentMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/AdminUserMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/SystemConfigMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/TagMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/NotificationMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/TopicMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/CollectMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/UserMapper.xml'
+removed directory 'target/classes/co/yiiu/pybbs/mapper'
+removed directory 'target/classes/co/yiiu/pybbs'
+removed directory 'target/classes/co/yiiu'
+removed directory 'target/classes/co'
+removed 'target/classes/logback-spring.xml'
+removed 'target/classes/static/theme/default/css/app.css'
+removed directory 'target/classes/static/theme/default/css'
+removed 'target/classes/static/theme/default/libs/layer/mobile/layer.js'
+removed 'target/classes/static/theme/default/libs/layer/mobile/need/layer.css'
+removed directory 'target/classes/static/theme/default/libs/layer/mobile/need'
+removed directory 'target/classes/static/theme/default/libs/layer/mobile'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/loading-1.gif'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/loading-2.gif'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/icon.png'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/layer.css'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/icon-ext.png'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/loading-0.gif'
+removed directory 'target/classes/static/theme/default/libs/layer/theme/default'
+removed 'target/classes/static/theme/default/libs/layer/theme/moon/default.png'
+removed 'target/classes/static/theme/default/libs/layer/theme/moon/style.css'
+removed directory 'target/classes/static/theme/default/libs/layer/theme/moon'
+removed directory 'target/classes/static/theme/default/libs/layer/theme'
+removed 'target/classes/static/theme/default/libs/layer/layer.js'
+removed directory 'target/classes/static/theme/default/libs/layer'
+removed directory 'target/classes/static/theme/default/libs'
+removed 'target/classes/static/theme/default/js/codemirror.js'
+removed 'target/classes/static/theme/default/js/app.js'
+removed directory 'target/classes/static/theme/default/js'
+removed directory 'target/classes/static/theme/default'
+removed directory 'target/classes/static/theme'
+removed 'target/classes/static/admin/js/app.min.js'
+removed directory 'target/classes/static/admin/js'
+removed directory 'target/classes/static/admin'
+removed directory 'target/classes/static'
+removed 'target/classes/banner.txt'
+removed directory 'target/classes'
+removed directory 'target'
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------------< co.yiiu:pybbs >----------------------------
+[INFO] Building pybbs 5.2.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ pybbs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 8 resources
+[INFO] Copying 108 resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ pybbs ---
+[WARNING] Parameter 'compilerArguments' is deprecated: use compilerArgs instead.
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 179 source files with javac [forked debug target 1.8] to target/classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] [options] bootstrap class path not set in conjunction with -source 8
+[INFO] 1 warning
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR]  Library Check Activation: true, Validation Check Activation: false, Side Effect Activation: false
+/home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/CommonInterceptor.java:[54,50] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 1
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/UserInterceptor.java:[40,46] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 2
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[32,92] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+  found   : @RTainted String
+  required: @RUntainted String, index: 3
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[59,25] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+  found   : @RTainted String
+  required: @RUntainted String, index: 4
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/service/impl/UserService.java:[206,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 5
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[54,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 6
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[119,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 7
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[152,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 8
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[162,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 9
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[222,71] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 10
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/OAuthController.java:[92,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 11
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/CommonController.java:[34,41] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted String
+  required: @RUntainted Object, index: 12
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[36,106] error: [argument] incompatible argument for parameter url of DriverManager.getConnection.
+  found   : @RTainted String
+  required: @RUntainted String, index: 13
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,53] error: [argument] incompatible argument for parameter user of DriverManager.getConnection.
+  found   : @RTainted String
+  required: @RUntainted String, index: 14
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,90] error: [argument] incompatible argument for parameter password of DriverManager.getConnection.
+  found   : @RTainted String
+  required: @RUntainted String, index: 15
+[INFO] 15 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.302 s
+[INFO] Finished at: 2023-11-26T00:12:50-08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project pybbs: Compilation failure: Compilation failure: 
+[ERROR]  Library Check Activation: true, Validation Check Activation: false, Side Effect Activation: false
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/CommonInterceptor.java:[54,50] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 1
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/UserInterceptor.java:[40,46] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 2
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[32,92] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 3
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[59,25] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 4
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/service/impl/UserService.java:[206,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 5
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[54,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 6
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[119,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 7
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[152,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 8
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[162,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 9
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[222,71] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 10
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/OAuthController.java:[92,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 11
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/CommonController.java:[34,41] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted Object, index: 12
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[36,106] error: [argument] incompatible argument for parameter url of DriverManager.getConnection.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 13
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,53] error: [argument] incompatible argument for parameter user of DriverManager.getConnection.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 14
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,90] error: [argument] incompatible argument for parameter password of DriverManager.getConnection.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 15
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+removed directory 'target/generated-sources/annotations'
+removed directory 'target/generated-sources'
+removed 'target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst'
+removed 'target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst'
+removed directory 'target/maven-status/maven-compiler-plugin/compile/default-compile'
+removed directory 'target/maven-status/maven-compiler-plugin/compile'
+removed directory 'target/maven-status/maven-compiler-plugin'
+removed directory 'target/maven-status'
+removed 'target/classes/application-docker.yml'
+removed 'target/classes/application-dev.yml'
+removed 'target/classes/i18n/message_en_US.properties'
+removed 'target/classes/i18n/message.properties'
+removed 'target/classes/i18n/message_zh_CN.properties'
+removed directory 'target/classes/i18n'
+removed 'target/classes/application-prod.yml'
+removed 'target/classes/db/migration/V1.6__add_permission_about_sensitive_word.sql'
+removed 'target/classes/db/migration/V1.8__add_sms_region_id.sql'
+removed 'target/classes/db/migration/V1.15__modify_content_character.sql'
+removed 'target/classes/db/migration/V1.17__add_cloud_storage.sql'
+removed 'target/classes/db/migration/V1.9__update_system_config_ws.sql'
+removed 'target/classes/db/migration/V1.16__add_column_content_style.sql'
+removed 'target/classes/db/migration/V1.18__add_tgbot.sql'
+removed 'target/classes/db/migration/V1.2__update_system_config_default_theme.sql'
+removed 'target/classes/db/migration/V1.4__alter_code.sql'
+removed 'target/classes/db/migration/V1__initialize.sql'
+removed 'target/classes/db/migration/V1.12__add_indexes.sql'
+removed 'target/classes/db/migration/V1.11__update_system_config_key.sql'
+removed 'target/classes/db/migration/V1.14__add_system_config_user_need_active.sql'
+removed 'target/classes/db/migration/V1.10__delete_system_config_search.sql'
+removed 'target/classes/db/migration/V1.7__alter_oauth_user.sql'
+removed 'target/classes/db/migration/V1.3__delete_system_config_redis_ssl.sql'
+removed 'target/classes/db/migration/V1.5__add_sensitive_word.sql'
+removed 'target/classes/db/migration/V1.13__add_social_config.sql'
+removed 'target/classes/db/migration/V1.1__user_add_field.sql'
+removed directory 'target/classes/db/migration'
+removed directory 'target/classes/db'
+removed 'target/classes/application.yml'
+removed 'target/classes/templates/theme/default/user/settings.ftl'
+removed 'target/classes/templates/theme/default/user/collects.ftl'
+removed 'target/classes/templates/theme/default/user/comments.ftl'
+removed 'target/classes/templates/theme/default/user/topics.ftl'
+removed 'target/classes/templates/theme/default/user/profile.ftl'
+removed directory 'target/classes/templates/theme/default/user'
+removed 'target/classes/templates/theme/default/comment/edit.ftl'
+removed directory 'target/classes/templates/theme/default/comment'
+removed 'target/classes/templates/theme/default/index.ftl'
+removed 'target/classes/templates/theme/default/login.ftl'
+removed 'target/classes/templates/theme/default/components/websocket.ftl'
+removed 'target/classes/templates/theme/default/components/author.ftl'
+removed 'target/classes/templates/theme/default/components/upload.ftl'
+removed 'target/classes/templates/theme/default/components/user_topics.ftl'
+removed 'target/classes/templates/theme/default/components/user_info.ftl'
+removed 'target/classes/templates/theme/default/components/notification.ftl'
+removed 'target/classes/templates/theme/default/components/paginate.ftl'
+removed 'target/classes/templates/theme/default/components/create_topic_guide.ftl'
+removed 'target/classes/templates/theme/default/components/editor.ftl'
+removed 'target/classes/templates/theme/default/components/welcome.ftl'
+removed 'target/classes/templates/theme/default/components/topics.ftl'
+removed 'target/classes/templates/theme/default/components/markdown_guide.ftl'
+removed 'target/classes/templates/theme/default/components/github_repos.ftl'
+removed 'target/classes/templates/theme/default/components/mobile_login.ftl'
+removed 'target/classes/templates/theme/default/components/score.ftl'
+removed 'target/classes/templates/theme/default/components/topic_comments.ftl'
+removed 'target/classes/templates/theme/default/components/other_topic.ftl'
+removed 'target/classes/templates/theme/default/components/forget_password.ftl'
+removed 'target/classes/templates/theme/default/components/user_comments.ftl'
+removed 'target/classes/templates/theme/default/components/token.ftl'
+removed directory 'target/classes/templates/theme/default/components'
+removed 'target/classes/templates/theme/default/register.ftl'
+removed 'target/classes/templates/theme/default/search.ftl'
+removed 'target/classes/templates/theme/default/top100.ftl'
+removed 'target/classes/templates/theme/default/notifications.ftl'
+removed 'target/classes/templates/theme/default/error.ftl'
+removed 'target/classes/templates/theme/default/topic/create.ftl'
+removed 'target/classes/templates/theme/default/topic/detail.ftl'
+removed 'target/classes/templates/theme/default/topic/edit.ftl'
+removed directory 'target/classes/templates/theme/default/topic'
+removed 'target/classes/templates/theme/default/tag/tag.ftl'
+removed 'target/classes/templates/theme/default/tag/tags.ftl'
+removed directory 'target/classes/templates/theme/default/tag'
+removed 'target/classes/templates/theme/default/layout/header.ftl'
+removed 'target/classes/templates/theme/default/layout/layout.ftl'
+removed 'target/classes/templates/theme/default/layout/footer.ftl'
+removed directory 'target/classes/templates/theme/default/layout'
+removed directory 'target/classes/templates/theme/default'
+removed directory 'target/classes/templates/theme'
+removed 'target/classes/templates/admin/user/list.ftl'
+removed 'target/classes/templates/admin/user/edit.ftl'
+removed directory 'target/classes/templates/admin/user'
+removed 'target/classes/templates/admin/comment/list.ftl'
+removed 'target/classes/templates/admin/comment/edit.ftl'
+removed directory 'target/classes/templates/admin/comment'
+removed 'target/classes/templates/admin/admin_user/add.ftl'
+removed 'target/classes/templates/admin/admin_user/list.ftl'
+removed 'target/classes/templates/admin/admin_user/edit.ftl'
+removed directory 'target/classes/templates/admin/admin_user'
+removed 'target/classes/templates/admin/role/add.ftl'
+removed 'target/classes/templates/admin/role/list.ftl'
+removed 'target/classes/templates/admin/role/edit.ftl'
+removed directory 'target/classes/templates/admin/role'
+removed 'target/classes/templates/admin/index.ftl'
+removed 'target/classes/templates/admin/login.ftl'
+removed 'target/classes/templates/admin/system/edit.ftl'
+removed directory 'target/classes/templates/admin/system'
+removed 'target/classes/templates/admin/permission/list.ftl'
+removed directory 'target/classes/templates/admin/permission'
+removed 'target/classes/templates/admin/topic/list.ftl'
+removed 'target/classes/templates/admin/topic/edit.ftl'
+removed directory 'target/classes/templates/admin/topic'
+removed 'target/classes/templates/admin/tag/list.ftl'
+removed 'target/classes/templates/admin/tag/edit.ftl'
+removed directory 'target/classes/templates/admin/tag'
+removed 'target/classes/templates/admin/layout/header.ftl'
+removed 'target/classes/templates/admin/layout/layout.ftl'
+removed 'target/classes/templates/admin/layout/paginate.ftl'
+removed 'target/classes/templates/admin/layout/footer.ftl'
+removed 'target/classes/templates/admin/layout/menu.ftl'
+removed directory 'target/classes/templates/admin/layout'
+removed 'target/classes/templates/admin/sensitive_word/list.ftl'
+removed directory 'target/classes/templates/admin/sensitive_word'
+removed directory 'target/classes/templates/admin'
+removed directory 'target/classes/templates'
+removed 'target/classes/co/yiiu/pybbs/mapper/CommentMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/AdminUserMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/SystemConfigMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/TagMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/NotificationMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/TopicMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/CollectMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/UserMapper.xml'
+removed directory 'target/classes/co/yiiu/pybbs/mapper'
+removed directory 'target/classes/co/yiiu/pybbs'
+removed directory 'target/classes/co/yiiu'
+removed directory 'target/classes/co'
+removed 'target/classes/logback-spring.xml'
+removed 'target/classes/static/theme/default/css/app.css'
+removed directory 'target/classes/static/theme/default/css'
+removed 'target/classes/static/theme/default/libs/layer/mobile/layer.js'
+removed 'target/classes/static/theme/default/libs/layer/mobile/need/layer.css'
+removed directory 'target/classes/static/theme/default/libs/layer/mobile/need'
+removed directory 'target/classes/static/theme/default/libs/layer/mobile'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/loading-1.gif'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/loading-2.gif'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/icon.png'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/layer.css'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/icon-ext.png'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/loading-0.gif'
+removed directory 'target/classes/static/theme/default/libs/layer/theme/default'
+removed 'target/classes/static/theme/default/libs/layer/theme/moon/default.png'
+removed 'target/classes/static/theme/default/libs/layer/theme/moon/style.css'
+removed directory 'target/classes/static/theme/default/libs/layer/theme/moon'
+removed directory 'target/classes/static/theme/default/libs/layer/theme'
+removed 'target/classes/static/theme/default/libs/layer/layer.js'
+removed directory 'target/classes/static/theme/default/libs/layer'
+removed directory 'target/classes/static/theme/default/libs'
+removed 'target/classes/static/theme/default/js/codemirror.js'
+removed 'target/classes/static/theme/default/js/app.js'
+removed directory 'target/classes/static/theme/default/js'
+removed directory 'target/classes/static/theme/default'
+removed directory 'target/classes/static/theme'
+removed 'target/classes/static/admin/js/app.min.js'
+removed directory 'target/classes/static/admin/js'
+removed directory 'target/classes/static/admin'
+removed directory 'target/classes/static'
+removed 'target/classes/banner.txt'
+removed directory 'target/classes'
+removed directory 'target'
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------------< co.yiiu:pybbs >----------------------------
+[INFO] Building pybbs 5.2.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ pybbs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 8 resources
+[INFO] Copying 108 resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ pybbs ---
+[WARNING] Parameter 'compilerArguments' is deprecated: use compilerArgs instead.
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 179 source files with javac [forked debug target 1.8] to target/classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] [options] bootstrap class path not set in conjunction with -source 8
+[INFO] 1 warning
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR]  Library Check Activation: true, Validation Check Activation: false, Side Effect Activation: false
+/home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/CommonInterceptor.java:[54,50] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 1
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/UserInterceptor.java:[40,46] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 2
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[32,92] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+  found   : @RTainted String
+  required: @RUntainted String, index: 3
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[59,25] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+  found   : @RTainted String
+  required: @RUntainted String, index: 4
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/service/impl/UserService.java:[206,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 5
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[54,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 6
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[119,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 7
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[152,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 8
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[162,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 9
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[222,71] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 10
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/OAuthController.java:[92,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 11
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/CommonController.java:[34,41] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted String
+  required: @RUntainted Object, index: 12
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[36,106] error: [argument] incompatible argument for parameter url of DriverManager.getConnection.
+  found   : @RTainted String
+  required: @RUntainted String, index: 13
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,53] error: [argument] incompatible argument for parameter user of DriverManager.getConnection.
+  found   : @RTainted String
+  required: @RUntainted String, index: 14
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,90] error: [argument] incompatible argument for parameter password of DriverManager.getConnection.
+  found   : @RTainted String
+  required: @RUntainted String, index: 15
+[INFO] 15 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.040 s
+[INFO] Finished at: 2023-11-26T00:12:58-08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project pybbs: Compilation failure: Compilation failure: 
+[ERROR]  Library Check Activation: true, Validation Check Activation: false, Side Effect Activation: false
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/CommonInterceptor.java:[54,50] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 1
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/UserInterceptor.java:[40,46] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 2
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[32,92] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 3
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[59,25] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 4
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/service/impl/UserService.java:[206,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 5
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[54,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 6
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[119,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 7
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[152,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 8
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[162,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 9
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[222,71] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 10
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/OAuthController.java:[92,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 11
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/CommonController.java:[34,41] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted Object, index: 12
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[36,106] error: [argument] incompatible argument for parameter url of DriverManager.getConnection.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 13
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,53] error: [argument] incompatible argument for parameter user of DriverManager.getConnection.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 14
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,90] error: [argument] incompatible argument for parameter password of DriverManager.getConnection.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 15
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+removed directory 'target/generated-sources/annotations'
+removed directory 'target/generated-sources'
+removed 'target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst'
+removed 'target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst'
+removed directory 'target/maven-status/maven-compiler-plugin/compile/default-compile'
+removed directory 'target/maven-status/maven-compiler-plugin/compile'
+removed directory 'target/maven-status/maven-compiler-plugin'
+removed directory 'target/maven-status'
+removed 'target/classes/application-docker.yml'
+removed 'target/classes/application-dev.yml'
+removed 'target/classes/i18n/message_en_US.properties'
+removed 'target/classes/i18n/message.properties'
+removed 'target/classes/i18n/message_zh_CN.properties'
+removed directory 'target/classes/i18n'
+removed 'target/classes/application-prod.yml'
+removed 'target/classes/db/migration/V1.6__add_permission_about_sensitive_word.sql'
+removed 'target/classes/db/migration/V1.8__add_sms_region_id.sql'
+removed 'target/classes/db/migration/V1.15__modify_content_character.sql'
+removed 'target/classes/db/migration/V1.17__add_cloud_storage.sql'
+removed 'target/classes/db/migration/V1.9__update_system_config_ws.sql'
+removed 'target/classes/db/migration/V1.16__add_column_content_style.sql'
+removed 'target/classes/db/migration/V1.18__add_tgbot.sql'
+removed 'target/classes/db/migration/V1.2__update_system_config_default_theme.sql'
+removed 'target/classes/db/migration/V1.4__alter_code.sql'
+removed 'target/classes/db/migration/V1__initialize.sql'
+removed 'target/classes/db/migration/V1.12__add_indexes.sql'
+removed 'target/classes/db/migration/V1.11__update_system_config_key.sql'
+removed 'target/classes/db/migration/V1.14__add_system_config_user_need_active.sql'
+removed 'target/classes/db/migration/V1.10__delete_system_config_search.sql'
+removed 'target/classes/db/migration/V1.7__alter_oauth_user.sql'
+removed 'target/classes/db/migration/V1.3__delete_system_config_redis_ssl.sql'
+removed 'target/classes/db/migration/V1.5__add_sensitive_word.sql'
+removed 'target/classes/db/migration/V1.13__add_social_config.sql'
+removed 'target/classes/db/migration/V1.1__user_add_field.sql'
+removed directory 'target/classes/db/migration'
+removed directory 'target/classes/db'
+removed 'target/classes/application.yml'
+removed 'target/classes/templates/theme/default/user/settings.ftl'
+removed 'target/classes/templates/theme/default/user/collects.ftl'
+removed 'target/classes/templates/theme/default/user/comments.ftl'
+removed 'target/classes/templates/theme/default/user/topics.ftl'
+removed 'target/classes/templates/theme/default/user/profile.ftl'
+removed directory 'target/classes/templates/theme/default/user'
+removed 'target/classes/templates/theme/default/comment/edit.ftl'
+removed directory 'target/classes/templates/theme/default/comment'
+removed 'target/classes/templates/theme/default/index.ftl'
+removed 'target/classes/templates/theme/default/login.ftl'
+removed 'target/classes/templates/theme/default/components/websocket.ftl'
+removed 'target/classes/templates/theme/default/components/author.ftl'
+removed 'target/classes/templates/theme/default/components/upload.ftl'
+removed 'target/classes/templates/theme/default/components/user_topics.ftl'
+removed 'target/classes/templates/theme/default/components/user_info.ftl'
+removed 'target/classes/templates/theme/default/components/notification.ftl'
+removed 'target/classes/templates/theme/default/components/paginate.ftl'
+removed 'target/classes/templates/theme/default/components/create_topic_guide.ftl'
+removed 'target/classes/templates/theme/default/components/editor.ftl'
+removed 'target/classes/templates/theme/default/components/welcome.ftl'
+removed 'target/classes/templates/theme/default/components/topics.ftl'
+removed 'target/classes/templates/theme/default/components/markdown_guide.ftl'
+removed 'target/classes/templates/theme/default/components/github_repos.ftl'
+removed 'target/classes/templates/theme/default/components/mobile_login.ftl'
+removed 'target/classes/templates/theme/default/components/score.ftl'
+removed 'target/classes/templates/theme/default/components/topic_comments.ftl'
+removed 'target/classes/templates/theme/default/components/other_topic.ftl'
+removed 'target/classes/templates/theme/default/components/forget_password.ftl'
+removed 'target/classes/templates/theme/default/components/user_comments.ftl'
+removed 'target/classes/templates/theme/default/components/token.ftl'
+removed directory 'target/classes/templates/theme/default/components'
+removed 'target/classes/templates/theme/default/register.ftl'
+removed 'target/classes/templates/theme/default/search.ftl'
+removed 'target/classes/templates/theme/default/top100.ftl'
+removed 'target/classes/templates/theme/default/notifications.ftl'
+removed 'target/classes/templates/theme/default/error.ftl'
+removed 'target/classes/templates/theme/default/topic/create.ftl'
+removed 'target/classes/templates/theme/default/topic/detail.ftl'
+removed 'target/classes/templates/theme/default/topic/edit.ftl'
+removed directory 'target/classes/templates/theme/default/topic'
+removed 'target/classes/templates/theme/default/tag/tag.ftl'
+removed 'target/classes/templates/theme/default/tag/tags.ftl'
+removed directory 'target/classes/templates/theme/default/tag'
+removed 'target/classes/templates/theme/default/layout/header.ftl'
+removed 'target/classes/templates/theme/default/layout/layout.ftl'
+removed 'target/classes/templates/theme/default/layout/footer.ftl'
+removed directory 'target/classes/templates/theme/default/layout'
+removed directory 'target/classes/templates/theme/default'
+removed directory 'target/classes/templates/theme'
+removed 'target/classes/templates/admin/user/list.ftl'
+removed 'target/classes/templates/admin/user/edit.ftl'
+removed directory 'target/classes/templates/admin/user'
+removed 'target/classes/templates/admin/comment/list.ftl'
+removed 'target/classes/templates/admin/comment/edit.ftl'
+removed directory 'target/classes/templates/admin/comment'
+removed 'target/classes/templates/admin/admin_user/add.ftl'
+removed 'target/classes/templates/admin/admin_user/list.ftl'
+removed 'target/classes/templates/admin/admin_user/edit.ftl'
+removed directory 'target/classes/templates/admin/admin_user'
+removed 'target/classes/templates/admin/role/add.ftl'
+removed 'target/classes/templates/admin/role/list.ftl'
+removed 'target/classes/templates/admin/role/edit.ftl'
+removed directory 'target/classes/templates/admin/role'
+removed 'target/classes/templates/admin/index.ftl'
+removed 'target/classes/templates/admin/login.ftl'
+removed 'target/classes/templates/admin/system/edit.ftl'
+removed directory 'target/classes/templates/admin/system'
+removed 'target/classes/templates/admin/permission/list.ftl'
+removed directory 'target/classes/templates/admin/permission'
+removed 'target/classes/templates/admin/topic/list.ftl'
+removed 'target/classes/templates/admin/topic/edit.ftl'
+removed directory 'target/classes/templates/admin/topic'
+removed 'target/classes/templates/admin/tag/list.ftl'
+removed 'target/classes/templates/admin/tag/edit.ftl'
+removed directory 'target/classes/templates/admin/tag'
+removed 'target/classes/templates/admin/layout/header.ftl'
+removed 'target/classes/templates/admin/layout/layout.ftl'
+removed 'target/classes/templates/admin/layout/paginate.ftl'
+removed 'target/classes/templates/admin/layout/footer.ftl'
+removed 'target/classes/templates/admin/layout/menu.ftl'
+removed directory 'target/classes/templates/admin/layout'
+removed 'target/classes/templates/admin/sensitive_word/list.ftl'
+removed directory 'target/classes/templates/admin/sensitive_word'
+removed directory 'target/classes/templates/admin'
+removed directory 'target/classes/templates'
+removed 'target/classes/co/yiiu/pybbs/mapper/CommentMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/AdminUserMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/SystemConfigMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/TagMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/NotificationMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/TopicMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/CollectMapper.xml'
+removed 'target/classes/co/yiiu/pybbs/mapper/UserMapper.xml'
+removed directory 'target/classes/co/yiiu/pybbs/mapper'
+removed directory 'target/classes/co/yiiu/pybbs'
+removed directory 'target/classes/co/yiiu'
+removed directory 'target/classes/co'
+removed 'target/classes/logback-spring.xml'
+removed 'target/classes/static/theme/default/css/app.css'
+removed directory 'target/classes/static/theme/default/css'
+removed 'target/classes/static/theme/default/libs/layer/mobile/layer.js'
+removed 'target/classes/static/theme/default/libs/layer/mobile/need/layer.css'
+removed directory 'target/classes/static/theme/default/libs/layer/mobile/need'
+removed directory 'target/classes/static/theme/default/libs/layer/mobile'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/loading-1.gif'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/loading-2.gif'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/icon.png'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/layer.css'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/icon-ext.png'
+removed 'target/classes/static/theme/default/libs/layer/theme/default/loading-0.gif'
+removed directory 'target/classes/static/theme/default/libs/layer/theme/default'
+removed 'target/classes/static/theme/default/libs/layer/theme/moon/default.png'
+removed 'target/classes/static/theme/default/libs/layer/theme/moon/style.css'
+removed directory 'target/classes/static/theme/default/libs/layer/theme/moon'
+removed directory 'target/classes/static/theme/default/libs/layer/theme'
+removed 'target/classes/static/theme/default/libs/layer/layer.js'
+removed directory 'target/classes/static/theme/default/libs/layer'
+removed directory 'target/classes/static/theme/default/libs'
+removed 'target/classes/static/theme/default/js/codemirror.js'
+removed 'target/classes/static/theme/default/js/app.js'
+removed directory 'target/classes/static/theme/default/js'
+removed directory 'target/classes/static/theme/default'
+removed directory 'target/classes/static/theme'
+removed 'target/classes/static/admin/js/app.min.js'
+removed directory 'target/classes/static/admin/js'
+removed directory 'target/classes/static/admin'
+removed directory 'target/classes/static'
+removed 'target/classes/banner.txt'
+removed directory 'target/classes'
+removed directory 'target'
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------------< co.yiiu:pybbs >----------------------------
+[INFO] Building pybbs 5.2.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ pybbs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 8 resources
+[INFO] Copying 108 resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ pybbs ---
+[WARNING] Parameter 'compilerArguments' is deprecated: use compilerArgs instead.
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 179 source files with javac [forked debug target 1.8] to target/classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] [options] bootstrap class path not set in conjunction with -source 8
+[INFO] 1 warning
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR]  Library Check Activation: true, Validation Check Activation: false, Side Effect Activation: false
+/home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/CommonInterceptor.java:[54,50] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 1
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/UserInterceptor.java:[40,46] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 2
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[32,92] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+  found   : @RTainted String
+  required: @RUntainted String, index: 3
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[59,25] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+  found   : @RTainted String
+  required: @RUntainted String, index: 4
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/service/impl/UserService.java:[206,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 5
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[54,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 6
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[119,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 7
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[152,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 8
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[162,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 9
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[222,71] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 10
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/OAuthController.java:[92,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 11
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/CommonController.java:[34,41] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted String
+  required: @RUntainted Object, index: 12
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[36,106] error: [argument] incompatible argument for parameter url of DriverManager.getConnection.
+  found   : @RTainted String
+  required: @RUntainted String, index: 13
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,53] error: [argument] incompatible argument for parameter user of DriverManager.getConnection.
+  found   : @RTainted String
+  required: @RUntainted String, index: 14
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,90] error: [argument] incompatible argument for parameter password of DriverManager.getConnection.
+  found   : @RTainted String
+  required: @RUntainted String, index: 15
+[INFO] 15 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.169 s
+[INFO] Finished at: 2023-11-26T00:13:05-08:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project pybbs: Compilation failure: Compilation failure: 
+[ERROR]  Library Check Activation: true, Validation Check Activation: false, Side Effect Activation: false
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/CommonInterceptor.java:[54,50] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 1
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/UserInterceptor.java:[40,46] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 2
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[32,92] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 3
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[59,25] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 4
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/service/impl/UserService.java:[206,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 5
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[54,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 6
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[119,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 7
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[152,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 8
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[162,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 9
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[222,71] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 10
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/OAuthController.java:[92,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 11
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/CommonController.java:[34,41] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted Object, index: 12
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[36,106] error: [argument] incompatible argument for parameter url of DriverManager.getConnection.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 13
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,53] error: [argument] incompatible argument for parameter user of DriverManager.getConnection.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 14
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,90] error: [argument] incompatible argument for parameter password of DriverManager.getConnection.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 15
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
+
+Finished annotating.
