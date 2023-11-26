@@ -22,6 +22,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Locale;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -135,7 +136,7 @@ public class IndexController extends BaseController {
     public String active(String email, String code) {
         Assert.notNull(email, "激活邮箱不能为空");
         Assert.notNull(code, "激活码不能为空");
-        User user = getUser();
+        @RUntainted User user = getUser();
         if (user == null) {
             user = userService.selectByEmail(email);
         } else {

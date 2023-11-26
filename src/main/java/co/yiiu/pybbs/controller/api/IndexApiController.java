@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.*;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -78,7 +79,7 @@ public class IndexApiController extends BaseApiController {
         ApiAssert.notTrue(!_captcha.equalsIgnoreCase(captcha), "验证码不正确");
         ApiAssert.notEmpty(username, "请输入用户名");
         ApiAssert.notEmpty(password, "请输入密码");
-        User user = userService.selectByUsername(username);
+        @RUntainted User user = userService.selectByUsername(username);
         ApiAssert.notNull(user, "用户不存在");
         ApiAssert.isTrue(new BCryptPasswordEncoder().matches(password, user.getPassword()), "用户名或密码不正确");
         return this.doUserStorage(session, user);
@@ -99,7 +100,7 @@ public class IndexApiController extends BaseApiController {
         ApiAssert.notEmpty(email, "请输入邮箱");
         ApiAssert.isTrue(StringUtil.check(username, StringUtil.USERNAMEREGEX), "用户名只能为a-z,A-Z,0-9组合且2-16位");
         ApiAssert.isTrue(StringUtil.check(email, StringUtil.EMAILREGEX), "请输入正确的邮箱地址");
-        User user = userService.selectByUsername(username);
+        @RUntainted User user = userService.selectByUsername(username);
         ApiAssert.isNull(user, "用户名已存在");
         User emailUser = userService.selectByEmail(email);
         ApiAssert.isNull(emailUser, "这个邮箱已经被注册过了，请更换一个邮箱");
@@ -137,7 +138,7 @@ public class IndexApiController extends BaseApiController {
         ApiAssert.notEmpty(code, "请输入手机验证码");
         Code validateCode = codeService.validateCode(null, null, mobile, code);
         ApiAssert.notTrue(validateCode == null, "手机验证码错误");
-        User user = userService.addUserWithMobile(mobile);
+        @RUntainted User user = userService.addUserWithMobile(mobile);
         return doUserStorage(session, user);
     }
 
@@ -156,7 +157,7 @@ public class IndexApiController extends BaseApiController {
     //  }
 
     // 登录成功后，处理的逻辑一样，这里提取出来封装一个方法处理
-    private Result doUserStorage(HttpSession session, User user) {
+    private Result doUserStorage(HttpSession session, @RUntainted User user) {
         // 将用户信息写session
         if (session != null) {
             session.setAttribute("_user", user);
@@ -214,7 +215,7 @@ public class IndexApiController extends BaseApiController {
                 url = fileUtil.upload(file, "avatar", "avatar/" + user.getUsername());
                 if (url != null) {
                     // 查询当前用户的最新信息
-                    User user1 = userService.selectById(user.getId());
+                    @RUntainted User user1 = userService.selectById(user.getId());
                     user1.setAvatar(url);
                     // 保存用户新的头像
                     userService.update(user1);

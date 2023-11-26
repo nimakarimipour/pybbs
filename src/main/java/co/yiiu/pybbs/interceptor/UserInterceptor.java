@@ -13,6 +13,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -30,9 +31,9 @@ public class UserInterceptor implements HandlerInterceptor {
     private UserService userService;
 
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("_user");
+    public boolean preHandle(@RUntainted HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        @RUntainted HttpSession session = request.getSession();
+        @RUntainted User user = (User) session.getAttribute("_user");
         if (user == null) {
             String token = cookieUtil.getCookie(systemConfigService.selectAllConfig().get("cookie_name").toString());
             if (!StringUtils.isEmpty(token)) {

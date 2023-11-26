@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -71,7 +72,7 @@ public class OAuthController extends BaseController {
         String accessToken = authUser.getToken().getAccessToken();
 
         OAuthUser oAuthUser = oAuthUserService.selectByTypeAndLogin(type.toUpperCase(), authUser.getUsername());
-        User user;
+        @RUntainted User user;
         if (oAuthUser == null) {
             if (userService.selectByUsername(username) != null) {
                 username = username + githubId;

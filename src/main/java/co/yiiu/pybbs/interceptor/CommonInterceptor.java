@@ -18,6 +18,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Map;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -36,13 +37,13 @@ public class CommonInterceptor implements HandlerInterceptor {
     private ISystemConfigService systemConfigService;
 
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
+    public boolean preHandle(@RUntainted HttpServletRequest request, HttpServletResponse response, Object handler) {
         long start = System.currentTimeMillis();
         request.setAttribute("_start", start);
 
         // 判断session里有用户信息，有直接通过
-        HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("_user");
+        @RUntainted HttpSession session = request.getSession();
+        @RUntainted User user = (User) session.getAttribute("_user");
         if (user == null) {
             // 获取cookie里的token，查询用户的信息并放入session里
             String token = cookieUtil.getCookie(systemConfigService.selectAllConfig().get("cookie_name").toString());

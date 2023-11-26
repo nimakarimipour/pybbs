@@ -12,6 +12,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -30,7 +31,7 @@ public class CommonController extends BaseApiController {
     public void captcha(HttpServletResponse response, HttpSession session) throws IOException {
         Captcha captcha = new GifCaptcha();
         captcha.out(response.getOutputStream());
-        String text = captcha.text();
+        @RUntainted String text = captcha.text();
         session.setAttribute("_captcha", text);
     }
 
