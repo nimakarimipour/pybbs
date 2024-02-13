@@ -27,7 +27,7 @@ def run_annotator():
     commands += ['-cn', 'UCRTaint']
     commands += ["--depth", "7"]
     # Uncomment to see build output
-    commands += ['-rboserr']
+    #commands += ['-rboserr']
     # Comment to inject root at a time
     commands += ['-ch']
     # Uncomment to disable cache
