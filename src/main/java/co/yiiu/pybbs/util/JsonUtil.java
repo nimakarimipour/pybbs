@@ -3,6 +3,8 @@ package co.yiiu.pybbs.util;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,7 +19,7 @@ public class JsonUtil {
 
     private final static Logger log = LoggerFactory.getLogger(JsonUtil.class);
 
-    private static ObjectMapper objectMapper = new ObjectMapper();
+    private static @RUntainted ObjectMapper objectMapper = new ObjectMapper();
 
     public static <T> List<T> jsonToListObject(String json, Class<T> clazz) {
         try {
@@ -38,7 +40,7 @@ public class JsonUtil {
         }
     }
 
-    public static String objectToJson(Object obj) {
+    public static @RPolyTainted String objectToJson(@RPolyTainted Object obj) {
         try {
             return objectMapper.writeValueAsString(obj);
         } catch (JsonProcessingException e) {

@@ -7,6 +7,7 @@ import co.yiiu.pybbs.service.IOAuthUserService;
 import co.yiiu.pybbs.service.ISystemConfigService;
 import co.yiiu.pybbs.service.IUserService;
 import co.yiiu.pybbs.util.CookieUtil;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import me.zhyd.oauth.model.AuthCallback;
 import me.zhyd.oauth.model.AuthResponse;
 import me.zhyd.oauth.model.AuthUser;
@@ -54,7 +55,7 @@ public class OAuthController extends BaseController {
 
         AuthRequest request = socialPlugin.getRequest(type);
 
-        AuthResponse<AuthUser> response = request.login(callback);
+        AuthResponse<@RUntainted AuthUser> response = request.login(callback);
         if (!response.ok()) {
             throw new IllegalArgumentException(response.getMsg());
         }

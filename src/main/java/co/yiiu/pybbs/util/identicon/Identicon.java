@@ -7,6 +7,7 @@ import co.yiiu.pybbs.util.StringUtil;
 import co.yiiu.pybbs.util.identicon.generator.IBaseGenerator;
 import co.yiiu.pybbs.util.identicon.generator.impl.MyGenerator;
 import com.google.common.base.Preconditions;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -84,14 +85,14 @@ public class Identicon {
         return "data:image/png;base64," + imgToBase64String(image, "png");
     }
 
-    public String generator(String username) {
+    public String generator(@RUntainted String username) {
         Identicon identicon = new Identicon();
         String md5 = HashUtil.md5(StringUtil.randomString(6));
         BufferedImage image = identicon.create(md5, 420);
         return saveFile(username, image);
     }
 
-    public String saveFile(String username, BufferedImage image) {
+    public String saveFile(@RUntainted String username, BufferedImage image) {
         String fileName = "avatar.png";
         String userAvatarPath = "avatar/" + username + "/";
         try {

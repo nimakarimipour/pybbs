@@ -6,6 +6,7 @@ import co.yiiu.pybbs.util.Result;
 import co.yiiu.pybbs.util.StringUtil;
 import co.yiiu.pybbs.util.bcrypt.BCryptPasswordEncoder;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,7 +33,7 @@ public class UserAdminController extends BaseAdminController {
     public String list(@RequestParam(defaultValue = "1") Integer pageNo, String username, Model model) {
         if (username != null) username = username.replace("\"", "").replace("'", "");
 //        username= SecurityUtil.sanitizeInput(username);
-        IPage<User> iPage = userService.selectAll(pageNo, username);
+        IPage<@RUntainted User> iPage = userService.selectAll(pageNo, username);
         model.addAttribute("page", iPage);
         model.addAttribute("username", username);
         return "admin/user/list";
@@ -50,7 +51,7 @@ public class UserAdminController extends BaseAdminController {
     @RequiresPermissions("user:edit")
     @PostMapping("/edit")
     @ResponseBody
-    public Result update(User user) {
+    public Result update(@RUntainted User user) {
         // 如果密码不为空，给加密一下再保存
         if (!StringUtils.isEmpty(user.getPassword())) {
             user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));

@@ -2,6 +2,7 @@ package co.yiiu.pybbs.directive;
 
 import co.yiiu.pybbs.model.User;
 import co.yiiu.pybbs.service.IUserService;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import freemarker.core.Environment;
 import freemarker.template.*;
 import org.springframework.stereotype.Component;
@@ -27,7 +28,7 @@ public class ScoreDirective implements TemplateDirectiveModel {
             templateDirectiveBody) throws TemplateException, IOException {
         Integer limit = Integer.parseInt(map.get("limit").toString());
         if (limit > 100) limit = 100;
-        List<User> users = userService.selectTop(limit);
+        List<@RUntainted User> users = userService.selectTop(limit);
 
         DefaultObjectWrapperBuilder builder = new DefaultObjectWrapperBuilder(Configuration.VERSION_2_3_28);
         environment.setVariable("users", builder.build().wrap(users));

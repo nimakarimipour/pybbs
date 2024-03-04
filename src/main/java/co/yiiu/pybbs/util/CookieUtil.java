@@ -1,6 +1,7 @@
 package co.yiiu.pybbs.util;
 
 import co.yiiu.pybbs.service.ISystemConfigService;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -22,7 +23,7 @@ public class CookieUtil {
     @Resource
     private ISystemConfigService systemConfigService;
 
-    public void setCookie(String key, String value) {
+    public void setCookie(@RUntainted String key, @RUntainted String value) {
         HttpServletResponse response = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder
                 .getRequestAttributes())).getResponse();
         Cookie cookie = new Cookie(key, value);
@@ -50,7 +51,7 @@ public class CookieUtil {
     }
 
     // 清除cookie
-    public void clearCookie(String name) {
+    public void clearCookie(@RUntainted String name) {
         HttpServletResponse response = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder
                 .getRequestAttributes())).getResponse();
         Cookie cookie = new Cookie(name, null);

@@ -6,6 +6,7 @@ import co.yiiu.pybbs.service.ICommentService;
 import co.yiiu.pybbs.service.ITopicService;
 import co.yiiu.pybbs.util.MyPage;
 import co.yiiu.pybbs.util.Result;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -60,7 +61,7 @@ public class CommentAdminController extends BaseAdminController {
     @RequiresPermissions("comment:edit")
     @PostMapping("/edit")
     @ResponseBody
-    public Result update(Integer id, String content) {
+    public Result update(Integer id, @RUntainted String content) {
         Comment comment = commentService.selectById(id);
         comment.setContent(content);
         commentService.update(comment);

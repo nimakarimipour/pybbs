@@ -38,7 +38,7 @@
         <dependency>
             <groupId>org.checkerframework</groupId>
             <artifactId>checker-qual</artifactId>
-            <version>${env.CF_VERSION}</version>
+            <version>3.42.0</version>
         </dependency>
         <!-- <dependency>
             <groupId>com.google.errorprone</groupId>
@@ -48,7 +48,7 @@
         <dependency>
             <groupId>edu.ucr.cs.riple.taint</groupId>
             <artifactId>ucrtainting-checker-qual</artifactId>
-            <version>${env.UCRT_VERSION}</version>
+            <version>0.1-alpha-3-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -290,7 +290,7 @@
                                 <path>
                                     <groupId>edu.ucr.cs.riple.taint</groupId>
                                     <artifactId>ucrtainting-checker</artifactId>
-                                    <version>${env.UCRT_VERSION}</version>
+                                    <version>0.1-alpha-3-SNAPSHOT</version>
                                 </path>
                                 <!-- <path>
                                     <groupId>edu.ucr.cs.riple.annotator</groupId>
@@ -315,9 +315,9 @@
                                 <arg>-Anowarns</arg>
                                 <arg>-nowarn</arg>
                                 <arg>-AannotatedPackages=co.yiiu.pybbs</arg>
-                                <arg>-AenableLibraryCheck=${env.ANNOTATOR_LIBRARY}</arg>
-                                <arg>-AenablePolyTaintInference=${env.ANNOTATOR_POLY}</arg>
-                                <arg>-AenableTypeArgumentInference=${env.ANNOTATOR_TYPE_ARG}</arg>
+                                <arg>-AenableLibraryCheck=true</arg>
+                                <arg>-AenablePolyTaintInference=true</arg>
+                                <arg>-AenableTypeArgumentInference=true</arg>
                                 <arg>-AenableSerialization</arg>
                                 <arg>-AserializationConfigPath=/Users/kknock/RIPLE/taint/summer/pybbs/annotator-out/checker.xml</arg>
                                 <arg>-XDcompilePolicy=simple</arg>
@@ -332,7 +332,7 @@
                 <dependency>
                     <groupId>org.checkerframework</groupId>
                     <artifactId>checker</artifactId>
-                    <version>${env.CF_VERSION}</version>
+                    <version>3.42.0</version>
                 </dependency>
             </dependencies>
         </profile>

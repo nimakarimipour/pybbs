@@ -1,5 +1,6 @@
 package co.yiiu.pybbs.util;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.springframework.util.StringUtils;
 
 import java.util.*;
@@ -50,7 +51,7 @@ public class StringUtil {
      * @param length
      * @return
      */
-    public static String randomString(int length) {
+    public static @RUntainted String randomString(int length) {
         StringBuilder sb = new StringBuilder();
         for (int loop = 0; loop < length; ++loop) {
             sb.append(hexDigits[random.nextInt(hexDigits.length)]);
@@ -73,7 +74,7 @@ public class StringUtil {
     }
 
     // 生成一个uuid
-    public static String uuid() {
+    public static @RUntainted String uuid() {
         return UUID.randomUUID().toString();
     }
 

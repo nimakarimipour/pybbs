@@ -3,6 +3,7 @@ package co.yiiu.pybbs.model;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -18,7 +19,7 @@ public class User implements Serializable {
 
     @TableId(type = IdType.AUTO)
     private Integer id;
-    private String username;
+    private @RUntainted String username;
     private String telegramName;
     private String avatar;
     @JsonIgnore
@@ -32,7 +33,7 @@ public class User implements Serializable {
     private Integer score;
     private Date inTime;
     //    @JsonIgnore
-    private String token;
+    private @RUntainted String token;
     // 有消息通知是否通过邮箱收取
     private Boolean emailNotification;
     // 帐号是否激活
@@ -59,11 +60,11 @@ public class User implements Serializable {
         this.telegramName = telegramName;
     }
 
-    public String getToken() {
+    public @RUntainted String getToken() {
         return token;
     }
 
-    public void setToken(String token) {
+    public void setToken(@RUntainted String token) {
         this.token = token;
     }
 
@@ -99,11 +100,11 @@ public class User implements Serializable {
         this.id = id;
     }
 
-    public String getUsername() {
+    public @RUntainted String getUsername() {
         return username;
     }
 
-    public void setUsername(String username) {
+    public void setUsername(@RUntainted String username) {
         this.username = username;
     }
 

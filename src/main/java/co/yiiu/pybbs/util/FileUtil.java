@@ -8,6 +8,7 @@ import com.qiniu.storage.Configuration;
 import com.qiniu.storage.Region;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -69,7 +70,7 @@ public class FileUtil {
      *                   格式类似 avatar/admin 前后没有 / 前面表示头像，后面是用户的昵称，举例，如果将用户头像全都放在一个文件夹里，这里可以直接传个 avatar
      * @return
      */
-    public String upload(MultipartFile file, String fileName, String customPath) {
+    public String upload(MultipartFile file, String fileName, @RUntainted String customPath) {
         try {
             if (file == null || file.isEmpty()) return null;
 

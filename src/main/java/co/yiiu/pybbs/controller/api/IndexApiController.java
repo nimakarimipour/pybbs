@@ -7,6 +7,7 @@ import co.yiiu.pybbs.model.User;
 import co.yiiu.pybbs.service.*;
 import co.yiiu.pybbs.util.*;
 import co.yiiu.pybbs.util.bcrypt.BCryptPasswordEncoder;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -156,7 +157,7 @@ public class IndexApiController extends BaseApiController {
     //  }
 
     // 登录成功后，处理的逻辑一样，这里提取出来封装一个方法处理
-    private Result doUserStorage(HttpSession session, User user) {
+    private Result doUserStorage(HttpSession session, @RUntainted User user) {
         // 将用户信息写session
         if (session != null) {
             session.setAttribute("_user", user);

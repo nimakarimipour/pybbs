@@ -2,6 +2,7 @@ package co.yiiu.pybbs.controller.front;
 
 import co.yiiu.pybbs.model.User;
 import co.yiiu.pybbs.service.ISystemConfigService;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -24,7 +25,7 @@ public class BaseController {
         return "redirect:" + path;
     }
 
-    protected User getUser() {
+    protected @RUntainted User getUser() {
         HttpServletRequest request = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder
                 .getRequestAttributes())).getRequest();
         HttpSession session = request.getSession();

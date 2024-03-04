@@ -4,6 +4,7 @@ import co.yiiu.pybbs.mapper.SystemConfigMapper;
 import co.yiiu.pybbs.model.SystemConfig;
 import co.yiiu.pybbs.service.ISystemConfigService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
@@ -26,11 +27,11 @@ public class SystemConfigService implements ISystemConfigService {
     @Resource
     private SystemConfigMapper systemConfigMapper;
 
-    private static Map<String, String> SYSTEM_CONFIG;
+    private static Map<String, @RUntainted String> SYSTEM_CONFIG;
     private static Map<String, String> SYSTEM_CONFIG_WITHOUT_PASSWORD;
 
     @Override
-    public Map<String, String> selectAllConfig() {
+    public Map<String, @RUntainted String> selectAllConfig() {
         if (SYSTEM_CONFIG != null) {
             return SYSTEM_CONFIG;
         }
