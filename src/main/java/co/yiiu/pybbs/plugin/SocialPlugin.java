@@ -1,6 +1,7 @@
 package co.yiiu.pybbs.plugin;
 
 import co.yiiu.pybbs.service.ISystemConfigService;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import me.zhyd.oauth.config.AuthConfig;
 import me.zhyd.oauth.exception.AuthException;
 import me.zhyd.oauth.request.*;
@@ -13,7 +14,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * 社会化登录相关

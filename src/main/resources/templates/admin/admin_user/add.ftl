@@ -23,7 +23,8 @@
                         <form id="form" action="/admin/admin_user/add" method="post">
                             <div class="form-group">
                                 <label>用户名</label>
-                                <input type="text" id="username" name="username" class="form-control" placeholder="用户名">
+                                <input type="text" id="username" name="username" class="form-control"
+                                       placeholder="用户名">
                             </div>
                             <div class="form-group">
                                 <label>密码</label>

@@ -4,6 +4,7 @@ import co.yiiu.pybbs.mapper.SystemConfigMapper;
 import co.yiiu.pybbs.model.SystemConfig;
 import co.yiiu.pybbs.service.ISystemConfigService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
@@ -13,7 +14,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.

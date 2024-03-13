@@ -1,10 +1,10 @@
 package co.yiiu.pybbs.config;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 import java.io.Serializable;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.

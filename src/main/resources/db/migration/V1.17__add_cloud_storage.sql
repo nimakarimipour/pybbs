@@ -9,7 +9,8 @@ VALUES (78, 'oss_secret', '', '阿里云存储secret', 75, 'text', NULL, 0);
 INSERT INTO `system_config` (`id`, `key`, `value`, `description`, `pid`, `type`, `option`, `reboot`)
 VALUES (79, 'oss_bucket', '', '阿里云存储bucket', 75, 'text', NULL, 0);
 INSERT INTO `system_config` (`id`, `key`, `value`, `description`, `pid`, `type`, `option`, `reboot`)
-VALUES (80, 'oss_end_point', 'http://oss-cn-hangzhou.aliyuncs.com', '阿里云存储上传地址（请根据文档来设置）', 75, 'url', NULL, 0);
+VALUES (80, 'oss_end_point', 'http://oss-cn-hangzhou.aliyuncs.com', '阿里云存储上传地址（请根据文档来设置）', 75, 'url',
+        NULL, 0);
 INSERT INTO `system_config` (`id`, `key`, `value`, `description`, `pid`, `type`, `option`, `reboot`)
 VALUES (81, 'qiniu_key', '', '七牛云存储key', 75, 'text', NULL, 0);
 INSERT INTO `system_config` (`id`, `key`, `value`, `description`, `pid`, `type`, `option`, `reboot`)

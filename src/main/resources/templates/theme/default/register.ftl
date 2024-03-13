@@ -13,7 +13,8 @@
                         </div>
                         <div class="form-group">
                             <label for="password">密码</label>
-                            <input type="password" id="password" name="password" class="form-control" placeholder="密码"/>
+                            <input type="password" id="password" name="password" class="form-control"
+                                   placeholder="密码"/>
                         </div>
                         <div class="form-group">
                             <label for="email">邮箱</label>
@@ -22,7 +23,8 @@
                         <div class="form-group">
                             <label for="captcha">验证码</label>
                             <div class="input-group">
-                                <input type="text" class="form-control" id="captcha" name="captcha" placeholder="验证码"/>
+                                <input type="text" class="form-control" id="captcha" name="captcha"
+                                       placeholder="验证码"/>
                                 <span class="input-group-append">
                                     <img style="border: 1px solid #ccc;" src="" class="captcha" id="changeCaptcha"/>
                                 </span>
@@ -43,13 +45,15 @@
                             <#if socialList??>
                                 <#list socialList as social>
                                     <a href="/oauth/redirect/${social}" class="btn btn-light btn-block">
-                                        <img src="https://cdn.jsdelivr.net/gh/justauth/justauth-oauth-logo@1.1/${social}.png" alt="${social}授权登录" width="15" height="15">
+                                        <img src="https://cdn.jsdelivr.net/gh/justauth/justauth-oauth-logo@1.1/${social}.png"
+                                             alt="${social}授权登录" width="15" height="15">
                                         通过 ${social?cap_first} 登录/注册
                                     </a>
                                 </#list>
                             </#if>
                             <#if !model.isEmpty(site.sms_access_key_id!)>
-                                <button class="btn btn-light btn-block" id="mobile_login_btn"><i class="fa fa-mobile"></i>&nbsp;&nbsp;通过手机号登录/注册
+                                <button class="btn btn-light btn-block" id="mobile_login_btn"><i
+                                            class="fa fa-mobile"></i>&nbsp;&nbsp;通过手机号登录/注册
                                 </button>
                             </#if>
                         </div>

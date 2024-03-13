@@ -2,6 +2,7 @@ package co.yiiu.pybbs.directive;
 
 import co.yiiu.pybbs.model.User;
 import co.yiiu.pybbs.service.IUserService;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import freemarker.core.Environment;
 import freemarker.template.*;
 import org.springframework.stereotype.Component;
@@ -10,7 +11,6 @@ import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.

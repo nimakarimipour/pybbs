@@ -1,12 +1,12 @@
 package co.yiiu.pybbs.util.captcha;
 
+import static co.yiiu.pybbs.util.captcha.Randoms.num;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.OutputStream;
-
-import static co.yiiu.pybbs.util.captcha.Randoms.num;
 
 /**
  * <p>png格式验证码</p>

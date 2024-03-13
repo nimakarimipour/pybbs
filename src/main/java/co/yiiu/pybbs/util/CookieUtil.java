@@ -1,6 +1,7 @@
 package co.yiiu.pybbs.util;
 
 import co.yiiu.pybbs.service.ISystemConfigService;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -10,7 +11,6 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Objects;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.

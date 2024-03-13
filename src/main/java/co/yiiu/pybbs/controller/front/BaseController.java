@@ -2,6 +2,7 @@ package co.yiiu.pybbs.controller.front;
 
 import co.yiiu.pybbs.model.User;
 import co.yiiu.pybbs.service.ISystemConfigService;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -9,7 +10,6 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Objects;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.

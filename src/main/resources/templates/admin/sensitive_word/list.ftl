@@ -53,7 +53,8 @@
                                     </button>
                                 </#if>
                                 <#if sec.hasPermission('sensitive_word:delete')>
-                                    <button onclick="deleteBtn('${item.id}')" class="btn btn-xs btn-danger">删除</button>
+                                    <button onclick="deleteBtn('${item.id}')" class="btn btn-xs btn-danger">删除
+                                    </button>
                                 </#if>
                             </td>
                         </tr>

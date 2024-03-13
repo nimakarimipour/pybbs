@@ -14,6 +14,7 @@ import co.yiiu.pybbs.util.MyPage;
 import co.yiiu.pybbs.util.SensitiveWordUtil;
 import co.yiiu.pybbs.util.StringUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Lazy;
@@ -25,7 +26,6 @@ import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.

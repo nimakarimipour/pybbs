@@ -3,12 +3,12 @@ package co.yiiu.pybbs.util;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
 
 /**
  * Created by tomoya.

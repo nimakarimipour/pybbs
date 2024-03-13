@@ -8,6 +8,7 @@ import com.qiniu.storage.Configuration;
 import com.qiniu.storage.Region;
 import com.qiniu.storage.UploadManager;
 import com.qiniu.util.Auth;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -23,7 +24,6 @@ import java.net.URL;
 import java.security.MessageDigest;
 import java.util.Date;
 import java.util.Objects;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.

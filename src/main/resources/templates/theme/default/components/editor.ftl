@@ -96,7 +96,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/codemirror.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/mode/markdown/markdown.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/addon/display/placeholder.min.js"></script>
-        <textarea name="content" id="content" class="form-control" placeholder="内容，支持Markdown语法">${_content!?html}</textarea>
+        <textarea name="content" id="content" class="form-control"
+                  placeholder="内容，支持Markdown语法">${_content!?html}</textarea>
         <script type="text/javascript">
             CodeMirror.keyMap.default["Shift-Tab"] = "indentLess";
             CodeMirror.keyMap.default["Tab"] = "indentMore";

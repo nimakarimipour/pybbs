@@ -7,6 +7,7 @@ import co.yiiu.pybbs.service.IOAuthUserService;
 import co.yiiu.pybbs.service.ISystemConfigService;
 import co.yiiu.pybbs.service.IUserService;
 import co.yiiu.pybbs.util.CookieUtil;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import me.zhyd.oauth.model.AuthCallback;
 import me.zhyd.oauth.model.AuthResponse;
 import me.zhyd.oauth.model.AuthUser;
@@ -20,7 +21,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.

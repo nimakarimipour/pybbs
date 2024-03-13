@@ -6,6 +6,7 @@ import co.yiiu.pybbs.util.Result;
 import co.yiiu.pybbs.util.StringUtil;
 import co.yiiu.pybbs.util.bcrypt.BCryptPasswordEncoder;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +14,6 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.

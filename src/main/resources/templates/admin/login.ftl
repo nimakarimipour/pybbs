@@ -47,7 +47,8 @@
         </#if>
         <form id="form" action="/admin/login" method="post">
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" id="username" name="username" value="${username!}" placeholder="用户名">
+                <input type="text" class="form-control" id="username" name="username" value="${username!}"
+                       placeholder="用户名">
                 <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
@@ -68,7 +69,8 @@
                 </div>
                 <!-- /.col -->
                 <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat"><i class="fa fa-adminUser"></i> 登录</button>
+                    <button type="submit" class="btn btn-primary btn-block btn-flat"><i class="fa fa-adminUser"></i> 登录
+                    </button>
                 </div>
                 <!-- /.col -->
             </div>

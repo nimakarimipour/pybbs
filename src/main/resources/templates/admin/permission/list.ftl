@@ -47,7 +47,8 @@
                             <div class="panel-heading">
                                 权限管理
                                 <#if sec.hasPermission("permission:add")>
-                                    <a class="pull-right" onclick="addPermission(${pid!0})" href="javascript:;">添加权限</a>
+                                    <a class="pull-right" onclick="addPermission(${pid!0})"
+                                       href="javascript:;">添加权限</a>
                                 </#if>
                             </div>
                             <div class="table-responsive">

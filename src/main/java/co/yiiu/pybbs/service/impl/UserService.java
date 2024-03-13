@@ -10,6 +10,7 @@ import co.yiiu.pybbs.util.bcrypt.BCryptPasswordEncoder;
 import co.yiiu.pybbs.util.identicon.Identicon;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,7 +25,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -91,7 +91,7 @@ public class UserService implements IUserService {
      */
     @Override
     public @RUntainted User addUser(@RUntainted String username, String password, String avatar, String email, String bio, String website,
-                        boolean needActiveEmail) {
+                                    boolean needActiveEmail) {
         String token = this.generateToken();
         User user = new User();
         user.setUsername(username);
@@ -199,7 +199,7 @@ public class UserService implements IUserService {
     @Override
     public void update(@RUntainted User user) {
         userMapper.updateById(user);
-        
+
         // 更新session中的用户
         HttpServletRequest request = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder
                 .getRequestAttributes())).getRequest();

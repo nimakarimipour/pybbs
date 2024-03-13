@@ -1,11 +1,11 @@
 package co.yiiu.pybbs.util.captcha;
 
-import java.awt.*;
-import java.io.OutputStream;
-
 import static co.yiiu.pybbs.util.captcha.Randoms.alpha;
 import static co.yiiu.pybbs.util.captcha.Randoms.num;
 import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
+
+import java.awt.*;
+import java.io.OutputStream;
 
 /**
  * <p>验证码抽象类,暂时不支持中文</p>

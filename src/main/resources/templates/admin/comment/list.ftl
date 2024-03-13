@@ -24,7 +24,8 @@
                                class="form-control" placeholder="开始时间">
                         <input type="text" readonly id="endDate" name="endDate" value="${endDate!}"
                                class="form-control" placeholder="结束时间">
-                        <input type="text" name="username" value="${username!}" class="form-control" placeholder="用户名">
+                        <input type="text" name="username" value="${username!}" class="form-control"
+                               placeholder="用户名">
                         <button type="submit" class="btn btn-primary btn-sm">搜索</button>
                     </div>
                 </form>
@@ -47,13 +48,17 @@
                             <td>${comment.inTime!}</td>
                             <td>
                                 <#if sec.hasPermission("comment:examine") && !comment.status>
-                                    <button onclick="examineBtn('${comment.id}')" class="btn btn-xs btn-primary">审核通过</button>
+                                    <button onclick="examineBtn('${comment.id}')" class="btn btn-xs btn-primary">
+                                        审核通过
+                                    </button>
                                 </#if>
                                 <#if sec.hasPermission("comment:edit")>
-                                    <a href="/admin/comment/edit?id=${comment.id}" class="btn btn-xs btn-warning">编辑</a>
+                                    <a href="/admin/comment/edit?id=${comment.id}"
+                                       class="btn btn-xs btn-warning">编辑</a>
                                 </#if>
                                 <#if sec.hasPermission("comment:delete")>
-                                    <button onclick="deleteBtn('${comment.id}')" class="btn btn-xs btn-danger">删除</button>
+                                    <button onclick="deleteBtn('${comment.id}')" class="btn btn-xs btn-danger">删除
+                                    </button>
                                 </#if>
                             </td>
                         </tr>

@@ -23,7 +23,8 @@
                     <div class="icon">
                         <i class="ion ion-ios-list-outline"></i>
                     </div>
-                    <a href="/admin/topic/list" class="small-box-footer">更多 <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="/admin/topic/list" class="small-box-footer">更多 <i
+                                class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->
@@ -69,7 +70,8 @@
                     <div class="icon">
                         <i class="ion ion-person-add"></i>
                     </div>
-                    <a href="/admin/user/list" class="small-box-footer">更多 <i class="fa fa-arrow-circle-right"></i></a>
+                    <a href="/admin/user/list" class="small-box-footer">更多 <i
+                                class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <!-- ./col -->

@@ -17,9 +17,10 @@
                 </div>
             </div>
             <div class="form-group">
-                <button type="button" id="email_forget_password" onclick="email_forget_password()" class="btn btn-dark btn-block">
+                <button type="button" id="email_forget_password" onclick="email_forget_password()"
+                        class="btn btn-dark btn-block">
                     找回密码<i class="fa fa-question-circle ml-1" data-toggle="tooltip" data-placement="right" title=""
-                           data-original-title="手机号登录系统会判断手机号是否注册过，如果没有注册过，会创建帐号"></i>
+                               data-original-title="手机号登录系统会判断手机号是否注册过，如果没有注册过，会创建帐号"></i>
                 </button>
             </div>
             <div class="form-group">

@@ -3,10 +3,10 @@ package co.yiiu.pybbs.model;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 import java.io.Serializable;
 import java.util.Date;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.

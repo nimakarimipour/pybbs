@@ -17,7 +17,6 @@ import javax.annotation.Resource;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.

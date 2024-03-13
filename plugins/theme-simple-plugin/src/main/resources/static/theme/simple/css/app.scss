@@ -57,6 +57,7 @@ button {
 ol, ul {
   margin-left: 0;
   padding-left: 25px;
+
   li {
     line-height: 1.7em;
   }
@@ -174,6 +175,7 @@ ol, ul {
         font-size: 18px;
         text-decoration: none;
       }
+
       .divide {
         padding-bottom: 10px;
         border-bottom: 1px solid $text-color;
@@ -199,10 +201,12 @@ ol, ul {
           white-space: pre-wrap;
         }
       }
+
       table {
         width: 100%;
         border-collapse: collapse;
         border: 1px solid $text-color;
+
         td, th {
           border: 1px solid $text-color;
           padding: 5px;
@@ -239,6 +243,7 @@ ol, ul {
 
     .tags {
       overflow: hidden;
+
       .item {
         float: left;
         width: 25%;
@@ -270,23 +275,29 @@ ol, ul {
         cursor: pointer;
       }
     }
+
     .user {
       overflow: hidden;
+
       .left {
         float: left;
         width: 200px;
       }
+
       .right {
         width: $section-width - 215px;
         float: right;
       }
+
       .menu {
         position: fixed;
       }
+
       .settings {
         p {
           margin-bottom: 5px;
         }
+
         button {
           margin-top: 10px;
         }

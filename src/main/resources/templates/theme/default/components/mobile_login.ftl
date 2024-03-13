@@ -27,7 +27,8 @@
             </div>
             <div class="form-group">
                 <button type="button" id="mobile_login" onclick="to_mobile_login()" class="btn btn-dark btn-block">
-                    登录/注册<i class="fa fa-question-circle ml-1" data-toggle="tooltip" data-placement="right" title="" data-original-title="手机号登录系统会判断手机号是否注册过，如果没有注册过，会创建帐号"></i>
+                    登录/注册<i class="fa fa-question-circle ml-1" data-toggle="tooltip" data-placement="right" title=""
+                                data-original-title="手机号登录系统会判断手机号是否注册过，如果没有注册过，会创建帐号"></i>
                 </button>
 
             </div>
@@ -40,7 +41,8 @@
                 <#if socialList??>
                     <#list socialList as social>
                         <a href="/oauth/redirect/${social}" class="btn btn-light btn-block">
-                            <img src="https://cdn.jsdelivr.net/gh/justauth/justauth-oauth-logo@1.1/${social}.png" alt="${social}授权登录" width="15" height="15">
+                            <img src="https://cdn.jsdelivr.net/gh/justauth/justauth-oauth-logo@1.1/${social}.png"
+                                 alt="${social}授权登录" width="15" height="15">
                             通过 ${social?cap_first} 登录/注册
                         </a>
                     </#list>

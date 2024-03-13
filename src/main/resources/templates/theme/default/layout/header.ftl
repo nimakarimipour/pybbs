@@ -22,7 +22,8 @@
                 </ul>
                 <form class="form-inline my-2 my-lg-0 ml-2 d-none d-md-block" action="/search">
                     <div class="input-group">
-                        <input class="form-control" type="search" name="keyword" placeholder="回车搜索" value="${keyword!}"
+                        <input class="form-control" type="search" name="keyword" placeholder="回车搜索"
+                               value="${keyword!}"
                                required aria-label="Search">
                         <div class="input-group-append">
                             <button class="btn btn-outline-success" type="submit">${i18n.getMessage("search")}</button>

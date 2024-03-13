@@ -8,6 +8,7 @@ import co.yiiu.pybbs.service.*;
 import co.yiiu.pybbs.util.MyPage;
 import co.yiiu.pybbs.util.SensitiveWordUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 import org.springframework.context.annotation.Lazy;
@@ -20,7 +21,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.

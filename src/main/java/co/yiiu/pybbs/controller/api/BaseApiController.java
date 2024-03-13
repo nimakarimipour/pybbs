@@ -5,6 +5,7 @@ import co.yiiu.pybbs.exception.ApiAssert;
 import co.yiiu.pybbs.model.User;
 import co.yiiu.pybbs.service.IUserService;
 import co.yiiu.pybbs.util.Result;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.springframework.util.StringUtils;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -12,7 +13,6 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Objects;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.

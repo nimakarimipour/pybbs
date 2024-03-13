@@ -7,6 +7,7 @@ import co.yiiu.pybbs.model.User;
 import co.yiiu.pybbs.service.*;
 import co.yiiu.pybbs.util.*;
 import co.yiiu.pybbs.util.bcrypt.BCryptPasswordEncoder;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,7 +15,6 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.*;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.

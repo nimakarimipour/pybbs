@@ -7,6 +7,7 @@ import co.yiiu.pybbs.util.StringUtil;
 import co.yiiu.pybbs.util.identicon.generator.IBaseGenerator;
 import co.yiiu.pybbs.util.identicon.generator.impl.MyGenerator;
 import com.google.common.base.Preconditions;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -22,7 +23,6 @@ import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.util.Base64;
-import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Author: Bryant Hang

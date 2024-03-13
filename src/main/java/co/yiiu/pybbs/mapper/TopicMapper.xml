@@ -50,7 +50,7 @@
     <select id="selectByUserId" resultType="map">
         select t.*, u.username, u.avatar
         from topic t
-        left join user u on t.user_id = u.id
+                 left join user u on t.user_id = u.id
         where t.user_id = #{userId}
         order by t.in_time desc
     </select>
