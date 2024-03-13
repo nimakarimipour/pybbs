@@ -49,7 +49,8 @@
                                     <a href="/admin/user/edit?id=${user.id}" class="btn btn-xs btn-warning">编辑</a>
                                 </#if>
                                 <#if sec.hasPermission("user:delete")>
-                                    <button onclick="deleteUser('${user.id}')" class="btn btn-xs btn-danger">删除</button>
+                                    <button onclick="deleteUser('${user.id}')" class="btn btn-xs btn-danger">删除
+                                    </button>
                                 </#if>
                             </td>
                         </tr>

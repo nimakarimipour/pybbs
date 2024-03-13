@@ -40,13 +40,13 @@
         });
 
         function markRead() {
-         <#if _user??>
+            <#if _user??>
             req("get", "/api/notification/markRead", '${_user.token!}', function (data) {
                 if (data.code === 200) {
                     window.location.reload();
                 }
             });
-          </#if>
+            </#if>
         }
     </script>
 </@html>

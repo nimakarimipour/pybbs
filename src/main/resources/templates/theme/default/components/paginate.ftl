@@ -38,7 +38,8 @@
             <#else>
                 <li class="page-item"><a class="page-link" href="${actionUrl}?pageNo=#{currentPage + 1}${urlParas!}">&gt;</a>
                 </li>
-                <li class="page-item"><a class="page-link" href="${actionUrl}?pageNo=#{totalPage}${urlParas!}">&gt;&gt;</a>
+                <li class="page-item"><a class="page-link"
+                                         href="${actionUrl}?pageNo=#{totalPage}${urlParas!}">&gt;&gt;</a>
                 </li>
             </#if>
         </ul>

@@ -264,7 +264,7 @@
         </plugins>
     </build>
     <profiles>
-    <profile>
+        <profile>
             <id>checkerframework</id>
             <!-- If you omit the activation block, run mvn with "-P checkerframework" to run checkers. -->
             <activation>
@@ -299,7 +299,8 @@
                                 </path> -->
                             </annotationProcessorPaths>
                             <annotationProcessors>
-                                <annotationProcessor>edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingChecker</annotationProcessor>
+                                <annotationProcessor>edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingChecker
+                                </annotationProcessor>
                             </annotationProcessors>
                             <compilerArgs>
                                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
@@ -311,7 +312,7 @@
                                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED</arg>
                                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED</arg>
                                 <arg>-J--add-opens=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED</arg>
-<!--                                <arg>-Awarns</arg>-->
+                                <!--                                <arg>-Awarns</arg>-->
                                 <arg>-Anowarns</arg>
                                 <arg>-nowarn</arg>
                                 <arg>-AannotatedPackages=co.yiiu.pybbs</arg>
@@ -319,7 +320,9 @@
                                 <arg>-AenablePolyTaintInference=true</arg>
                                 <arg>-AenableTypeArgumentInference=true</arg>
                                 <arg>-AenableSerialization</arg>
-                                <arg>-AserializationConfigPath=/Users/kknock/RIPLE/taint/summer/pybbs/annotator-out/checker.xml</arg>
+                                <arg>
+                                    -AserializationConfigPath=/Users/kknock/RIPLE/taint/summer/pybbs/annotator-out/checker.xml
+                                </arg>
                                 <arg>-XDcompilePolicy=simple</arg>
                                 <arg>-parameters</arg>
                                 <!-- <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:AnnotatorScanner:ERROR -XepOpt:AnnotatorScanner:ConfigPath=/Users/kknock/RIPLE/taint/summer/pybbs/annotator-out/scanner.xml</arg> -->
@@ -361,7 +364,9 @@
                         <configuration>
                             <fork>true</fork>
                             <compilerArgs combine.children="append">
-                                <arg>-J-Xbootclasspath/p:${settings.localRepository}/com/google/errorprone/javac/${javac.version}/javac-${javac.version}.jar</arg>
+                                <arg>
+                                    -J-Xbootclasspath/p:${settings.localRepository}/com/google/errorprone/javac/${javac.version}/javac-${javac.version}.jar
+                                </arg>
                             </compilerArgs>
                         </configuration>
                     </plugin>

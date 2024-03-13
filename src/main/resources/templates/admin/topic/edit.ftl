@@ -27,7 +27,8 @@
                     <div class="form-group">
                         <label for="content">内容</label>
                         <#if topic.style == "MD">
-                            <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/codemirror.min.css" rel="stylesheet">
+                            <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.47.0/codemirror.min.css"
+                                  rel="stylesheet">
                             <style>
                                 .CodeMirror {
                                     border: 1px solid #ddd;

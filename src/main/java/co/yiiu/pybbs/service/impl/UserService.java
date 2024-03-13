@@ -91,7 +91,7 @@ public class UserService implements IUserService {
      */
     @Override
     public @RUntainted User addUser(@RUntainted String username, String password, String avatar, String email, String bio, String website,
-                        boolean needActiveEmail) {
+                                    boolean needActiveEmail) {
         String token = this.generateToken();
         User user = new User();
         user.setUsername(username);
@@ -199,7 +199,7 @@ public class UserService implements IUserService {
     @Override
     public void update(@RUntainted User user) {
         userMapper.updateById(user);
-        
+
         // 更新session中的用户
         HttpServletRequest request = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder
                 .getRequestAttributes())).getRequest();
