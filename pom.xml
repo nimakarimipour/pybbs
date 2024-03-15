@@ -319,10 +319,10 @@
                                 <arg>-AenablePolyTaintInference=${env.ANNOTATOR_POLY}</arg>
                                 <arg>-AenableTypeArgumentInference=${env.ANNOTATOR_TYPE_ARG}</arg>
                                 <arg>-AenableSerialization</arg>
-                                <arg>-AserializationConfigPath=/Users/nima/Developer/pybbs/annotator-out/checker.xml</arg>
+                                <arg>-AserializationConfigPath=/home/kdas006/annotation_dataset/pybbs/annotator-out/checker.xml</arg>
                                 <arg>-XDcompilePolicy=simple</arg>
                                 <arg>-parameters</arg>
-                                <!-- <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:AnnotatorScanner:ERROR -XepOpt:AnnotatorScanner:ConfigPath=/home/nima/Developer/taint-benchmarks/pybbs/annotator-out/scanner.xml</arg> -->
+                                <!-- <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:AnnotatorScanner:ERROR -XepOpt:AnnotatorScanner:ConfigPath=/home/kdas006/annotation_dataset/pybbs/annotator-out/scanner.xml</arg> -->
                             </compilerArgs>
                         </configuration>
                     </plugin>
