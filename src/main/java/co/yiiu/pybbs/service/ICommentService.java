@@ -8,6 +8,7 @@ import co.yiiu.pybbs.util.MyPage;
 
 import java.util.List;
 import java.util.Map;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -25,7 +26,7 @@ public interface ICommentService {
     void deleteByUserId(Integer userId);
 
     // 保存评论
-    Comment insert(Comment comment, Topic topic, User user);
+    Comment insert(Comment comment, Topic topic, @RUntainted User user);
 
     Comment selectById(Integer id);
 
@@ -35,7 +36,7 @@ public interface ICommentService {
     void update(Comment comment);
 
     // 对评论点赞
-    int vote(Comment comment, User user);
+    int vote(Comment comment, @RUntainted User user);
 
     // 删除评论
     void delete(Comment comment);
