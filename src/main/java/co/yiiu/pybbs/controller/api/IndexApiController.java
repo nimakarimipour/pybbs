@@ -87,7 +87,7 @@ public class IndexApiController extends BaseApiController {
 
     // 处理注册的接口
     @PostMapping("/register")
-    public Result register(@RequestBody Map<String, String> body, HttpSession session) {
+    public Result register(@RequestBody Map<String, @RUntainted String> body, HttpSession session) {
         String username = body.get("username");
         String password = body.get("password");
         String email = body.get("email");
