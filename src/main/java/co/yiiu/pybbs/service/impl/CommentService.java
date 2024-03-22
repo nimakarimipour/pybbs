@@ -25,6 +25,7 @@ import javax.annotation.Resource;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -84,7 +85,7 @@ public class CommentService implements ICommentService {
 
     // 保存评论
     @Override
-    public Comment insert(Comment comment, Topic topic, User user) {
+    public Comment insert(Comment comment, Topic topic, @RUntainted User user) {
         if (systemConfigService.selectAllConfig().get("comment_need_examine").equals("1")) {
             comment.setStatus(false);// 审核中
         } else {
@@ -189,7 +190,7 @@ public class CommentService implements ICommentService {
 
     // 对评论点赞
     @Override
-    public int vote(Comment comment, User user) {
+    public int vote(Comment comment, @RUntainted User user) {
         String upIds = comment.getUpIds();
         // 将点赞用户id的字符串转成集合
         Set<String> strings = StringUtils.commaDelimitedListToSet(upIds);

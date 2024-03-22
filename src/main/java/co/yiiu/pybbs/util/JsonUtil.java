@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.List;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -17,7 +18,7 @@ public class JsonUtil {
 
     private final static Logger log = LoggerFactory.getLogger(JsonUtil.class);
 
-    private static ObjectMapper objectMapper = new ObjectMapper();
+    private static @RUntainted ObjectMapper objectMapper = new ObjectMapper();
 
     public static <T> List<T> jsonToListObject(String json, Class<T> clazz) {
         try {
@@ -38,7 +39,7 @@ public class JsonUtil {
         }
     }
 
-    public static String objectToJson(Object obj) {
+    public static @RUntainted String objectToJson(@RUntainted Object obj) {
         try {
             return objectMapper.writeValueAsString(obj);
         } catch (JsonProcessingException e) {
