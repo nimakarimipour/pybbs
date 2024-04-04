@@ -21,6 +21,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -68,7 +69,7 @@ public class TopicAdminController extends BaseAdminController {
     @RequiresPermissions("topic:edit")
     @PostMapping("edit")
     @ResponseBody
-    public Result update(Integer id, String title, String content, String tags) {
+    public Result update(Integer id, String title, @RUntainted String content, String tags) {
         title = Jsoup.clean(title, Whitelist.basic());
         ApiAssert.notEmpty(title, "话题标题不能为空");
 
