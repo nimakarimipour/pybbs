@@ -5,6 +5,7 @@ import org.springframework.util.StringUtils;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -50,7 +51,7 @@ public class StringUtil {
      * @param length
      * @return
      */
-    public static String randomString(int length) {
+    public static @RUntainted String randomString(int length) {
         StringBuilder sb = new StringBuilder();
         for (int loop = 0; loop < length; ++loop) {
             sb.append(hexDigits[random.nextInt(hexDigits.length)]);
@@ -73,7 +74,7 @@ public class StringUtil {
     }
 
     // 生成一个uuid
-    public static String uuid() {
+    public static @RUntainted String uuid() {
         return UUID.randomUUID().toString();
     }
 

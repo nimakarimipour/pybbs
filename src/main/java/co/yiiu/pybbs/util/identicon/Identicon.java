@@ -22,6 +22,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
 import java.util.Base64;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Author: Bryant Hang
@@ -84,14 +85,14 @@ public class Identicon {
         return "data:image/png;base64," + imgToBase64String(image, "png");
     }
 
-    public String generator(String username) {
+    public String generator(@RUntainted String username) {
         Identicon identicon = new Identicon();
         String md5 = HashUtil.md5(StringUtil.randomString(6));
         BufferedImage image = identicon.create(md5, 420);
         return saveFile(username, image);
     }
 
-    public String saveFile(String username, BufferedImage image) {
+    public String saveFile(@RUntainted String username, BufferedImage image) {
         String fileName = "avatar.png";
         String userAvatarPath = "avatar/" + username + "/";
         try {

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.util.Date;
 import java.util.Map;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -34,7 +35,7 @@ public class CommentApiController extends BaseApiController {
 
     // 创建评论
     @PostMapping
-    public Result create(@RequestBody Map<String, String> body) {
+    public Result create(@RequestBody Map<String, @RUntainted String> body) {
         User user = getApiUser();
         ApiAssert.isTrue(user.getActive(), "你的帐号还没有激活，请去个人设置页面激活帐号");
         String content = body.get("content");
@@ -61,7 +62,7 @@ public class CommentApiController extends BaseApiController {
     // 更新评论
     // 更新操作不用判断用户是否激活过，如果没有激活的用户是没有办法评论的，所以更新操作不做帐号是否激活判断
     @PutMapping("/{id}")
-    public Result update(@PathVariable Integer id, @RequestBody Map<String, String> body) {
+    public Result update(@PathVariable Integer id, @RequestBody Map<String, @RUntainted String> body) {
         User user = getApiUser();
         String content = body.get("content");
         ApiAssert.notNull(id, "评论ID呢？");
