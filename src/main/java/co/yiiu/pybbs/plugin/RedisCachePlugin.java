@@ -15,6 +15,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -35,7 +36,7 @@ public class RedisCachePlugin {
     // ---------- topic cache start ----------
 
     @Around("co.yiiu.pybbs.hook.TopicServiceHook.selectById()")
-    public Object topicSelectById(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+    public Object topicSelectById(@RUntainted ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         String topicJson = redisService.getString(String.format(RedisKeys.REDIS_TOPIC_KEY, proceedingJoinPoint.getArgs()[0]));
         if (topicJson == null) {
             Object topic = proceedingJoinPoint.proceed(proceedingJoinPoint.getArgs());
@@ -74,7 +75,7 @@ public class RedisCachePlugin {
     }
 
     @After("co.yiiu.pybbs.hook.TopicServiceHook.update()")
-    public void topicUpdate(JoinPoint joinPoint) {
+    public void topicUpdate(@RUntainted JoinPoint joinPoint) {
         Topic topic = (Topic) joinPoint.getArgs()[0];
         // 缓存到redis里
         redisService.setString(String.format(RedisKeys.REDIS_TOPIC_KEY, topic.getId()), JsonUtil.objectToJson(topic));
@@ -85,7 +86,7 @@ public class RedisCachePlugin {
     // ---------- comment cache start ----------
 
     @Around("co.yiiu.pybbs.hook.CommentServiceHook.selectByTopicId()")
-    public Object commentSelectByTopicId(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+    public Object commentSelectByTopicId(@RUntainted ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         Integer topicId = (Integer) proceedingJoinPoint.getArgs()[0];
         String commentsJson = redisService.getString(String.format(RedisKeys.REDIS_COMMENTS_KEY, topicId));
         if (commentsJson != null) {
@@ -128,7 +129,7 @@ public class RedisCachePlugin {
     // ---------- user cache start ----------
 
     @Around("co.yiiu.pybbs.hook.UserServiceHook.selectByUsername()")
-    public Object userSelectByUsername(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+    public Object userSelectByUsername(@RUntainted ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         String username = (String) proceedingJoinPoint.getArgs()[0];
         String userJson = redisService.getString(String.format(RedisKeys.REDIS_USER_USERNAME_KEY, username));
         if (userJson != null) {
@@ -144,7 +145,7 @@ public class RedisCachePlugin {
     }
 
     @Around("co.yiiu.pybbs.hook.UserServiceHook.selectByToken()")
-    public Object userSelectByToken(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+    public Object userSelectByToken(@RUntainted ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         String token = (String) proceedingJoinPoint.getArgs()[0];
         String userJson = redisService.getString(String.format(RedisKeys.REDIS_USER_TOKEN_KEY, token));
         if (userJson != null) {
@@ -160,7 +161,7 @@ public class RedisCachePlugin {
     }
 
     @Around("co.yiiu.pybbs.hook.UserServiceHook.selectById()")
-    public Object userSelectById(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+    public Object userSelectById(@RUntainted ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         Integer id = (Integer) proceedingJoinPoint.getArgs()[0];
         String userJson = redisService.getString(String.format(RedisKeys.REDIS_USER_ID_KEY, id));
         if (userJson != null) {
