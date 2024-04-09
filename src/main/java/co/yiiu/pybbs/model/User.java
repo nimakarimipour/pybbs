@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.io.Serializable;
 import java.util.Date;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -32,7 +33,7 @@ public class User implements Serializable {
     private Integer score;
     private Date inTime;
     //    @JsonIgnore
-    private String token;
+    private @RUntainted String token;
     // 有消息通知是否通过邮箱收取
     private Boolean emailNotification;
     // 帐号是否激活
@@ -59,7 +60,7 @@ public class User implements Serializable {
         this.telegramName = telegramName;
     }
 
-    public String getToken() {
+    public @RUntainted String getToken() {
         return token;
     }
 

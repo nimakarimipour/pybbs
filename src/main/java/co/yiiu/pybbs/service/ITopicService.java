@@ -6,6 +6,7 @@ import co.yiiu.pybbs.util.MyPage;
 
 import java.util.List;
 import java.util.Map;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -26,7 +27,7 @@ public interface ITopicService {
     MyPage<Map<String, Object>> selectByUserId(Integer userId, Integer pageNo, Integer pageSize);
 
     // 保存话题
-    Topic insert(String title, String content, String tags, User user);
+    Topic insert(String title, String content, String tags, @RUntainted User user);
 
     // 根据id查询话题
     Topic selectById(Integer id);
@@ -51,5 +52,5 @@ public interface ITopicService {
     // 查询今天新增的话题数
     int countToday();
 
-    int vote(Topic topic, User user);
+    int vote(Topic topic, @RUntainted User user);
 }
