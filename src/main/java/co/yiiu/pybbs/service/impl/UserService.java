@@ -24,6 +24,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -89,7 +90,7 @@ public class UserService implements IUserService {
      * @return
      */
     @Override
-    public User addUser(String username, String password, String avatar, String email, String bio, String website,
+    public @RUntainted User addUser(String username, String password, String avatar, String email, String bio, String website,
                         boolean needActiveEmail) {
         String token = this.generateToken();
         User user = new User();
@@ -154,7 +155,7 @@ public class UserService implements IUserService {
 
     // 根据用户token查询用户
     @Override
-    public User selectByToken(String token) {
+    public @RUntainted User selectByToken(String token) {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(User::getToken, token);
         return userMapper.selectOne(wrapper);
@@ -170,19 +171,19 @@ public class UserService implements IUserService {
 
     // 根据用户email查询用户
     @Override
-    public User selectByEmail(String email) {
+    public @RUntainted User selectByEmail(String email) {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(User::getEmail, email);
         return userMapper.selectOne(wrapper);
     }
 
     @Override
-    public User selectById(Integer id) {
+    public @RUntainted User selectById(Integer id) {
         return userMapper.selectById(id);
     }
 
     @Override
-    public User selectByIdWithoutCache(Integer id) {
+    public @RUntainted User selectByIdWithoutCache(Integer id) {
         return userMapper.selectById(id);
     }
 
@@ -196,7 +197,7 @@ public class UserService implements IUserService {
 
     // 更新用户信息
     @Override
-    public void update(User user) {
+    public void update(@RUntainted User user) {
         userMapper.updateById(user);
         
         // 更新session中的用户
@@ -222,7 +223,7 @@ public class UserService implements IUserService {
         return userMapper.selectPage(page, wrapper);
     }
 
-    public User selectByIdNoCatch(Integer id) {
+    public @RUntainted User selectByIdNoCatch(Integer id) {
         return userMapper.selectById(id);
     }
 

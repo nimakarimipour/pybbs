@@ -10,6 +10,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Objects;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -50,7 +51,7 @@ public class CookieUtil {
     }
 
     // 清除cookie
-    public void clearCookie(String name) {
+    public void clearCookie(@RUntainted String name) {
         HttpServletResponse response = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder
                 .getRequestAttributes())).getResponse();
         Cookie cookie = new Cookie(name, null);
