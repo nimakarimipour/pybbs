@@ -23,6 +23,7 @@ import java.net.URL;
 import java.security.MessageDigest;
 import java.util.Date;
 import java.util.Objects;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -69,7 +70,7 @@ public class FileUtil {
      *                   格式类似 avatar/admin 前后没有 / 前面表示头像，后面是用户的昵称，举例，如果将用户头像全都放在一个文件夹里，这里可以直接传个 avatar
      * @return
      */
-    public String upload(MultipartFile file, String fileName, String customPath) {
+    public String upload(@RUntainted MultipartFile file, @RUntainted String fileName, @RUntainted String customPath) {
         try {
             if (file == null || file.isEmpty()) return null;
 
