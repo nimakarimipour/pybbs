@@ -27,7 +27,7 @@ public abstract class Captcha {
      * @return 字符数组
      */
     protected char[] alphas() {
-        char[] cs = new char[len];
+        @RUntainted char[] cs = new char[len];
         for (int i = 0; i < len; i++) {
             cs[i] = alpha();
         }

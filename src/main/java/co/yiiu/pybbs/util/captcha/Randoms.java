@@ -1,5 +1,8 @@
 package co.yiiu.pybbs.util.captcha;
 
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RPolyTainted;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
+
 import java.util.Random;
 
 /**
@@ -9,9 +12,9 @@ import java.util.Random;
  * @version:1.0
  */
 public class Randoms {
-    private static final Random RANDOM = new Random();
+    private static final @RUntainted Random RANDOM = new Random();
     //定义验证码字符.去除了O和I等容易混淆的字母
-    public static final char ALPHA[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'G', 'K', 'M', 'N', 'P', 'Q', 'R', 'S',
+    public static final @RUntainted char ALPHA[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'G', 'K', 'M', 'N', 'P', 'Q', 'R', 'S',
             'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'm', 'n', 'p', 'q',
             'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '2', '3', '4', '5', '6', '7', '8', '9'};
 
@@ -22,7 +25,7 @@ public class Randoms {
      * @param max 比min大的数
      * @return int 随机数字
      */
-    public static int num(int min, int max) {
+    public static @RPolyTainted int num(@RPolyTainted int min, @RPolyTainted int max) {
         return min + RANDOM.nextInt(max - min);
     }
 
@@ -36,7 +39,7 @@ public class Randoms {
         return RANDOM.nextInt(num);
     }
 
-    public static char alpha() {
+    public static @RUntainted char alpha() {
         return ALPHA[num(0, ALPHA.length)];
     }
 }
