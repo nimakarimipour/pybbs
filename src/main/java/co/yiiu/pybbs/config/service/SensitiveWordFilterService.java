@@ -24,7 +24,7 @@ public class SensitiveWordFilterService {
     @Resource
     private ISensitiveWordService sensitiveWordService;
 
-    // 初始化过滤器
+    // aaaaaa
     @PostConstruct
     public void init() {
         List<SensitiveWord> sensitiveWords = sensitiveWordService.selectAll();

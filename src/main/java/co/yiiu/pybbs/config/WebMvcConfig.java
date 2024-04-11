@@ -35,9 +35,9 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
 
     @Override
     protected void addInterceptors(InterceptorRegistry registry) {
-        // 配置全局日志拦截器，用于记录用户的请求记录
+        // aaaaaaaaa，aaaaaaaaaaa
         registry.addInterceptor(commonInterceptor).addPathPatterns("/**");
-        // 用户拦截器，拦截用户是否登录
+        // aaaaa，aaaaaaaa
         registry.addInterceptor(userInterceptor).addPathPatterns("/settings", "/settings/*", "/topic/create", "/topic/edit/*");
     }
 
@@ -46,7 +46,7 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
         registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/", "file:./static/");
     }
 
-    // 配置网站默认语言
+    // aaaaaaaa
     @Bean
     public LocaleResolver localeResolver() {
         SessionLocaleResolver sessionLocaleResolver = new SessionLocaleResolver();
@@ -54,7 +54,7 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
         return sessionLocaleResolver;
     }
 
-    // 解析put delete请求时带的参数
+    // aaput deleteaaaaaaa
     //  @Bean
     //  public FormContentFilter formContentFilter() {
     //    return new FormContentFilter();

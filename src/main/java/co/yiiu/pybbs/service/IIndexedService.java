@@ -7,16 +7,16 @@ package co.yiiu.pybbs.service;
  */
 public interface IIndexedService {
 
-    // 索引全部话题
+    // aaaaaa
     void indexAllTopic();
 
-    // 索引话题
+    // aaaa
     void indexTopic(String id, String title, String content);
 
-    // 删除话题索引
+    // aaaaaa
     void deleteTopicIndex(String id);
 
-    // 删除所有话题索引
+    // aaaaaaaa
     void batchDeleteIndex();
 
 }

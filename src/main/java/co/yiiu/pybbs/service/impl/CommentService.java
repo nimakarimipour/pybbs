@@ -54,11 +54,11 @@ public class CommentService implements ICommentService {
     @Resource
     private TelegramBotService telegramBotService;
 
-    // 根据话题id查询评论
+    // aaaaidaaaa
     @Override
     public List<CommentsByTopic> selectByTopicId(Integer topicId) {
         List<CommentsByTopic> commentsByTopics = commentMapper.selectByTopicId(topicId);
-        // 对评论内容进行过滤，然后再写入redis
+        // aaaaaaaaa，aaaaaredis
         for (CommentsByTopic commentsByTopic : commentsByTopics) {
             commentsByTopic.setContent(SensitiveWordUtil.replaceSensitiveWord(commentsByTopic.getContent(), "*",
                     SensitiveWordUtil.MinMatchType));
@@ -66,7 +66,7 @@ public class CommentService implements ICommentService {
         return commentsByTopics;
     }
 
-    // 删除话题时删除相关的评论
+    // aaaaaaaaaaaa
     @Override
     public void deleteByTopicId(Integer topicId) {
         QueryWrapper<Comment> wrapper = new QueryWrapper<>();
@@ -74,7 +74,7 @@ public class CommentService implements ICommentService {
         commentMapper.delete(wrapper);
     }
 
-    // 根据用户id删除评论记录
+    // aaaaidaaaaaa
     @Override
     public void deleteByUserId(Integer userId) {
         QueryWrapper<Comment> wrapper = new QueryWrapper<>();
@@ -82,56 +82,56 @@ public class CommentService implements ICommentService {
         commentMapper.delete(wrapper);
     }
 
-    // 保存评论
+    // aaaa
     @Override
     public Comment insert(Comment comment, Topic topic, User user) {
         if (systemConfigService.selectAllConfig().get("comment_need_examine").equals("1")) {
-            comment.setStatus(false);// 审核中
+            comment.setStatus(false);// aaa
         } else {
-            comment.setStatus(true);// 无需审核
+            comment.setStatus(true);// aaaa
         }
         commentMapper.insert(comment);
 
-        // 话题的评论数+1
+        // aaaaaa+1
         topic.setCommentCount(topic.getCommentCount() + 1);
         topicService.update(topic, null);
 
-        // 增加用户积分
+        // aaaaaa
         user.setScore(user.getScore() + Integer.parseInt(systemConfigService.selectAllConfig().get
                 ("create_comment_score")));
         userService.update(user);
 
-        // 通知
-        // 给评论的作者发通知
+        // aa
+        // aaaaaaaaa
         if (comment.getCommentId() != null) {
             Comment targetComment = this.selectById(comment.getCommentId());
             if (!user.getId().equals(targetComment.getUserId())) {
                 notificationService.insert(user.getId(), targetComment.getUserId(), topic.getId(), "REPLY", comment
                         .getContent());
 
-                String emailTitle = "你在话题 %s 下的评论被 %s 回复了，快去看看吧！";
-                // 如果开启了websocket，就发网页通知
+                String emailTitle = "aaaa %s aaaaa %s aaa，aaaaa！";
+                // aaaaawebsocket，aaaaaa
                 if (systemConfigService.selectAllConfig().get("websocket").equals("1")) {
                     MyWebSocket.emit(targetComment.getUserId(), new Message("notifications", String.format(emailTitle, topic
                             .getTitle(), user.getUsername())));
                     MyWebSocket.emit(targetComment.getUserId(), new Message("notification_notread", 1));
                 }
-                // 发送邮件通知
+                // aaaaaa
                 User targetUser = userService.selectById(targetComment.getUserId());
                 if (!StringUtils.isEmpty(targetUser.getEmail()) && targetUser.getEmailNotification()) {
-                    String emailContent = "回复内容: %s <br><a href='%s/topic/%s' target='_blank'>传送门</a>";
+                    String emailContent = "aaaa: %s <br><a href='%s/topic/%s' target='_blank'>aaa</a>";
                     new Thread(() -> emailService.sendEmail(targetUser.getEmail(), String.format(emailTitle, topic.getTitle(),
                             user.getUsername()), String.format(emailContent, comment.getContent(), systemConfigService
                             .selectAllConfig().get("base_url"), topic.getId()))).start();
                 }
             }
         }
-        // 给话题作者发通知
+        // aaaaaaaa
         if (!user.getId().equals(topic.getUserId())) {
             notificationService.insert(user.getId(), topic.getUserId(), topic.getId(), "COMMENT", comment.getContent());
-            // 发送邮件通知
-            String emailTitle = "%s 评论你的话题 %s 快去看看吧！";
-            // 如果开启了websocket，就发网页通知
+            // aaaaaa
+            String emailTitle = "%s aaaaaa %s aaaaa！";
+            // aaaaawebsocket，aaaaaa
             if (systemConfigService.selectAllConfig().get("websocket").equals("1")) {
                 MyWebSocket.emit(topic.getUserId(), new Message("notifications", String.format(emailTitle, user.getUsername()
                         , topic.getTitle())));
@@ -139,23 +139,23 @@ public class CommentService implements ICommentService {
             }
             User targetUser = userService.selectById(topic.getUserId());
             if (!StringUtils.isEmpty(targetUser.getEmail()) && targetUser.getEmailNotification()) {
-                String emailContent = "评论内容: %s <br><a href='%s/topic/%s' target='_blank'>传送门</a>";
+                String emailContent = "aaaa: %s <br><a href='%s/topic/%s' target='_blank'>aaa</a>";
                 new Thread(() -> emailService.sendEmail(targetUser.getEmail(), String.format(emailTitle, user.getUsername(),
                         topic.getTitle()), String.format(emailContent, comment.getContent(), systemConfigService.selectAllConfig
                         ().get("base_url"), topic.getId()))).start();
             }
         }
 
-        // 日志 TODO
+        // aa TODO
 
-        // 发送TG通知
+        // aaTGaa
         new Thread(() -> {
             String formatMessage;
             String domain = systemConfigService.selectAllConfig().get("base_url");
             if (systemConfigService.selectAllConfig().get("content_style").equals("MD")) {
-                formatMessage = String.format("%s 评论了话题 [%s](%s) 内容： %s", user.getUsername(), topic.getTitle(), domain + "/topic/" + topic.getId(), StringUtil.removeSpecialChar(comment.getContent()));
+                formatMessage = String.format("%s aaaaa [%s](%s) aa： %s", user.getUsername(), topic.getTitle(), domain + "/topic/" + topic.getId(), StringUtil.removeSpecialChar(comment.getContent()));
             } else {
-                formatMessage = String.format("%s 评论了话题 <a href=\"%s\">%s</a> 内容： %s", user.getUsername(), domain + "/topic/" + topic.getId(), topic.getTitle(), StringUtil.removeSpecialChar(comment.getContent()));
+                formatMessage = String.format("%s aaaaa <a href=\"%s\">%s</a> aa： %s", user.getUsername(), domain + "/topic/" + topic.getId(), topic.getTitle(), StringUtil.removeSpecialChar(comment.getContent()));
             }
             Integer message_id = telegramBotService.init().sendMessage(formatMessage, true, null);
             Comment newComment = new Comment();
@@ -181,56 +181,56 @@ public class CommentService implements ICommentService {
         return comments.size() > 0 ? comments.get(0) : null;
     }
 
-    // 更新评论
+    // aaaa
     @Override
     public void update(Comment comment) {
         commentMapper.updateById(comment);
     }
 
-    // 对评论点赞
+    // aaaaa
     @Override
     public int vote(Comment comment, User user) {
         String upIds = comment.getUpIds();
-        // 将点赞用户id的字符串转成集合
+        // aaaaaidaaaaaaaa
         Set<String> strings = StringUtils.commaDelimitedListToSet(upIds);
-        // 把新的点赞用户id添加进集合，这里用set，正好可以去重，如果集合里已经有用户的id了，那么这次动作被视为取消点赞
+        // aaaaaaaidaaaaa，aaaset，aaaaaa，aaaaaaaaaaaida，aaaaaaaaaaaaa
         Integer userScore = user.getScore();
-        if (strings.contains(String.valueOf(user.getId()))) { // 取消点赞行为
+        if (strings.contains(String.valueOf(user.getId()))) { // aaaaaa
             strings.remove(String.valueOf(user.getId()));
             userScore -= Integer.parseInt(systemConfigService.selectAllConfig().get("up_comment_score"));
-        } else { // 点赞行为
+        } else { // aaaa
             strings.add(String.valueOf(user.getId()));
             userScore += Integer.parseInt(systemConfigService.selectAllConfig().get("up_comment_score"));
         }
-        // 再把这些id按逗号隔开组成字符串
+        // aaaaidaaaaaaaaaa
         comment.setUpIds(StringUtils.collectionToCommaDelimitedString(strings));
-        // 更新评论
+        // aaaa
         this.update(comment);
-        // 增加用户积分
+        // aaaaaa
         user.setScore(userScore);
         userService.update(user);
         return strings.size();
     }
 
-    // 删除评论
+    // aaaa
     @Override
     public void delete(Comment comment) {
         if (comment != null) {
-            // 话题评论数-1
+            // aaaaa-1
             Topic topic = topicService.selectById(comment.getTopicId());
             topic.setCommentCount(topic.getCommentCount() - 1);
             topicService.update(topic, null);
-            // 减去用户积分
+            // aaaaaa
             User user = userService.selectById(comment.getUserId());
             user.setScore(user.getScore() - Integer.parseInt(systemConfigService.selectAllConfig().get
                     ("delete_comment_score").toString()));
             userService.update(user);
-            // 删除评论
+            // aaaa
             commentMapper.deleteById(comment.getId());
         }
     }
 
-    // 查询用户的评论
+    // aaaaaaa
     @Override
     public MyPage<Map<String, Object>> selectByUserId(Integer userId, Integer pageNo, Integer pageSize) {
         MyPage<Map<String, Object>> iPage = new MyPage<>(pageNo, pageSize == null ? Integer.parseInt(systemConfigService
@@ -252,7 +252,7 @@ public class CommentService implements ICommentService {
         return commentMapper.selectAllForAdmin(iPage, startDate, endDate, username);
     }
 
-    // 查询今天新增的话题数
+    // aaaaaaaaaa
     @Override
     public int countToday() {
         return commentMapper.countToday();

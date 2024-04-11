@@ -44,29 +44,29 @@ public class TopicController extends BaseController {
     @Resource
     private ICollectService collectService;
 
-    // 话题详情
+    // aaaa
     @GetMapping("/{id}")
     public String detail(@PathVariable Integer id, Model model, HttpServletRequest request) {
-        // 查询话题详情
+        // aaaaaa
         Topic topic = topicService.selectById(id);
-        Assert.notNull(topic, "话题不存在");
-        // 查询话题关联的标签
+        Assert.notNull(topic, "aaaaa");
+        // aaaaaaaaa
         List<Tag> tags = tagService.selectByTopicId(id);
-        // 查询话题的作者信息
+        // aaaaaaaaa
         User topicUser = userService.selectById(topic.getUserId());
-        // 查询话题有多少收藏
+        // aaaaaaaaa
         List<Collect> collects = collectService.selectByTopicId(id);
-        // 如果自己登录了，查询自己是否收藏过这个话题
+        // aaaaaaa，aaaaaaaaaaaaa
         if (getUser() != null) {
             Collect collect = collectService.selectByTopicIdAndUserId(id, getUser().getId());
             model.addAttribute("collect", collect);
         }
-        // 话题浏览量+1
+        // aaaaa+1
         String ip = IpUtil.getIpAddr(request);
         ip = ip.replace(":", "_").replace(".", "_");
         topic = topicService.updateViewCount(topic, ip);
 
-        // 对内容进行过滤
+        // aaaaaaa
         topic.setContent(SensitiveWordUtil.replaceSensitiveWord(topic.getContent(), "*", SensitiveWordUtil.MinMatchType));
 
         model.addAttribute("topic", topic);
@@ -83,14 +83,14 @@ public class TopicController extends BaseController {
         return render("topic/create");
     }
 
-    // 编辑话题
+    // aaaa
     @GetMapping("/edit/{id}")
     public String edit(@PathVariable Integer id, Model model) {
         Topic topic = topicService.selectById(id);
-        Assert.isTrue(topic.getUserId().equals(getUser().getId()), "谁给你的权限修改别人的话题的？");
-        // 查询话题的标签
+        Assert.isTrue(topic.getUserId().equals(getUser().getId()), "aaaaaaaaaaaaaa？");
+        // aaaaaaa
         List<Tag> tagList = tagService.selectByTopicId(id);
-        // 将标签集合转成逗号隔开的字符串
+        // aaaaaaaaaaaaaaa
         String tags = StringUtils.collectionToCommaDelimitedString(tagList.stream().map(Tag::getName).collect(Collectors
                 .toList()));
 
@@ -102,8 +102,8 @@ public class TopicController extends BaseController {
     @GetMapping("/tag/{name}")
     public String tag(@PathVariable String name, @RequestParam(defaultValue = "1") Integer pageNo, Model model) {
         Tag tag = tagService.selectByName(name);
-        Assert.notNull(tag, "标签不存在");
-        // 查询标签关联的话题
+        Assert.notNull(tag, "aaaaa");
+        // aaaaaaaaa
         MyPage<Map<String, Object>> iPage = tagService.selectTopicByTagId(tag.getId(), pageNo);
         model.addAttribute("tag", tag);
         model.addAttribute("page", iPage);

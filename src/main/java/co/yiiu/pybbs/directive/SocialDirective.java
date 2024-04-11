@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
- * 社交化登录相关的自定义标签
+ * aaaaaaaaaaaaa
  *
  * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
  * @version 1.0.0

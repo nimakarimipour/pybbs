@@ -12,31 +12,31 @@ import org.springframework.util.StringUtils;
 @Component
 public class ShiroTag {
 
-    // 判断当前用户是否已经登录认证过
+    // aaaaaaaaaaaaaaa
     public boolean isAuthenticated() {
         return SecurityUtils.getSubject().isAuthenticated();
     }
 
-    // 获取当前用户的用户名
+    // aaaaaaaaaa
     public String getPrincipal() {
         return (String) SecurityUtils.getSubject().getPrincipal();
     }
 
-    // 判断用户是否有 xx 角色
+    // aaaaaaa xx aa
     public boolean hasRole(String name) {
         return SecurityUtils.getSubject().hasRole(name);
     }
 
-    // 判断用户是否有 xx 权限
+    // aaaaaaa xx aa
     public boolean hasPermission(String name) {
         return !StringUtils.isEmpty(name) && SecurityUtils.getSubject().isPermitted(name);
     }
 
-    // 判断用户是否有 xx 权限
+    // aaaaaaa xx aa
     public boolean hasPermissionOr(String... name) {
         boolean[] permitted = SecurityUtils.getSubject().isPermitted(name);
         for (boolean b : permitted) {
-            // 如果有一个权限，就成功
+            // aaaaaaa，aaa
             if (b) {
                 return true;
             }
@@ -44,11 +44,11 @@ public class ShiroTag {
         return false;
     }
 
-    // 判断用户是否有 xx 权限
+    // aaaaaaa xx aa
     public boolean hasPermissionAnd(String... name) {
         boolean[] permitted = SecurityUtils.getSubject().isPermitted(name);
         for (boolean b : permitted) {
-            // 必须所有的权限都有，才成功
+            // aaaaaaaaa，aaa
             if (!b) {
                 return false;
             }
@@ -56,7 +56,7 @@ public class ShiroTag {
         return true;
     }
 
-    // 判断用户是否有 xx 权限
+    // aaaaaaa xx aa
     public boolean hasAllPermission(String... name) {
         return SecurityUtils.getSubject().isPermittedAll(name);
     }

@@ -13,42 +13,42 @@ import java.util.Map;
  * https://atjiu.github.io
  */
 public interface ITopicService {
-    // 搜索
+    // aa
     MyPage<Map<String, Object>> search(Integer pageNo, Integer pageSize, String keyword);
 
-    // 分页查询话题
+    // aaaaaa
     MyPage<Map<String, Object>> selectAll(Integer pageNo, String tab);
 
-    // 查询话题作者其它的话题
+    // aaaaaaaaaaa
     List<Topic> selectAuthorOtherTopic(Integer userId, Integer topicId, Integer limit);
 
-    // 查询用户的话题
+    // aaaaaaa
     MyPage<Map<String, Object>> selectByUserId(Integer userId, Integer pageNo, Integer pageSize);
 
-    // 保存话题
+    // aaaa
     Topic insert(String title, String content, String tags, User user);
 
-    // 根据id查询话题
+    // aaidaaaa
     Topic selectById(Integer id);
 
-    // 根据title查询话题，防止重复话题
+    // aatitleaaaa，aaaaaa
     Topic selectByTitle(String title);
 
-    // 处理话题的访问量
+    // aaaaaaaa
     Topic updateViewCount(Topic topic, String ip);
 
-    // 更新话题
+    // aaaa
     void update(Topic topic, String tags);
 
-    // 删除话题
+    // aaaa
     void delete(Topic topic);
 
-    // 根据用户id删除帖子
+    // aaaaidaaaa
     void deleteByUserId(Integer userId);
 
     MyPage<Map<String, Object>> selectAllForAdmin(Integer pageNo, String startDate, String endDate, String username);
 
-    // 查询今天新增的话题数
+    // aaaaaaaaaa
     int countToday();
 
     int vote(Topic topic, User user);

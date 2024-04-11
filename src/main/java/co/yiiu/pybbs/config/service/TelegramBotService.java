@@ -62,7 +62,7 @@ public class TelegramBotService {
 
     public Integer sendMessage(String message, boolean btn, Integer reply_to_message_id) {
         if (StringUtils.isEmpty(accessToken) || StringUtils.isEmpty(chatId)) {
-            log.info("Telegram Bot未启用或配置有误，跳过！！");
+            log.info("Telegram Botaaaaaaaa，aa！！");
             return null;
         }
 
@@ -83,13 +83,13 @@ public class TelegramBotService {
 
             if (systemConfigService.selectAllConfig().get("comment_need_examine").equals("1")) {
                 Map<String, Object> passBtnMap = new HashMap<>();
-                passBtnMap.put("text", "过");
+                passBtnMap.put("text", "a");
                 passBtnMap.put("callback_data", "pass_btn");
                 inline_keyboard2.add(passBtnMap);
             }
 
             Map<String, Object> delBtnMap = new HashMap<>();
-            delBtnMap.put("text", "删");
+            delBtnMap.put("text", "a");
             delBtnMap.put("callback_data", "del_btn");
             inline_keyboard2.add(delBtnMap);
 
@@ -103,7 +103,7 @@ public class TelegramBotService {
         HttpEntity<String> entity = new HttpEntity<>(JsonUtil.objectToJson(dataMap), headers);
         ResponseEntity<String> exchange = restTemplate.exchange("https://api.telegram.org/bot" + accessToken + "/sendMessage", HttpMethod.POST, entity, String.class);
         if (exchange.getStatusCodeValue() != 200) {
-            log.error("发送TG通知失败: {}", exchange.getStatusCodeValue());
+            log.error("aaTGaaaa: {}", exchange.getStatusCodeValue());
         } else {
             Map map1 = JsonUtil.jsonToObject(exchange.getBody(), Map.class);
             return (Integer) ((Map) map1.get("result")).get("message_id");
@@ -132,12 +132,12 @@ public class TelegramBotService {
 
             ResponseEntity<String> exchange = restTemplate.exchange("https://api.telegram.org/bot" + token + "/setWebhook", HttpMethod.POST, entity, String.class);
             if (exchange.getStatusCodeValue() != 200) {
-                log.info("Telegram setWebhook失败，errorCode: {}", exchange.getStatusCode());
+                log.info("Telegram setWebhookaa，errorCode: {}", exchange.getStatusCode());
             } else {
-                log.info("Telegram setWebhook成功");
+                log.info("Telegram setWebhookaa");
             }
         } else {
-            log.info("Telegram未配置，路过setWebhook");
+            log.info("Telegramaaa，aasetWebhook");
         }
     }
 }

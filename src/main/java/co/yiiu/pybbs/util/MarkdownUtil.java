@@ -25,7 +25,7 @@ public class MarkdownUtil {
         List<Extension> extensions = Arrays.asList(AutolinkExtension.create(), TablesExtension.create());
 
         Parser parser = Parser.builder().extensions(extensions).build();
-        // 回车一次就可以实现换行
+        // aaaaaaaaaaa
         HtmlRenderer renderer = HtmlRenderer.builder().softbreak("<br/>").attributeProviderFactory(context -> new
                 MyAttributeProvider()).extensions(extensions).build();
         Node document = parser.parse(content == null ? "" : content);
@@ -36,11 +36,11 @@ public class MarkdownUtil {
 
         @Override
         public void setAttributes(Node node, String s, Map<String, String> map) {
-            // 给图片添加上类样式，类样式可以在css里自定义
+            // aaaaaaaaa，aaaaaacssaaaa
             if (node instanceof Image) {
                 map.put("class", "md-image");
             }
-            // 给表格添加上类样式，类样式可以在css里自定义
+            // aaaaaaaaa，aaaaaacssaaaa
             if (node instanceof TableBlock) {
                 map.put("class", "table table-bordered");
             }

@@ -18,14 +18,14 @@ public class Comment implements Serializable {
     private Integer id;
     private Integer topicId;
     private Integer userId;
-    private String style; // 内容格式化，RICH，MD
+    private String style; // aaaaa，RICH，MD
     private String content;
     private Date inTime;
     private Integer commentId;
-    // 点赞用户的id
+    // aaaaaid
     private String upIds;
     private Integer tgMessageId;
-    // true: 通过，false: 审核中
+    // true: aa，false: aaa
     private Boolean status;
 
     public String getStyle() {

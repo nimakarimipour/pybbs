@@ -16,25 +16,25 @@ public class SystemConfig implements Serializable {
     @TableId(type = IdType.AUTO)
     private Integer id;
 
-    // 配置键
+    // aaa
     @TableField("`key`")
     private String key;
-    // 配置值
+    // aaa
     @TableField("`value`")
     private String value;
-    // 配置描述
+    // aaaa
     private String description;
     private Integer pid;
 
-    // 配置类型，常见的有 select, input[type=text,url,number,radio,password,email]
+    // aaaa，aaaa select, input[type=text,url,number,radio,password,email]
     @TableField("`type`")
     private String type;
 
-    // 特殊类型里的值，比如 radio，select 的option
+    // aaaaaaa，aa radio，select aoption
     @TableField("`option`")
     private String option;
 
-    // 修改后是否需要重启
+    // aaaaaaaaa
     @TableField("`reboot`")
     private String reboot;
 

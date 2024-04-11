@@ -9,7 +9,7 @@ import java.io.OutputStream;
 import static co.yiiu.pybbs.util.captcha.Randoms.num;
 
 /**
- * <p>png格式验证码</p>
+ * <p>pngaaaaa</p>
  *
  * @author: wuhongjun
  * @version:1.0
@@ -34,9 +34,9 @@ public class SpecCaptcha extends Captcha {
     }
 
     /**
-     * 生成验证码
+     * aaaaa
      *
-     * @throws java.io.IOException IO异常
+     * @throws java.io.IOException IOaa
      */
     @Override
     public void out(OutputStream out) {
@@ -44,10 +44,10 @@ public class SpecCaptcha extends Captcha {
     }
 
     /**
-     * 画随机码图
+     * aaaaa
      *
-     * @param strs 文本
-     * @param out  输出流
+     * @param strs aa
+     * @param out  aaa
      */
     private boolean graphicsImage(char[] strs, OutputStream out) {
         boolean ok = false;
@@ -59,20 +59,20 @@ public class SpecCaptcha extends Captcha {
             int len = strs.length;
             g.setColor(Color.WHITE);
             g.fillRect(0, 0, width, height);
-            // 随机画干扰的蛋蛋
+            // aaaaaaaa
             for (int i = 0; i < 15; i++) {
                 color = color(150, 250);
                 g.setColor(color);
-                g.drawOval(num(width), num(height), 5 + num(10), 5 + num(10));// 画蛋蛋，有蛋的生活才精彩
+                g.drawOval(num(width), num(height), 5 + num(10), 5 + num(10));// aaa，aaaaaaaa
                 color = null;
             }
             g.setFont(font);
             int h = height - ((height - font.getSize()) >> 1), w = width / len, size = w - font.getSize() + 1;
-            /* 画字符串 */
+            /* aaaa */
             for (int i = 0; i < len; i++) {
-                ac3 = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.7f);// 指定透明度
+                ac3 = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.7f);// aaaaa
                 g.setComposite(ac3);
-                color = new Color(20 + num(110), 20 + num(110), 20 + num(110));// 对每个字符都用随机颜色
+                color = new Color(20 + num(110), 20 + num(110), 20 + num(110));// aaaaaaaaaaa
                 g.setColor(color);
                 g.drawString(strs[i] + "", (width - (len - i) * w) + size, h - 4);
                 color = null;

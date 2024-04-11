@@ -36,33 +36,33 @@ public class MyShiroRealm extends AuthorizingRealm {
     @Resource
     private IPermissionService permissionService;
 
-    // 用户权限配置
+    // aaaaaa
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-        //访问@RequirePermission注解的url时触发
+        //aa@RequirePermissionaaaurlaaa
         SimpleAuthorizationInfo simpleAuthorizationInfo = new SimpleAuthorizationInfo();
         AdminUser adminUser = adminUserService.selectByUsername(principals.toString());
-        //获得用户的角色，及权限进行绑定
+        //aaaaaaa，aaaaaaa
         Role role = roleService.selectById(adminUser.getRoleId());
-        // 其实这里也可以不要权限那个类了，直接用角色这个类来做鉴权，
-        // 不过角色包含很多的权限，已经算是大家约定的了，所以下面还是查询权限然后放在AuthorizationInfo里
+        // aaaaaaaaaaaaaaa，aaaaaaaaaaaa，
+        // aaaaaaaaaaa，aaaaaaaaaa，aaaaaaaaaaaaaaAuthorizationInfoa
         simpleAuthorizationInfo.addRole(role.getName());
-        // 查询权限
+        // aaaa
         List<Permission> permissions = permissionService.selectByRoleId(adminUser.getRoleId());
-        // 将权限具体值取出来组装成一个权限String的集合
+        // aaaaaaaaaaaaaaaaStringaaa
         List<String> permissionValues = permissions.stream().map(Permission::getValue).collect(Collectors.toList());
-        // 将权限的String集合添加进AuthorizationInfo里，后面请求鉴权有用
+        // aaaaStringaaaaaAuthorizationInfoa，aaaaaaaa
         simpleAuthorizationInfo.addStringPermissions(permissionValues);
         return simpleAuthorizationInfo;
     }
 
-    // 组装用户信息
+    // aaaaaa
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
         String username = (String) token.getPrincipal();
-        log.info("用户：{} 正在登录...", username);
+        log.info("aa：{} aaaa...", username);
         AdminUser adminUser = adminUserService.selectByUsername(username);
-        // 如果用户不存在，则抛出未知用户的异常
+        // aaaaaaa，aaaaaaaaaa
         if (adminUser == null) throw new UnknownAccountException();
         return new SimpleAuthenticationInfo(username, adminUser.getPassword(), getName());
     }

@@ -22,7 +22,7 @@ public class RolePermissionService implements IRolePermissionService {
     @Resource
     private RolePermissionMapper rolePermissionMapper;
 
-    // 根据角色id查询所有的角色权限关联记录
+    // aaaaidaaaaaaaaaaaaa
     @Override
     public List<RolePermission> selectByRoleId(Integer roleId) {
         QueryWrapper<RolePermission> wrapper = new QueryWrapper<>();
@@ -30,7 +30,7 @@ public class RolePermissionService implements IRolePermissionService {
         return rolePermissionMapper.selectList(wrapper);
     }
 
-    // 根据角色id删除关联关系
+    // aaaaidaaaaaa
     @Override
     public void deleteByRoleId(Integer roleId) {
         QueryWrapper<RolePermission> wrapper = new QueryWrapper<>();
@@ -38,7 +38,7 @@ public class RolePermissionService implements IRolePermissionService {
         rolePermissionMapper.delete(wrapper);
     }
 
-    // 根据权限id删除关联关系
+    // aaaaidaaaaaa
     @Override
     public void deleteByPermissionId(Integer permissionId) {
         QueryWrapper<RolePermission> wrapper = new QueryWrapper<>();

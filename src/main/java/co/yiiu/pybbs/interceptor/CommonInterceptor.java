@@ -40,17 +40,17 @@ public class CommonInterceptor implements HandlerInterceptor {
         long start = System.currentTimeMillis();
         request.setAttribute("_start", start);
 
-        // 判断session里有用户信息，有直接通过
+        // aasessionaaaaaa，aaaaa
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("_user");
         if (user == null) {
-            // 获取cookie里的token，查询用户的信息并放入session里
+            // aacookieaatoken，aaaaaaaaaasessiona
             String token = cookieUtil.getCookie(systemConfigService.selectAllConfig().get("cookie_name").toString());
             if (!StringUtils.isEmpty(token)) {
-                // 根据token查询用户是否存在
+                // aatokenaaaaaaaa
                 user = userService.selectByToken(token);
                 if (user != null) {
-                    // 用户存在写session，cookie然后给予通过
+                    // aaaaasession，cookieaaaaaa
                     session.setAttribute("_user", user);
                     cookieUtil.setCookie(systemConfigService.selectAllConfig().get("cookie_name").toString(), user.getToken());
                 }
@@ -62,9 +62,9 @@ public class CommonInterceptor implements HandlerInterceptor {
     @Override
     public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) {
         if (!HttpUtil.isApiRequest(request) && modelAndView != null) {
-            // TODO 这地方有安全隐患，通过这个设置，就可以在页面上获取到system_config表里的所有数据了，如果有人恶意往页面里加入一些代码，就可以拿到一些不可告人的东西。。
-            // 后面啥时候想起来了，再收拾它
-            // 2023/3/14 过滤掉了systemConfig里type为password的数据，应该能提升一丢丢的安全性吧
+            // TODO aaaaaaaa，aaaaaa，aaaaaaaaaasystem_configaaaaaaaa，aaaaaaaaaaaaaaaa，aaaaaaaaaaaaaa。。
+            // aaaaaaaaa，aaaa
+            // 2023/3/14 aaaasystemConfigatypeapasswordaaa，aaaaaaaaaaaaa
             modelAndView.addObject("site", systemConfigService.selectAllConfigWithoutPassword());
         }
     }

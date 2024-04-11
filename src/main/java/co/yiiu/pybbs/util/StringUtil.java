@@ -16,21 +16,21 @@ public class StringUtil {
     private StringUtil() {
     }
 
-    // 手机号正则
+    // aaaaa
     public static final String MOBILEREGEX = "^1[0-9]{10}";
-    // email正则
+    // emailaa
     public static final String EMAILREGEX = "\\w[-\\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\\.)+[A-Za-z]{2,14}";
-    // url正则
+    // urlaa
     public static final String URLREGEX = "^((https|http)?:\\/\\/)[^\\s]+";
-    // 用户名正则
+    // aaaaa
     public static final String USERNAMEREGEX = "[a-z0-9A-Z]{2,16}";
-    // 密码正则
+    // aaaa
     public static final String PASSWORDREGEX = "[a-z0-9A-Z]{6,32}";
-    // 生成随机字符串用到的字符数组
+    // aaaaaaaaaaaaaa
     private static final char[] hexDigits = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c',
             'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
             'z'};
-    // 生成随机长度的数字用到的数组
+    // aaaaaaaaaaaaaa
     private static final char[] digits = new char[]{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
     public static final Random random = new Random();
 
@@ -45,7 +45,7 @@ public class StringUtil {
     }
 
     /**
-     * 随机指定长度的字符串
+     * aaaaaaaaaa
      *
      * @param length
      * @return
@@ -59,7 +59,7 @@ public class StringUtil {
     }
 
     /**
-     * 随机指定长度的数字
+     * aaaaaaaaa
      *
      * @param length
      * @return
@@ -72,13 +72,13 @@ public class StringUtil {
         return sb.toString();
     }
 
-    // 生成一个uuid
+    // aaaauuid
     public static String uuid() {
         return UUID.randomUUID().toString();
     }
 
     /**
-     * 检测是否是用户accessToken
+     * aaaaaaaaccessToken
      */
     public static boolean isUUID(String accessToken) {
         if (StringUtils.isEmpty(accessToken)) {
@@ -94,9 +94,9 @@ public class StringUtil {
         }
     }
 
-    // 格式化url参数部分返回map
-    // params格式：a=1&b=2&c=3
-    // 返回：{a: 1, b: 2, c: 3}
+    // aaaurlaaaaaamap
+    // paramsaa：a=1&b=2&c=3
+    // aa：{a: 1, b: 2, c: 3}
     public static Map<String, Object> formatParams(String params) {
         if (StringUtils.isEmpty(params)) return null;
         Map<String, Object> map = new HashMap<>();
@@ -107,14 +107,14 @@ public class StringUtil {
         return map;
     }
 
-    // 查找评论里at的用户名
+    // aaaaaataaaa
     public static List<String> fetchAtUser(String content) {
         if (StringUtils.isEmpty(content)) return Collections.emptyList();
-        // 去掉 ``` ``` 包围的内容
+        // aa ``` ``` aaaaa
         content = content.replaceAll("```([\\s\\S]*)```", "");
-        // 去掉 ` ` 包围的内容
+        // aa ` ` aaaaa
         content = content.replaceAll("`([\\s\\S]*)`", "");
-        // 找到@的用户
+        // aa@aaa
         String atRegex = "@[a-z0-9-_]+\\b?";
         List<String> atUsers = new ArrayList<>();
         Pattern regex = Pattern.compile(atRegex);
@@ -125,7 +125,7 @@ public class StringUtil {
         return atUsers;
     }
 
-    // 去掉数组里的空值和重复数据
+    // aaaaaaaaaaaaa
     public static Set<String> removeEmpty(String[] strs) {
         if (strs == null || strs.length == 0) return Collections.emptySet();
         Set<String> set = new HashSet<>();
@@ -138,7 +138,7 @@ public class StringUtil {
     }
 
     /**
-     * 将字符串转化成unicode码
+     * aaaaaaaunicodea
      *
      * @param string
      * @return
@@ -152,14 +152,14 @@ public class StringUtil {
         StringBuilder unicode = new StringBuilder();
         for (int i = 0; i < bytes.length; i++) {
             char c = bytes[i];
-            // 标准ASCII范围内的字符，直接输出
+            // aaASCIIaaaaaa，aaaa
             if (c >= 0 && c <= 127) {
                 unicode.append(c);
                 continue;
             }
             String hexString = Integer.toHexString(bytes[i]);
             unicode.append("\\u");
-            // 不够四位进行补0操作
+            // aaaaaaa0aa
             if (hexString.length() < 4) {
                 unicode.append("0000".substring(hexString.length(), 4));
             }
@@ -169,16 +169,16 @@ public class StringUtil {
     }
 
     /**
-     * \s+是空格一个或者多个,不管在那个位置都能匹配
-     * \pP 其中的小写 p 是 property 的意思，表示 Unicode 属性，用于 Unicode 正表达式的前缀。
-     * 大写 P 表示 Unicode 字符集七个字符属性之一：标点字符。
-     * 其他六个是
-     * L：字母；
-     * M：标记符号（一般不会单独出现）；
-     * Z：分隔符（比如空格、换行等）；
-     * S：符号（比如数学符号、货币符号等）；
-     * N：数字（比如阿拉伯数字、罗马数字等）；
-     * C：其他字符
+     * \s+aaaaaaaaa,aaaaaaaaaaa
+     * \pP aaaaa p a property aaa，aa Unicode aa，aa Unicode aaaaaaa。
+     * aa P aa Unicode aaaaaaaaaaa：aaaa。
+     * aaaaa
+     * L：aa；
+     * M：aaaa（aaaaaaaa）；
+     * Z：aaa（aaaa、aaa）；
+     * S：aa（aaaaaa、aaaaa）；
+     * N：aa（aaaaaaa、aaaaa）；
+     * C：aaaa
      *
      * @param str
      * @return

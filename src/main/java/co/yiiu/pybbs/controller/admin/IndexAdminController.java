@@ -50,28 +50,28 @@ public class IndexAdminController extends BaseAdminController {
     @RequiresUser
     @GetMapping({"/admin/", "/admin/index"})
     public String index(Model model) {
-        // 查询当天新增话题
+        // aaaaaaaa
         model.addAttribute("topic_count", topicService.countToday());
-        // 查询当天新增标签
+        // aaaaaaaa
         model.addAttribute("tag_count", tagService.countToday());
-        // 查询当天新增评论
+        // aaaaaaaa
         model.addAttribute("comment_count", commentService.countToday());
-        // 查询当天新增用户
+        // aaaaaaaa
         model.addAttribute("user_count", userService.countToday());
 
-        // 获取操作系统的名字
+        // aaaaaaaaa
         model.addAttribute("os_name", System.getProperty("os.name"));
 
-        // 内存
+        // aa
         int kb = 1024;
         OperatingSystemMXBean osmxb = (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
-        // 总的物理内存
+        // aaaaaa
         long totalMemorySize = osmxb.getTotalPhysicalMemorySize() / kb;
-        //已使用的物理内存
+        //aaaaaaaa
         long usedMemory = (osmxb.getTotalPhysicalMemorySize() - osmxb.getFreePhysicalMemorySize()) / kb;
-        // 获取系统cpu负载
+        // aaaacpuaa
         double systemCpuLoad = osmxb.getSystemCpuLoad();
-        // 获取jvm线程负载
+        // aajvmaaaa
         double processCpuLoad = osmxb.getProcessCpuLoad();
 
         model.addAttribute("totalMemorySize", totalMemorySize);
@@ -82,13 +82,13 @@ public class IndexAdminController extends BaseAdminController {
         return "admin/index";
     }
 
-    // 登录后台
+    // aaaa
     @GetMapping("/adminlogin")
     public String adminlogin() {
         return "admin/login";
     }
 
-    // 处理后台登录逻辑
+    // aaaaaaaa
     @PostMapping("/admin/login")
     public String adminlogin(String username, String password, String code, HttpSession session,
                              @RequestParam(defaultValue = "0") Boolean rememberMe,
@@ -96,39 +96,39 @@ public class IndexAdminController extends BaseAdminController {
         String url = WebUtils.getSavedRequest(request) == null ? "/admin/index" : WebUtils.getSavedRequest(request).getRequestUrl();
         String captcha = (String) session.getAttribute("_captcha");
         if (captcha == null || StringUtils.isEmpty(code) || !captcha.equalsIgnoreCase(code)) {
-            redirectAttributes.addFlashAttribute("error", "验证码不正确");
+            redirectAttributes.addFlashAttribute("error", "aaaaaa");
             redirectAttributes.addFlashAttribute("username", username);
             url = "/adminlogin";
         } else {
             try {
-                // 添加用户认证信息
+                // aaaaaaaa
                 Subject subject = SecurityUtils.getSubject();
                 UsernamePasswordToken token = new UsernamePasswordToken(username, password, rememberMe);
-                //进行验证，这里可以捕获异常，然后返回对应信息
+                //aaaa，aaaaaaaa，aaaaaaaa
                 subject.login(token);
             } catch (UnknownAccountException e) {
                 log.error(e.getMessage());
-                redirectAttributes.addFlashAttribute("error", "用户不存在");
+                redirectAttributes.addFlashAttribute("error", "aaaaa");
                 redirectAttributes.addFlashAttribute("username", username);
                 url = "/adminlogin";
             } catch (IncorrectCredentialsException e) {
                 log.error(e.getMessage());
-                redirectAttributes.addFlashAttribute("error", "密码错误");
+                redirectAttributes.addFlashAttribute("error", "aaaa");
                 redirectAttributes.addFlashAttribute("username", username);
                 url = "/adminlogin";
 //            } catch (LockedAccountException e) {
 //                log.error(e.getMessage());
-//                redirectAttributes.addFlashAttribute("error", "用户被锁定");
+//                redirectAttributes.addFlashAttribute("error", "aaaaa");
 //                redirectAttributes.addFlashAttribute("username", username);
 //                url = "/adminlogin";
 //            } catch (ExcessiveAttemptsException e) {
 //                log.error(e.getMessage());
-//                redirectAttributes.addFlashAttribute("error", "登录尝试次数过多");
+//                redirectAttributes.addFlashAttribute("error", "aaaaaaaa");
 //                redirectAttributes.addFlashAttribute("username", username);
 //                url = "/adminlogin";
             } catch (AuthenticationException e) {
                 log.error(e.getMessage());
-                redirectAttributes.addFlashAttribute("error", "用户名或密码错误");
+                redirectAttributes.addFlashAttribute("error", "aaaaaaaa");
                 redirectAttributes.addFlashAttribute("username", username);
                 url = "/adminlogin";
             }

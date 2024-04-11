@@ -55,14 +55,14 @@ public class FreemarkerConfig {
 
     @PostConstruct
     public void setSharedVariable() throws TemplateModelException {
-        //注入全局配置到freemarker
-        log.info("开始配置freemarker全局变量...");
+        //aaaaaaafreemarker
+        log.info("aaaafreemarkeraaaa...");
         configuration.setSharedVariable("model", baseModel);
-        // shiro鉴权
+        // shiroaa
         configuration.setSharedVariable("sec", shiroTag);
-        log.info("freemarker全局变量配置完成!");
+        log.info("freemarkeraaaaaaaa!");
 
-        log.info("开始配置freemarker自定义标签...");
+        log.info("aaaafreemarkeraaaaa...");
         configuration.setSharedVariable("tag_topics", topicListDirective);
         configuration.setSharedVariable("tag_other_topic", otherTopicDirective);
         configuration.setSharedVariable("tag_notifications", notificationsDirective);
@@ -76,7 +76,7 @@ public class FreemarkerConfig {
         configuration.setSharedVariable("tag_social_list", socialDirective);
 
         configuration.setSharedVariable("i18n", localeMessageSourceUtil);
-        log.info("freemarker自定义标签配置完成!");
+        log.info("freemarkeraaaaaaaaa!");
     }
 
 }

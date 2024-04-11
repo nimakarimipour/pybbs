@@ -24,7 +24,7 @@ public class NotificationService implements INotificationService {
     @Resource
     private NotificationMapper notificationMapper;
 
-    // 查询消息
+    // aaaa
     @Override
     public List<Map<String, Object>> selectByUserId(Integer userId, Boolean read, Integer limit) {
         List<Map<String, Object>> notifications = notificationMapper.selectByUserId(userId, read, limit);
@@ -36,7 +36,7 @@ public class NotificationService implements INotificationService {
         notificationMapper.updateNotificationStatus(userId);
     }
 
-    // 查询未读消息数量
+    // aaaaaaaa
     @Override
     public long countNotRead(Integer userId) {
         return notificationMapper.countNotRead(userId);

@@ -44,7 +44,7 @@ public class RoleAdminController extends BaseAdminController {
     @RequiresPermissions("role:add")
     @GetMapping("/add")
     public String add(Model model) {
-        // 查询所有的权限
+        // aaaaaaa
         model.addAttribute("permissions", permissionService.selectAll());
         return "admin/role/add";
     }
@@ -60,9 +60,9 @@ public class RoleAdminController extends BaseAdminController {
     @GetMapping("/edit")
     public String edit(Integer id, Model model) {
         model.addAttribute("role", roleService.selectById(id));
-        // 查询当前角色关联的权限
+        // aaaaaaaaaaa
         model.addAttribute("currentPermissions", permissionService.selectByRoleId(id));
-        // 查询所有的权限
+        // aaaaaaa
         model.addAttribute("permissions", permissionService.selectAll());
         return "admin/role/edit";
     }
@@ -78,13 +78,13 @@ public class RoleAdminController extends BaseAdminController {
     @GetMapping("/delete")
     @ResponseBody
     public Result delete(Integer id) {
-        // 先查询还有没有用户关联这个角色,其实这个在数据库里已经做过关联了，如果有用户关联了这个角色，也删不掉，数据库会报错
-        // 不过这里为了用户体验，加一个验证
+        // aaaaaaaaaaaaaaa,aaaaaaaaaaaaaaaa，aaaaaaaaaaaa，aaaa，aaaaaa
+        // aaaaaaaaaa，aaaaa
         List<AdminUser> adminUsers = adminUserService.selectByRoleId(id);
         if (adminUsers.size() > 0) {
             List<String> usernames = adminUsers.stream().map(AdminUser::getUsername).collect(Collectors.toList());
             String s = StringUtils.collectionToCommaDelimitedString(usernames);
-            return error("还有这么多用户关联这个角色：" + s + " 你把它删除，那些用户怎么办？");
+            return error("aaaaaaaaaaaaa：" + s + " aaaaa，aaaaaaa？");
         } else {
             roleService.delete(id);
             return success();

@@ -15,22 +15,22 @@ public class HttpUtil {
         return request.getHeader("Accept") == null || !request.getHeader("Accept").contains("text/html");
     }
 
-    // 根据请求接收的类型定义不同的响应方式
-    // 判断请求对象request里的header里accept字段接收类型
-    // 如果是 text/html 则响应一段js，这里要将response对象的响应内容类型也设置成 text/javascript
-    // 如果是 application/json 则响应一串json，response 对象的响应内容类型要设置成 application/json
-    // 因为响应内容描述是中文，所以都要带上 ;charset=utf-8 否则会有乱码
-    // 写注释真累费劲。。
+    // aaaaaaaaaaaaaaaaaa
+    // aaaaaarequestaaheaderaacceptaaaaaa
+    // aaa text/html aaaaajs，aaaaresponseaaaaaaaaaaaaa text/javascript
+    // aaa application/json aaaaajson，response aaaaaaaaaaaaa application/json
+    // aaaaaaaaaaa，aaaaaa ;charset=utf-8 aaaaaa
+    // aaaaaaa。。
     public static void responseWrite(HttpServletRequest request, HttpServletResponse response) throws IOException {
         if (!HttpUtil.isApiRequest(request)) {
             response.setContentType("text/html;charset=utf-8");
             response.sendRedirect("/login");
-//            response.getWriter().write("<script>alert('请先登录!');window.history.go(-1);</script>");
+//            response.getWriter().write("<script>alert('aaaa!');window.history.go(-1);</script>");
         } else /*if (accept.contains("application/json"))*/ {
             response.setContentType("application/json;charset=utf-8");
             Result result = new Result();
             result.setCode(201);
-            result.setDescription("请先登录");
+            result.setDescription("aaaa");
             response.getWriter().write(JsonUtil.objectToJson(result));
         }
     }

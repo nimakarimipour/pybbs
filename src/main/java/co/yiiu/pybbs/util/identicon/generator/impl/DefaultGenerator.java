@@ -12,7 +12,7 @@ import java.util.Random;
 /**
  * Author: Bryant Hang
  * Date: 15/1/10
- * Time: 下午2:44
+ * Time: aa2:44
  */
 public class DefaultGenerator implements IBaseGenerator {
     private String hash;
@@ -28,7 +28,7 @@ public class DefaultGenerator implements IBaseGenerator {
 
         boolean[][] array = new boolean[6][5];
 
-        //初始化字符串
+        //aaaaaa
         for (int i = 0; i < 6; i++) {
             for (int j = 0; j < 5; j++) {
                 array[i][j] = false;
@@ -36,7 +36,7 @@ public class DefaultGenerator implements IBaseGenerator {
         }
 
         for (int i = 0; i < hash.length(); i += 2) {
-            int s = i / 2; //只取hash字符串偶数编号（从0开始）的字符
+            int s = i / 2; //aahashaaaaaaa（a0aa）aaa
 
             boolean v = DoubleMath.roundToInt(Integer.parseInt(hash.charAt(i) + "", 16) / 10.0, RoundingMode.HALF_UP) > 0 ?
                     true : false;

@@ -7,23 +7,23 @@ import static co.yiiu.pybbs.util.captcha.Randoms.alpha;
 import static co.yiiu.pybbs.util.captcha.Randoms.num;
 
 /**
- * <p>验证码抽象类,暂时不支持中文</p>
+ * <p>aaaaaa,aaaaaaa</p>
  *
  * @author: wuhongjun
  * @version:1.0
  */
 public abstract class Captcha {
 
-    protected Font font = new Font("Verdana", Font.ITALIC | Font.BOLD, 28);   // 字体
-    protected int len = 4;  // 验证码随机字符长度
-    protected int width = 120;  // 验证码显示跨度
-    protected int height = 32;  // 验证码显示高度
-    private String chars = null;  // 随机字符串
+    protected Font font = new Font("Verdana", Font.ITALIC | Font.BOLD, 28);   // aa
+    protected int len = 4;  // aaaaaaaaa
+    protected int width = 120;  // aaaaaaa
+    protected int height = 32;  // aaaaaaa
+    private String chars = null;  // aaaaa
 
     /**
-     * 生成随机字符数组
+     * aaaaaaaa
      *
-     * @return 字符数组
+     * @return aaaa
      */
     protected char[] alphas() {
         char[] cs = new char[len];
@@ -67,9 +67,9 @@ public abstract class Captcha {
     }
 
     /**
-     * 给定范围获得随机颜色
+     * aaaaaaaaaa
      *
-     * @return Color 随机颜色
+     * @return Color aaaa
      */
     protected Color color(int fc, int bc) {
         if (fc > 255) fc = 255;
@@ -81,14 +81,14 @@ public abstract class Captcha {
     }
 
     /**
-     * 验证码输出,抽象方法，由子类实现
+     * aaaaa,aaaa，aaaaa
      *
-     * @param os 输出流
+     * @param os aaa
      */
     public abstract void out(OutputStream os);
 
     /**
-     * 获取随机字符串
+     * aaaaaaa
      *
      * @return string
      */

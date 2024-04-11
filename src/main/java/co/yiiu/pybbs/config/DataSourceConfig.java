@@ -36,9 +36,9 @@ public class DataSourceConfig {
         config.addDataSourceProperty("prepStmtCacheSqlLimit", 2048);
         config.setConnectionTestQuery("SELECT 1");
         config.setAutoCommit(true);
-        //池中最小空闲链接数量
+        //aaaaaaaaaa
         config.setMinimumIdle(10);
-        //池中最大链接数量
+        //aaaaaaaa
         config.setMaximumPoolSize(50);
         dataSource = new HikariDataSource(config);
 //        HikariDataSource dataSource = new HikariDataSource();

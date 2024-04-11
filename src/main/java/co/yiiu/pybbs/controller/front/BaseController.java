@@ -31,7 +31,7 @@ public class BaseController {
         return (User) session.getAttribute("_user");
     }
 
-    // 只针对前台页面的模板路径渲染，后台不变
+    // aaaaaaaaaaaaaa，aaaa
     protected String render(String path) {
         return String.format("theme/%s/%s", systemConfigService.selectAllConfig().get("theme").toString(), path);
     }

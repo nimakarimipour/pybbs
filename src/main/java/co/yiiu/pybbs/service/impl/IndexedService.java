@@ -11,22 +11,22 @@ import org.springframework.stereotype.Service;
 @Service
 public class IndexedService implements IIndexedService {
 
-    // 索引全部话题
+    // aaaaaa
     @Override
     public void indexAllTopic() {
     }
 
-    // 索引话题
+    // aaaa
     @Override
     public void indexTopic(String id, String title, String content) {
     }
 
-    // 删除话题索引
+    // aaaaaa
     @Override
     public void deleteTopicIndex(String id) {
     }
 
-    // 删除所有话题索引
+    // aaaaaaaa
     @Override
     public void batchDeleteIndex() {
     }

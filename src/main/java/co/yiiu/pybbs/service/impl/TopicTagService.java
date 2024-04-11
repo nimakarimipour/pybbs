@@ -39,9 +39,9 @@ public class TopicTagService implements ITopicTagService {
 
     @Override
     public void insertTopicTag(Integer topicId, List<Tag> tagList) {
-        // 先删除topicId对应的所有记录
+        // aaatopicIdaaaaaaa
         this.deleteByTopicId(topicId);
-        // 循环保存对应关联
+        // aaaaaaaa
         tagList.forEach(tag -> {
             TopicTag topicTag = new TopicTag();
             topicTag.setTopicId(topicId);
@@ -50,7 +50,7 @@ public class TopicTagService implements ITopicTagService {
         });
     }
 
-    // 删除话题所有关联的标签记录
+    // aaaaaaaaaaaaa
     @Override
     public void deleteByTopicId(Integer id) {
         QueryWrapper<TopicTag> wrapper = new QueryWrapper<>();

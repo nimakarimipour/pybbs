@@ -49,7 +49,7 @@ public class CookieUtil {
         return null;
     }
 
-    // 清除cookie
+    // aacookie
     public void clearCookie(String name) {
         HttpServletResponse response = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder
                 .getRequestAttributes())).getResponse();

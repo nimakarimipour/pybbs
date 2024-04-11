@@ -39,7 +39,7 @@ public class RedisCachePlugin {
         String topicJson = redisService.getString(String.format(RedisKeys.REDIS_TOPIC_KEY, proceedingJoinPoint.getArgs()[0]));
         if (topicJson == null) {
             Object topic = proceedingJoinPoint.proceed(proceedingJoinPoint.getArgs());
-            // 缓存在redis里
+            // aaaredisa
             redisService.setString(String.format(RedisKeys.REDIS_TOPIC_KEY, proceedingJoinPoint.getArgs()[0]), JsonUtil.objectToJson(topic));
             return topic;
         } else {
@@ -67,7 +67,7 @@ public class RedisCachePlugin {
 
     @Around("co.yiiu.pybbs.hook.TopicServiceHook.vote()")
     public Object voteTopic(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-        // 点赞后删除redis内缓存的topic数据
+        // aaaaaredisaaaatopicaa
         Topic topic = (Topic) proceedingJoinPoint.getArgs()[0];
         redisService.delString(String.format(RedisKeys.REDIS_TOPIC_KEY, topic.getId()));
         return proceedingJoinPoint.proceed(proceedingJoinPoint.getArgs());
@@ -76,7 +76,7 @@ public class RedisCachePlugin {
     @After("co.yiiu.pybbs.hook.TopicServiceHook.update()")
     public void topicUpdate(JoinPoint joinPoint) {
         Topic topic = (Topic) joinPoint.getArgs()[0];
-        // 缓存到redis里
+        // aaaredisa
         redisService.setString(String.format(RedisKeys.REDIS_TOPIC_KEY, topic.getId()), JsonUtil.objectToJson(topic));
     }
 
@@ -89,7 +89,7 @@ public class RedisCachePlugin {
         Integer topicId = (Integer) proceedingJoinPoint.getArgs()[0];
         String commentsJson = redisService.getString(String.format(RedisKeys.REDIS_COMMENTS_KEY, topicId));
         if (commentsJson != null) {
-            // 带泛型转换, 这里如果不带泛型转换，会报错
+            // aaaaa, aaaaaaaaaa，aaa
             return JsonUtil.jsonToListObject(commentsJson, CommentsByTopic.class);
         } else {
             Object returnValue = proceedingJoinPoint.proceed(proceedingJoinPoint.getArgs());
@@ -132,7 +132,7 @@ public class RedisCachePlugin {
         String username = (String) proceedingJoinPoint.getArgs()[0];
         String userJson = redisService.getString(String.format(RedisKeys.REDIS_USER_USERNAME_KEY, username));
         if (userJson != null) {
-            // 带泛型转换, 这里如果不带泛型转换，会报错
+            // aaaaa, aaaaaaaaaa，aaa
             return JsonUtil.jsonToObject(userJson, User.class);
         } else {
             Object returnValue = proceedingJoinPoint.proceed(proceedingJoinPoint.getArgs());
@@ -148,7 +148,7 @@ public class RedisCachePlugin {
         String token = (String) proceedingJoinPoint.getArgs()[0];
         String userJson = redisService.getString(String.format(RedisKeys.REDIS_USER_TOKEN_KEY, token));
         if (userJson != null) {
-            // 带泛型转换, 这里如果不带泛型转换，会报错
+            // aaaaa, aaaaaaaaaa，aaa
             return JsonUtil.jsonToObject(userJson, User.class);
         } else {
             Object returnValue = proceedingJoinPoint.proceed(proceedingJoinPoint.getArgs());
@@ -164,7 +164,7 @@ public class RedisCachePlugin {
         Integer id = (Integer) proceedingJoinPoint.getArgs()[0];
         String userJson = redisService.getString(String.format(RedisKeys.REDIS_USER_ID_KEY, id));
         if (userJson != null) {
-            // 带泛型转换, 这里如果不带泛型转换，会报错
+            // aaaaa, aaaaaaaaaa，aaa
             return JsonUtil.jsonToObject(userJson, User.class);
         } else {
             Object returnValue = proceedingJoinPoint.proceed(proceedingJoinPoint.getArgs());
@@ -186,12 +186,12 @@ public class RedisCachePlugin {
     // ---------- user cache end ----------
 
     static class RedisKeys {
-        public static final String REDIS_TOPIC_KEY = "pybbs_topic_%s"; // 后面还要拼上话题的id
-        public static final String REDIS_TOPIC_VIEW_IP_ID_KEY = "pybbs_topic_view_ip_%s_topic_%s"; // 需要格式化字符串填充上ip地址跟话题id
-        public static final String REDIS_COMMENTS_KEY = "pybbs_comments_%s"; // 后面还要拼上话题的id
+        public static final String REDIS_TOPIC_KEY = "pybbs_topic_%s"; // aaaaaaaaaid
+        public static final String REDIS_TOPIC_VIEW_IP_ID_KEY = "pybbs_topic_view_ip_%s_topic_%s"; // aaaaaaaaaaaipaaaaaid
+        public static final String REDIS_COMMENTS_KEY = "pybbs_comments_%s"; // aaaaaaaaaid
 
-        public static final String REDIS_USER_ID_KEY = "pybbs_user_id_%s"; // 后面还要拼上用户的id
-        public static final String REDIS_USER_USERNAME_KEY = "pybbs_user_username_%s"; // 后面还要拼上用户名
-        public static final String REDIS_USER_TOKEN_KEY = "pybbs_user_token_%s"; // 后面还要拼上用户的token
+        public static final String REDIS_USER_ID_KEY = "pybbs_user_id_%s"; // aaaaaaaaaid
+        public static final String REDIS_USER_USERNAME_KEY = "pybbs_user_username_%s"; // aaaaaaaaa
+        public static final String REDIS_USER_TOKEN_KEY = "pybbs_user_token_%s"; // aaaaaaaaatoken
     }
 }

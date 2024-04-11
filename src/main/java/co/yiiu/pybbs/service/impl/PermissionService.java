@@ -36,7 +36,7 @@ public class PermissionService implements IPermissionService {
         permissionsByRoleId.clear();
     }
 
-    // 根据角色id查询所有的权限, 这个方法调用非常频繁，在内存里缓存一下
+    // aaaaidaaaaaaa, aaaaaaaaaa，aaaaaaaa
     @Override
     public List<Permission> selectByRoleId(Integer roleId) {
         if (permissionsByRoleId.get("roleId_" + roleId) != null) return permissionsByRoleId.get("roleId_" + roleId);
@@ -49,7 +49,7 @@ public class PermissionService implements IPermissionService {
         return permissions;
     }
 
-    // 根据父节点查询子节点
+    // aaaaaaaaaa
     @Override
     public List<Permission> selectByPid(Integer pid) {
         QueryWrapper<Permission> wrapper = new QueryWrapper<>();
@@ -60,9 +60,9 @@ public class PermissionService implements IPermissionService {
     @Override
     public Map<String, List<Permission>> selectAll() {
         Map<String, List<Permission>> map = new LinkedHashMap<>();
-        // 先查父节点
+        // aaaaa
         List<Permission> permissions = this.selectByPid(0);
-        // 再查子节点
+        // aaaaa
         permissions.forEach(permission -> map.put(permission.getName(), this.selectByPid(permission.getId())));
         return map;
     }
@@ -85,20 +85,20 @@ public class PermissionService implements IPermissionService {
     public void delete(Integer id) {
         this.clearPermissionsCache();
         Permission permission = permissionMapper.selectById(id);
-        // 如果是父节点的话，要把所有子节点下的所有关联角色的记录都删了，否则会报错
+        // aaaaaaaa，aaaaaaaaaaaaaaaaaaaaa，aaaaa
         if (permission.getPid() == 0) {
             List<Permission> permissions = this.selectByPid(permission.getId());
             permissions.forEach(permission1 -> {
-                // 先删除role_permission里的关联数据
+                // aaarole_permissionaaaaaa
                 rolePermissionService.deleteByPermissionId(permission1.getId());
-                // 删除子节点
+                // aaaaa
                 permissionMapper.deleteById(permission1.getId());
             });
         } else {
-            // 先删除role_permission里的关联数据
+            // aaarole_permissionaaaaaa
             rolePermissionService.deleteByPermissionId(id);
         }
-        // 删除自己
+        // aaaa
         permissionMapper.deleteById(id);
     }
 

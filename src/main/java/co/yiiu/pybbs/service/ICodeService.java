@@ -10,23 +10,23 @@ import co.yiiu.pybbs.model.Code;
 public interface ICodeService {
     Code selectByCode(String _code);
 
-    // 查询没有用过的code
+    // aaaaaaacode
     Code selectNotUsedCode(Integer userId, String email, String mobile);
 
-    // 创建一条验证码记录
+    // aaaaaaaaa
     Code createCode(Integer userId, String email, String mobile);
 
-    // 验证邮箱验证码
+    // aaaaaaa
     Code validateCode(Integer userId, String email, String mobile, String _code);
 
-    // 发送邮件
+    // aaaa
     boolean sendEmail(Integer userId, String email, String title, String content);
 
-    // 发送短信
+    // aaaa
     boolean sendSms(String mobile);
 
     void update(Code code);
 
-    // 根据用户id删除评论记录
+    // aaaaidaaaaaa
     void deleteByUserId(Integer userId);
 }

@@ -32,7 +32,7 @@ public class CodeService implements ICodeService {
     @Resource
     private SmsService smsService;
 
-    // 递归生成code，防止code重复
+    // aaaacode，aacodeaa
     private String generateToken() {
         String _code = StringUtil.randomNumber(6);
         Code code = this.selectByCode(_code);
@@ -49,7 +49,7 @@ public class CodeService implements ICodeService {
         return codeMapper.selectOne(wrapper);
     }
 
-    // 查询没有用过的code
+    // aaaaaaacode
     @Override
     public Code selectNotUsedCode(Integer userId, String email, String mobile) {
         QueryWrapper<Code> wrapper = new QueryWrapper<>();
@@ -67,7 +67,7 @@ public class CodeService implements ICodeService {
         return codes.get(0);
     }
 
-    // 创建一条验证码记录
+    // aaaaaaaaa
     @Override
     public Code createCode(Integer userId, String email, String mobile) {
         Code code = this.selectNotUsedCode(userId, email, mobile);
@@ -85,7 +85,7 @@ public class CodeService implements ICodeService {
         return code;
     }
 
-    // 验证邮箱验证码
+    // aaaaaaa
     @Override
     public Code validateCode(Integer userId, String email, String mobile, String _code) {
         QueryWrapper<Code> wrapper = new QueryWrapper<>();
@@ -102,17 +102,17 @@ public class CodeService implements ICodeService {
         return codeMapper.selectOne(wrapper);
     }
 
-    // 发送邮件
+    // aaaa
     @Override
     public boolean sendEmail(Integer userId, String email, String title, String content) {
         Code code = this.createCode(userId, email, null);
         return emailService.sendEmail(email, title, content.replace("${code}", code.getCode()));
     }
 
-    // 发送短信
+    // aaaa
     @Override
     public boolean sendSms(String mobile) {
-        // 生成code
+        // aacode
         Code code = this.createCode(null, null, mobile);
         return smsService.sendSms(mobile, code.getCode());
     }
@@ -122,7 +122,7 @@ public class CodeService implements ICodeService {
         codeMapper.updateById(code);
     }
 
-    // 根据用户id删除评论记录
+    // aaaaidaaaaaa
     @Override
     public void deleteByUserId(Integer userId) {
         QueryWrapper<Code> wrapper = new QueryWrapper<>();

@@ -14,7 +14,7 @@ public class MessageDecoder implements Decoder.Text<Message> {
 
     @Override
     public boolean willDecode(String s) {
-        // 验证json字符串是否合法，合法才会进入decode()方法进行转换，不合法直接抛异常
+        // aajsonaaaaaaa，aaaaaadecode()aaaaaa，aaaaaaaa
         return JSON.isValid(s);
     }
 

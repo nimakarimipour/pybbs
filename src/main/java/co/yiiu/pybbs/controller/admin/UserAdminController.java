@@ -26,7 +26,7 @@ public class UserAdminController extends BaseAdminController {
     @Resource
     private IUserService userService;
 
-    // 前台用户管理
+    // aaaaaa
     @RequiresPermissions("user:list")
     @GetMapping("/list")
     public String list(@RequestParam(defaultValue = "1") Integer pageNo, String username, Model model) {
@@ -38,7 +38,7 @@ public class UserAdminController extends BaseAdminController {
         return "admin/user/list";
     }
 
-    // 编辑用户
+    // aaaa
     @RequiresPermissions("user:edit")
     @GetMapping("/edit")
     public String edit(Integer id, Model model) {
@@ -46,24 +46,24 @@ public class UserAdminController extends BaseAdminController {
         return "admin/user/edit";
     }
 
-    // 保存编辑后的用户信息
+    // aaaaaaaaaa
     @RequiresPermissions("user:edit")
     @PostMapping("/edit")
     @ResponseBody
     public Result update(User user) {
-        // 如果密码不为空，给加密一下再保存
+        // aaaaaaa，aaaaaaaa
         if (!StringUtils.isEmpty(user.getPassword())) {
             user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
         } else {
             user.setPassword(null);
         }
-        // 如果邮件接收通知没有勾选，user对象里的属性就是null，手动设置成false
+        // aaaaaaaaaaaa，useraaaaaaaanull，aaaaafalse
         if (user.getEmailNotification() == null) user.setEmailNotification(false);
         userService.update(user);
         return success();
     }
 
-    // 删除用户
+    // aaaa
     @RequiresPermissions("user:delete")
     @GetMapping("/delete")
     @ResponseBody
@@ -72,7 +72,7 @@ public class UserAdminController extends BaseAdminController {
         return success();
     }
 
-    // 刷新token
+    // aatoken
     @RequiresPermissions("user:refresh_token")
     @GetMapping("/refreshToken")
     @ResponseBody

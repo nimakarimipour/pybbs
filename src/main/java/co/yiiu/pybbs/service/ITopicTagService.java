@@ -17,6 +17,6 @@ public interface ITopicTagService {
 
     void insertTopicTag(Integer topicId, List<Tag> tagList);
 
-    // 删除话题所有关联的标签记录
+    // aaaaaaaaaaaaa
     void deleteByTopicId(Integer id);
 }

@@ -16,7 +16,7 @@ public class Permission implements Serializable {
     private Integer id;
     private String name;
     private String value;
-    // 权限的父节点的id
+    // aaaaaaaid
     private Integer pid;
 
     public Integer getId() {

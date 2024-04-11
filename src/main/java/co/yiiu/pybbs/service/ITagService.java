@@ -21,29 +21,29 @@ public interface ITagService {
 
     List<Tag> selectByIds(List<Integer> ids);
 
-    // 根据话题查询关联的所有标签
+    // aaaaaaaaaaaaa
     List<Tag> selectByTopicId(Integer topicId);
 
-    // 将创建话题时填的tag处理并保存
+    // aaaaaaaatagaaaaa
     List<Tag> insertTag(String newTags);
 
-    // 将标签的话题数都-1
+    // aaaaaaaa-1
     void reduceTopicCount(Integer id);
 
-    // 查询标签关联的话题
+    // aaaaaaaaa
     MyPage<Map<String, Object>> selectTopicByTagId(Integer tagId, Integer pageNo);
 
-    // 查询标签列表
+    // aaaaaa
     IPage<Tag> selectAll(Integer pageNo, Integer pageSize, String name);
 
     void update(Tag tag);
 
-    // 如果 topic_tag 表里还有关联的数据，这里删除会报错
+    // aa topic_tag aaaaaaaaa，aaaaaaa
     void delete(Integer id);
 
-    //同步标签的话题数
+    //aaaaaaaa
     void async();
 
-    // 查询今天新增的标签数
+    // aaaaaaaaaa
     int countToday();
 }

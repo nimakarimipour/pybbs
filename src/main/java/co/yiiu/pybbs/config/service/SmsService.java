@@ -52,13 +52,13 @@ public class SmsService {
         return client;
     }
 
-    // 发短信
+    // aaa
     public boolean sendSms(String mobile, String code) {
         try {
             if (StringUtils.isEmpty(mobile)) return false;
-            // 获取连接
+            // aaaa
             if (this.instance() == null) return false;
-            // 构建请求体
+            // aaaaa
             CommonRequest request = new CommonRequest();
             //request.setProtocol(ProtocolType.HTTPS);
             request.setMethod(MethodType.POST);

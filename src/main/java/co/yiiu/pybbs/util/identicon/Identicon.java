@@ -26,7 +26,7 @@ import java.util.Base64;
 /**
  * Author: Bryant Hang
  * Date: 15/1/10
- * Time: 下午2:42
+ * Time: aa2:42
  */
 @Component
 public class Identicon {
@@ -52,10 +52,10 @@ public class Identicon {
         BufferedImage identicon = new BufferedImage(ratio * 6, ratio * 6, BufferedImage.TYPE_INT_ARGB);
         Graphics graphics = identicon.getGraphics();
 
-        graphics.setColor(generator.getBackgroundColor()); // 背景色
+        graphics.setColor(generator.getBackgroundColor()); // aaa
         graphics.fillRect(0, 0, identicon.getWidth(), identicon.getHeight());
 
-        graphics.setColor(generator.getForegroundColor()); // 图案前景色
+        graphics.setColor(generator.getForegroundColor()); // aaaaa
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 if (array[i][j]) {
@@ -109,9 +109,9 @@ public class Identicon {
 
     //  public String saveFileToQiniu(byte[] data) {
     //    try {
-    //      //构造一个带指定Zone对象的配置类
+    //      //aaaaaaaZoneaaaaaa
     //      Configuration cfg = new Configuration(Zone.zone2());
-    //      //...其他参数参考类注释
+    //      //...aaaaaaaaa
     //      UploadManager uploadManager = new UploadManager(cfg);
     //      Auth auth = Auth.create(siteConfig.getUpload().getQiniu().getAccessKey(), siteConfig.getUpload().getQiniu()
     // .getSecretKey());

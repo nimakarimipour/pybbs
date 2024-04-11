@@ -34,14 +34,14 @@ public class UserController extends BaseController {
 
     @GetMapping("/{username}")
     public String profile(@PathVariable String username, Model model) {
-        // 查询用户个人信息
+        // aaaaaaaa
         User user = userService.selectByUsername(username);
-        // 查询oauth登录的用户信息
+        // aaoauthaaaaaaa
         List<OAuthUser> oAuthUsers = oAuthUserService.selectByUserId(user.getId());
-        // 查询用户收藏的话题数
+        // aaaaaaaaaa
         Integer collectCount = collectService.countByUserId(user.getId());
 
-        // 找出oauth登录里有没有github，有的话把github的login提取出来
+        // aaoauthaaaaaagithub，aaaagithubaloginaaaa
         List<String> logins = oAuthUsers.stream().filter(oAuthUser -> oAuthUser.getType().equals("GITHUB")).map
                 (OAuthUser::getLogin).collect(Collectors.toList());
         if (logins.size() > 0) {

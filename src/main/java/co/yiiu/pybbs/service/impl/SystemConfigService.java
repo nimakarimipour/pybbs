@@ -41,7 +41,7 @@ public class SystemConfigService implements ISystemConfigService {
         return SYSTEM_CONFIG;
     }
 
-    // 根据键取值
+    // aaaaa
     @Override
     public SystemConfig selectByKey(String key) {
         QueryWrapper<SystemConfig> wrapper = new QueryWrapper<>();
@@ -53,10 +53,10 @@ public class SystemConfigService implements ISystemConfigService {
     public Map<String, Object> selectAll() {
         Map<String, Object> map = new LinkedHashMap<>();
         List<SystemConfig> systemConfigs = systemConfigMapper.selectList(null);
-        // 先提取出所有父节点
+        // aaaaaaaaa
         List<SystemConfig> p = systemConfigs.stream().filter(systemConfig -> systemConfig.getPid() == 0).collect
                 (Collectors.toList());
-        // 遍历父节点取父节点下的所有子节点
+        // aaaaaaaaaaaaaaaa
         p.forEach(systemConfig -> {
             List<SystemConfig> collect = systemConfigs.stream()
                     .filter(systemConfig1 -> systemConfig1.getPid().equals(systemConfig.getId()))
@@ -66,13 +66,13 @@ public class SystemConfigService implements ISystemConfigService {
         return map;
     }
 
-    // 在更新系统设置后，清一下selectAllConfig()的缓存
+    // aaaaaaaa，aaaselectAllConfig()aaa
     @Override
     public void update(List<Map<String, String>> list) {
         for (Map<String, String> map : list) {
             String key = map.get("name");
             String value = map.get("value");
-            // 如果密码没有变动，则不做修改
+            // aaaaaaaa，aaaaa
             String type = this.selectByKey(key).getType();
             if (!StringUtils.isEmpty(type) && type.equals("password") && value.equals("*******")) {
                 continue;
@@ -84,18 +84,18 @@ public class SystemConfigService implements ISystemConfigService {
             wrapper.lambda().eq(SystemConfig::getKey, systemConfig.getKey());
             systemConfigMapper.update(systemConfig, wrapper);
         }
-        // 更新SYSTEM_CONFIG
+        // aaSYSTEM_CONFIG
         SYSTEM_CONFIG = null;
         SYSTEM_CONFIG_WITHOUT_PASSWORD = null;
     }
 
-    // 根据key更新数据
+    // aakeyaaaa
     @Override
     public void updateByKey(String key, SystemConfig systemConfig) {
         QueryWrapper<SystemConfig> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(SystemConfig::getKey, key);
         systemConfigMapper.update(systemConfig, wrapper);
-        // 更新SYSTEM_CONFIG
+        // aaSYSTEM_CONFIG
         SYSTEM_CONFIG = null;
         SYSTEM_CONFIG_WITHOUT_PASSWORD = null;
     }

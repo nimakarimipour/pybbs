@@ -32,18 +32,18 @@ public class UserApiController extends BaseApiController {
     @Resource
     private IOAuthUserService oAuthUserService;
 
-    // 用户的个人信息
+    // aaaaaaa
     @GetMapping("/{username}")
     public Result profile(@PathVariable String username) {
-        // 查询用户个人信息
+        // aaaaaaaa
         User user = userService.selectByUsername(username);
-        // 查询oauth登录的用户信息
+        // aaoauthaaaaaaa
         List<OAuthUser> oAuthUsers = oAuthUserService.selectByUserId(user.getId());
-        // 查询用户的话题
+        // aaaaaaa
         MyPage<Map<String, Object>> topics = topicService.selectByUserId(user.getId(), 1, 10);
-        // 查询用户参与的评论
+        // aaaaaaaaa
         MyPage<Map<String, Object>> comments = commentService.selectByUserId(user.getId(), 1, 10);
-        // 查询用户收藏的话题数
+        // aaaaaaaaaa
         Integer collectCount = collectService.countByUserId(user.getId());
 
         Map<String, Object> map = new HashMap<>();
@@ -55,12 +55,12 @@ public class UserApiController extends BaseApiController {
         return success(map);
     }
 
-    // 用户发布的话题
+    // aaaaaaa
     @GetMapping("/{username}/topics")
     public Result topics(@PathVariable String username, @RequestParam(defaultValue = "1") Integer pageNo) {
-        // 查询用户个人信息
+        // aaaaaaaa
         User user = userService.selectByUsername(username);
-        // 查询用户的话题
+        // aaaaaaa
         MyPage<Map<String, Object>> topics = topicService.selectByUserId(user.getId(), pageNo, null);
         Map<String, Object> map = new HashMap<>();
         map.put("user", user);
@@ -68,12 +68,12 @@ public class UserApiController extends BaseApiController {
         return success(map);
     }
 
-    // 用户评论列表
+    // aaaaaa
     @GetMapping("/{username}/comments")
     public Result comments(@PathVariable String username, @RequestParam(defaultValue = "1") Integer pageNo) {
-        // 查询用户个人信息
+        // aaaaaaaa
         User user = userService.selectByUsername(username);
-        // 查询用户参与的评论
+        // aaaaaaaaa
         MyPage<Map<String, Object>> comments = commentService.selectByUserId(user.getId(), pageNo, null);
         Map<String, Object> map = new HashMap<>();
         map.put("user", user);
@@ -81,12 +81,12 @@ public class UserApiController extends BaseApiController {
         return success(map);
     }
 
-    // 用户收藏的话题
+    // aaaaaaa
     @GetMapping("/{username}/collects")
     public Result collects(@PathVariable String username, @RequestParam(defaultValue = "1") Integer pageNo) {
-        // 查询用户个人信息
+        // aaaaaaaa
         User user = userService.selectByUsername(username);
-        // 查询用户参与的评论
+        // aaaaaaaaa
         MyPage<Map<String, Object>> collects = collectService.selectByUserId(user.getId(), pageNo, null);
         Map<String, Object> map = new HashMap<>();
         map.put("user", user);

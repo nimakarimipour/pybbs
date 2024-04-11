@@ -18,22 +18,22 @@ public class Topic implements Serializable {
     @TableId(type = IdType.AUTO)
     private Integer id;
     private String title;
-    private String style; // 内容格式化，RICH，MD
+    private String style; // aaaaa，RICH，MD
     private String content;
     private Date inTime;
     private Date modifyTime;
     private Integer userId;
-    // 评论数
+    // aaa
     private Integer commentCount;
-    // 收藏数
+    // aaa
     private Integer collectCount;
-    // 浏览数
+    // aaa
     private Integer view;
-    // 置顶
+    // aa
     private Boolean top;
-    // 加精
+    // aa
     private Boolean good;
-    // 点赞用户的id英文,隔开的，要计算被多少人点赞过，可以通过英文,分隔这个字符串计算数量
+    // aaaaaidaa,aaa，aaaaaaaaaa，aaaaaa,aaaaaaaaaaa
     private String upIds;
 
     public String getStyle() {

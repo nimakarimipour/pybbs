@@ -5,11 +5,11 @@ import java.awt.*;
 /**
  * Author: Bryant Hang
  * Date: 15/1/10
- * Time: 下午2:43
+ * Time: aa2:43
  */
 public interface IBaseGenerator {
     /**
-     * 将hash字符串转换为bool二维6*5数组
+     * ahashaaaaaaboolaa6*5aa
      *
      * @param hash
      * @return
@@ -18,7 +18,7 @@ public interface IBaseGenerator {
 
 
     /**
-     * 获取图片背景色
+     * aaaaaaa
      *
      * @return
      */
@@ -26,7 +26,7 @@ public interface IBaseGenerator {
 
 
     /**
-     * 获取图案前景色
+     * aaaaaaa
      *
      * @return
      */

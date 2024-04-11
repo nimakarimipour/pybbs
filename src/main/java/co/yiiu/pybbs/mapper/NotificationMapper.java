@@ -19,11 +19,11 @@ public interface NotificationMapper extends BaseMapper<Notification> {
     List<Map<String, Object>> selectByUserId(@Param("userId") Integer userId, @Param("read") Boolean read, @Param
             ("limit") Integer limit);
 
-    // 查询未读消息数量
+    // aaaaaaaa
     @Select("select count(1) from notification where target_user_id = #{userId} and `read` = false")
     long countNotRead(@Param("userId") Integer userId);
 
-    // 将未读消息置为已读
+    // aaaaaaaaa
     @Update("update notification set `read` = true where target_user_id = #{targetUserId}")
     void updateNotificationStatus(@Param("targetUserId") Integer targetUserId);
 }

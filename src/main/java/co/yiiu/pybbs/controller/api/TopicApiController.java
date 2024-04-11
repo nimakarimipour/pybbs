@@ -41,27 +41,27 @@ public class TopicApiController extends BaseApiController {
     @Resource
     private ICollectService collectService;
 
-    // 话题详情
+    // aaaa
     @GetMapping("/{id}")
     public Result detail(@PathVariable Integer id, HttpServletRequest request) {
         Map<String, Object> map = new HashMap<>();
-        // 查询话题详情
+        // aaaaaa
         Topic topic = topicService.selectById(id);
-        // 查询话题关联的标签
+        // aaaaaaaaa
         List<Tag> tags = tagService.selectByTopicId(id);
-        // 查询话题的评论
+        // aaaaaaa
         List<CommentsByTopic> comments = commentService.selectByTopicId(id);
-        // 查询话题的作者信息
+        // aaaaaaaaa
         User topicUser = userService.selectById(topic.getUserId());
-        // 查询话题有多少收藏
+        // aaaaaaaaa
         List<Collect> collects = collectService.selectByTopicId(id);
-        // 如果自己登录了，查询自己是否收藏过这个话题
+        // aaaaaaa，aaaaaaaaaaaaa
         User user = getApiUser(false);
         if (user != null) {
             Collect collect = collectService.selectByTopicIdAndUserId(id, user.getId());
             map.put("collect", collect);
         }
-        // 话题浏览量+1
+        // aaaaa+1
         String ip = IpUtil.getIpAddr(request);
         ip = ip.replace(":", "_").replace(".", "_");
         topic = topicService.updateViewCount(topic, ip);
@@ -75,39 +75,39 @@ public class TopicApiController extends BaseApiController {
         return success(map);
     }
 
-    // 保存话题
+    // aaaa
     @PostMapping
     public Result create(@RequestBody Map<String, String> body) {
         User user = getApiUser();
-        ApiAssert.isTrue(user.getActive(), "你的帐号还没有激活，请去个人设置页面激活帐号");
+        ApiAssert.isTrue(user.getActive(), "aaaaaaaaa，aaaaaaaaaaaa");
         String title = body.get("title");
         String content = body.get("content");
         String tag = body.get("tag");
         //    String tags = body.get("tags");
         title = Jsoup.clean(title, Whitelist.basic());
-        ApiAssert.notEmpty(title, "请输入标题");
-        ApiAssert.isNull(topicService.selectByTitle(title), "话题标题重复");
+        ApiAssert.notEmpty(title, "aaaaa");
+        ApiAssert.isNull(topicService.selectByTitle(title), "aaaaaa");
         //    String[] strings = StringUtils.commaDelimitedListToStringArray(tags);
         //    Set<String> set = StringUtil.removeEmpty(strings);
-        //    ApiAssert.notTrue(set.isEmpty() || set.size() > 5, "请输入标签且标签最多5个");
-        // 保存话题
-        // 再次将tag转成逗号隔开的字符串
+        //    ApiAssert.notTrue(set.isEmpty() || set.size() > 5, "aaaaaaaaaa5a");
+        // aaaa
+        // aaatagaaaaaaaaaa
         //    tags = StringUtils.collectionToCommaDelimitedString(set);
         Topic topic = topicService.insert(title, content, tag, user);
         topic.setContent(SensitiveWordUtil.replaceSensitiveWord(topic.getContent(), "*", SensitiveWordUtil.MinMatchType));
         return success(topic);
     }
 
-    // 更新话题
+    // aaaa
     @PutMapping(value = "/{id}")
     public Result edit(@PathVariable Integer id, @RequestBody Map<String, String> body) {
         User user = getApiUser();
         String title = body.get("title");
         String content = body.get("content");
-        ApiAssert.notEmpty(title, "请输入标题");
-        // 更新话题
+        ApiAssert.notEmpty(title, "aaaaa");
+        // aaaa
         Topic topic = topicService.selectById(id);
-        ApiAssert.isTrue(topic.getUserId().equals(user.getId()), "谁给你的权限修改别人的话题的？");
+        ApiAssert.isTrue(topic.getUserId().equals(user.getId()), "aaaaaaaaaaaaaa？");
         topic.setTitle(Jsoup.clean(title, Whitelist.none().addTags("video")));
         topic.setContent(content);
         topic.setModifyTime(new Date());
@@ -116,12 +116,12 @@ public class TopicApiController extends BaseApiController {
         return success(topic);
     }
 
-    // 删除话题
+    // aaaa
     @DeleteMapping("{id}")
     public Result delete(@PathVariable Integer id) {
         User user = getApiUser();
         Topic topic = topicService.selectById(id);
-        ApiAssert.isTrue(topic.getUserId().equals(user.getId()), "谁给你的权限删除别人的话题的？");
+        ApiAssert.isTrue(topic.getUserId().equals(user.getId()), "aaaaaaaaaaaaaa？");
         topicService.delete(topic);
         return success();
     }
@@ -130,8 +130,8 @@ public class TopicApiController extends BaseApiController {
     public Result vote(@PathVariable Integer id) {
         User user = getApiUser();
         Topic topic = topicService.selectById(id);
-        ApiAssert.notNull(topic, "这个话题可能已经被删除了");
-        ApiAssert.notTrue(topic.getUserId().equals(user.getId()), "给自己话题点赞，脸皮真厚！！");
+        ApiAssert.notNull(topic, "aaaaaaaaaaaa");
+        ApiAssert.notTrue(topic.getUserId().equals(user.getId()), "aaaaaaa，aaaa！！");
         int voteCount = topicService.vote(topic, getApiUser());
         return success(voteCount);
     }

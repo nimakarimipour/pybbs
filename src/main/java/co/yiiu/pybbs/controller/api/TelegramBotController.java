@@ -62,13 +62,13 @@ public class TelegramBotController extends BaseApiController {
             if (data.equals("del_btn")) {
                 if (comment != null) {
                     commentService.delete(comment);
-                    telegramBotService.init().sendMessage("已删除", false, comment.getTgMessageId());
+                    telegramBotService.init().sendMessage("aaa", false, comment.getTgMessageId());
                 }
             } else if (data.equals("pass_btn")) {
                 if (comment != null && comment.getStatus() != null && !comment.getStatus() && systemConfigService.selectAllConfig().get("comment_need_examine").equals("1")) {
                     comment.setStatus(true);
                     commentService.update(comment);
-                    telegramBotService.init().sendMessage("审核通过", false, comment.getTgMessageId());
+                    telegramBotService.init().sendMessage("aaaa", false, comment.getTgMessageId());
                 }
             }
         }

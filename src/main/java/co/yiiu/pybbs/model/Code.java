@@ -16,18 +16,18 @@ public class Code implements Serializable {
     private static final long serialVersionUID = -6008460350253418202L;
     @TableId(type = IdType.AUTO)
     private Integer id;
-    // 关联是哪个用户的验证码
+    // aaaaaaaaaaa
     private Integer userId;
-    // 邮件链接里附带上的验证码
+    // aaaaaaaaaaaa
     private String code;
     private Date inTime;
-    // 过期时间
+    // aaaa
     private Date expireTime;
-    // 要修改的邮箱
+    // aaaaaa
     private String email;
-    // 手机号
+    // aaa
     private String mobile;
-    // 是否使用过
+    // aaaaa
     private Boolean used;
 
     public Integer getUserId() {

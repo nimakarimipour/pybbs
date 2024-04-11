@@ -7,9 +7,9 @@
 //import org.springframework.web.filter.CorsFilter;
 //
 ///**
-// * 如果出现跨域问题，把这个类注释打开
+// * aaaaaaaa，aaaaaaaa
 // * <p>
-// * 正常开发原生app是没有跨域问题的，当开发前端项目时就会有了，这时候就需要这个类来解决跨域问题了
+// * aaaaaaappaaaaaaaa，aaaaaaaaaaaa，aaaaaaaaaaaaaaaaa
 // */
 //@Configuration
 //public class GlobalCorsConfiguration {

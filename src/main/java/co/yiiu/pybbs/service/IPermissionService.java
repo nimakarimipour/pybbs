@@ -12,13 +12,13 @@ import java.util.Map;
  */
 public interface IPermissionService {
 
-    // 更新角色关联的权限时调用一下，清除缓存，让权限实时生效
+    // aaaaaaaaaaaaaa，aaaa，aaaaaaa
     void clearRolePermissionCache();
 
-    // 根据角色id查询所有的权限
+    // aaaaidaaaaaaa
     List<Permission> selectByRoleId(Integer roleId);
 
-    // 根据父节点查询子节点
+    // aaaaaaaaaa
     List<Permission> selectByPid(Integer pid);
 
     Map<String, List<Permission>> selectAll();

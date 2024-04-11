@@ -68,7 +68,7 @@ public class TagService implements ITagService {
         return tagMapper.selectList(wrapper);
     }
 
-    // 根据话题查询关联的所有标签
+    // aaaaaaaaaaaaa
     @Override
     public List<Tag> selectByTopicId(Integer topicId) {
         List<TopicTag> topicTags = topicTagService.selectByTopicId(topicId);
@@ -81,10 +81,10 @@ public class TagService implements ITagService {
         return Lists.newArrayList();
     }
 
-    // 将创建话题时填的tag处理并保存
+    // aaaaaaaatagaaaaa
     @Override
     public List<Tag> insertTag(String newTags) {
-        // 使用工具将字符串按逗号分隔成数组
+        // aaaaaaaaaaaaaaaa
         String[] _tags = StringUtils.commaDelimitedListToStringArray(newTags);
         List<Tag> tagList = new ArrayList<>();
         for (String _tag : _tags) {
@@ -104,7 +104,7 @@ public class TagService implements ITagService {
         return tagList;
     }
 
-    // 将标签的话题数都-1
+    // aaaaaaaa-1
     @Override
     public void reduceTopicCount(Integer id) {
         List<Tag> tags = this.selectByTopicId(id);
@@ -114,7 +114,7 @@ public class TagService implements ITagService {
         });
     }
 
-    // 查询标签关联的话题
+    // aaaaaaaaa
     @Override
     public MyPage<Map<String, Object>> selectTopicByTagId(Integer tagId, Integer pageNo) {
         MyPage<Map<String, Object>> iPage = new MyPage<>(pageNo, Integer.parseInt(systemConfigService.selectAllConfig()
@@ -122,13 +122,13 @@ public class TagService implements ITagService {
         return tagMapper.selectTopicByTagId(iPage, tagId);
     }
 
-    // 查询标签列表
+    // aaaaaa
     @Override
     public IPage<Tag> selectAll(Integer pageNo, Integer pageSize, String name) {
         IPage<Tag> iPage = new MyPage<>(pageNo, pageSize == null ? Integer.parseInt(systemConfigService.selectAllConfig()
                 .get("page_size").toString()) : pageSize);
         QueryWrapper<Tag> wrapper = new QueryWrapper<>();
-        // 当传进来的name不为null的时候，就根据name查询
+        // aaaaanameaanullaaa，aaanameaa
         if (!StringUtils.isEmpty(name)) {
             wrapper.lambda().eq(Tag::getName, name);
         }
@@ -141,7 +141,7 @@ public class TagService implements ITagService {
         tagMapper.updateById(tag);
     }
 
-    // 如果 topic_tag 表里还有关联的数据，这里删除会报错
+    // aa topic_tag aaaaaaaaa，aaaaaaa
     @Override
     public void delete(Integer id) {
         tagMapper.deleteById(id);
@@ -150,7 +150,7 @@ public class TagService implements ITagService {
     // ---------------------------- admin ----------------------------
 
 
-    //同步标签的话题数
+    //aaaaaaaa
     @Override
     public void async() {
         List<Tag> tags = tagMapper.selectList(null);
@@ -161,7 +161,7 @@ public class TagService implements ITagService {
         });
     }
 
-    // 查询今天新增的标签数
+    // aaaaaaaaaa
     @Override
     public int countToday() {
         return tagMapper.countToday();

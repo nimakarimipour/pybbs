@@ -63,7 +63,7 @@ public class OAuthController extends BaseController {
         String username = authUser.getUsername();
         String githubId = authUser.getUuid();
 
-        // 拿用户信息
+        // aaaaa
         String avatarUrl = authUser.getAvatar();
         String bio = authUser.getRemark();
         String email = authUser.getEmail();
@@ -76,7 +76,7 @@ public class OAuthController extends BaseController {
             if (userService.selectByUsername(username) != null) {
                 username = username + githubId;
             }
-            // 先创建user，然后再创建oauthUser
+            // aaauser，aaaaaoauthUser
             user = userService.addUser(username, null, avatarUrl, email, bio, blog, StringUtils.isEmpty(email));
             oAuthUserService.addOAuthUser(Integer.parseInt(githubId), type.toUpperCase(), authUser.getUsername(), accessToken, bio, email, user.getId
                     (), null, null, null);
@@ -88,9 +88,9 @@ public class OAuthController extends BaseController {
             oAuthUserService.update(oAuthUser);
         }
 
-        // 将用户信息写session
+        // aaaaaasession
         session.setAttribute("_user", user);
-        // 将用户token写cookie
+        // aaatokenacookie
         cookieUtil.setCookie(systemConfigService.selectAllConfig().get("cookie_name").toString(), user.getToken());
 
         return redirect("/");

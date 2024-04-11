@@ -57,7 +57,7 @@ public class TopicAdminController extends BaseAdminController {
     @GetMapping("/edit")
     public String edit(Integer id, Model model) {
         model.addAttribute("topic", topicService.selectById(id));
-        // 将标签集合转成逗号隔开的字符串
+        // aaaaaaaaaaaaaaa
         List<Tag> tagList = tagService.selectByTopicId(id);
         String tags = StringUtils.collectionToCommaDelimitedString(tagList.stream().map(Tag::getName).collect(Collectors
                 .toList()));
@@ -70,7 +70,7 @@ public class TopicAdminController extends BaseAdminController {
     @ResponseBody
     public Result update(Integer id, String title, String content, String tags) {
         title = Jsoup.clean(title, Whitelist.basic());
-        ApiAssert.notEmpty(title, "话题标题不能为空");
+        ApiAssert.notEmpty(title, "aaaaaaaa");
 
         Topic topic = topicService.selectById(id);
         topic.setTitle(title);
@@ -129,7 +129,7 @@ public class TopicAdminController extends BaseAdminController {
     @RequiresPermissions("topic:delete_index")
     @GetMapping("/delete_index")
     @ResponseBody
-    public Result delete_index(String id) { // ajax传过来的id，这用String接收，不用再转一次了
+    public Result delete_index(String id) { // ajaxaaaaid，aaStringaa，aaaaaaa
         indexedService.deleteTopicIndex(id);
         return success();
     }

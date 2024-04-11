@@ -27,14 +27,14 @@ public class CommentLayerPlugin {
     public Object selectByTopicId(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         List<CommentsByTopic> newComments = (List<CommentsByTopic>) proceedingJoinPoint.proceed(proceedingJoinPoint.getArgs());
         if (systemConfigService.selectAllConfig().get("comment_layer").equals("1")) {
-            // 盖楼显示评论
+            // aaaaaa
             return this.sortByLayer(newComments);
         }
         return newComments;
     }
 
-    // 盖楼排序
-    // ！！！想来想去还是要用到两层for循环，求大神优化这部分代码，越快越好！！！
+    // aaaa
+    // ！！！aaaaaaaaaaaforaa，aaaaaaaaaa，aaaa！！！
     private List<CommentsByTopic> sortByLayer(List<CommentsByTopic> comments) {
         List<CommentsByTopic> newComments = new ArrayList<>();
         for (CommentsByTopic comment : comments) {

@@ -50,7 +50,7 @@ public class ElasticSearchService implements BaseService<RestHighLevelClient> {
     private ISystemConfigService systemConfigService;
     private final Logger log = LoggerFactory.getLogger(ElasticSearchService.class);
     private RestHighLevelClient client;
-    // 索引名
+    // aaa
     private String name;
 
     public static XContentBuilder topicMappingBuilder;
@@ -94,7 +94,7 @@ public class ElasticSearchService implements BaseService<RestHighLevelClient> {
 
             if (StringUtils.isEmpty(host) || StringUtils.isEmpty(port)) return null;
             client = new RestHighLevelClient(RestClient.builder(new HttpHost(host, Integer.parseInt(port), "http")));
-            // 判断索引是否存在，不存在创建
+            // aaaaaaaa，aaaaa
             if (!this.existIndex()) this.createIndex("topic", topicMappingBuilder);
             return client;
         } catch (NumberFormatException e) {
@@ -103,7 +103,7 @@ public class ElasticSearchService implements BaseService<RestHighLevelClient> {
         }
     }
 
-    // 创建索引
+    // aaaa
     public boolean createIndex(String type, XContentBuilder mappingBuilder) {
         try {
             if (this.instance() == null) return false;
@@ -118,7 +118,7 @@ public class ElasticSearchService implements BaseService<RestHighLevelClient> {
         }
     }
 
-    // 检查索引是否存在
+    // aaaaaaaa
     public boolean existIndex() {
         try {
             if (this.instance() == null) return false;
@@ -133,7 +133,7 @@ public class ElasticSearchService implements BaseService<RestHighLevelClient> {
         }
     }
 
-    // 删除索引
+    // aaaa
     public boolean deleteIndex() {
         try {
             if (this.instance() == null) return false;
@@ -147,7 +147,7 @@ public class ElasticSearchService implements BaseService<RestHighLevelClient> {
         }
     }
 
-    // 创建文档
+    // aaaa
     public void createDocument(String type, String id, Map<String, Object> source) {
         try {
             if (this.instance() == null) return;
@@ -159,7 +159,7 @@ public class ElasticSearchService implements BaseService<RestHighLevelClient> {
         }
     }
 
-    // 更新文档
+    // aaaa
     public void updateDocument(String type, String id, Map<String, Object> source) {
         try {
             if (this.instance() == null) return;
@@ -171,7 +171,7 @@ public class ElasticSearchService implements BaseService<RestHighLevelClient> {
         }
     }
 
-    // 删除文档
+    // aaaa
     public void deleteDocument(String type, String id) {
         try {
             if (this.instance() == null) return;
@@ -182,7 +182,7 @@ public class ElasticSearchService implements BaseService<RestHighLevelClient> {
         }
     }
 
-    // 批量创建文档
+    // aaaaaa
     public void bulkDocument(String type, Map<String, Map<String, Object>> sources) {
         try {
             if (this.instance() == null) return;
@@ -207,7 +207,7 @@ public class ElasticSearchService implements BaseService<RestHighLevelClient> {
         }
     }
 
-    // 批量删除文档
+    // aaaaaa
     public void bulkDeleteDocument(String type, List<Integer> ids) {
         try {
             if (this.instance() == null) return;
@@ -230,13 +230,13 @@ public class ElasticSearchService implements BaseService<RestHighLevelClient> {
     }
 
     /**
-     * 查询
+     * aa
      *
      * @param pageNo
      * @param pageSize
-     * @param keyword  要查询的内容
-     * @param fields   要查询的字段，可以为多个
-     * @return 分页对象 {@link Page}
+     * @param keyword  aaaaaa
+     * @param fields   aaaaaa，aaaaa
+     * @return aaaa {@link Page}
      */
     public MyPage<Map<String, Object>> searchDocument(Integer pageNo, Integer pageSize, String keyword, String... fields) {
         try {
@@ -247,9 +247,9 @@ public class ElasticSearchService implements BaseService<RestHighLevelClient> {
             builder.from((pageNo - 1) * pageSize).size(pageSize);
             request.source(builder);
             SearchResponse response = client.search(request, RequestOptions.DEFAULT);
-            // 总条数
+            // aaa
             long totalCount = response.getHits().getTotalHits();
-            // 结果集
+            // aaa
             List<Map<String, Object>> records = Arrays.stream(response.getHits().getHits()).map(hit -> {
                 Map<String, Object> map = new HashMap<>();
                 map.put("id", hit.getId());

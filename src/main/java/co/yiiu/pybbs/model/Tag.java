@@ -18,7 +18,7 @@ public class Tag implements Serializable {
     private String name;
     private String description;
     private String icon;
-    // 当前标签下的话题个数
+    // aaaaaaaaaa
     private Integer topicCount;
     private Date inTime;
 

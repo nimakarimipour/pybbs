@@ -15,7 +15,7 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * 社会化登录相关
+ * aaaaaaa
  *
  * @author yadong.zhang (yadong.zhang0415(a)gmail.com)
  * @version 1.0.0
@@ -29,9 +29,9 @@ public class SocialPlugin {
     private ISystemConfigService systemConfigService;
 
     /**
-     * 获取 JustAuth config
+     * aa JustAuth config
      *
-     * @param source 来源平台
+     * @param source aaaa
      * @return {@link AuthConfig}
      */
     private AuthConfig getConfig(String source) {
@@ -41,7 +41,7 @@ public class SocialPlugin {
         String callback = (String) config.get("oauth_" + source + "_callback_url");
 
         Assert.isTrue(!StringUtils.isEmpty(clientId) && !StringUtils.isEmpty(clientSecret) && !StringUtils.isEmpty
-                (callback), source + "登录还没有相关配置，联系站长吧！");
+                (callback), source + "aaaaaaaaa，aaaaa！");
 
         return AuthConfig.builder()
                 .clientId(clientId)
@@ -51,9 +51,9 @@ public class SocialPlugin {
     }
 
     /**
-     * 获取 JustAuth Request
+     * aa JustAuth Request
      *
-     * @param source 来源平台
+     * @param source aaaa
      * @return {@link AuthRequest}
      */
     public AuthRequest getRequest(String source) {
@@ -79,13 +79,13 @@ public class SocialPlugin {
                 break;
         }
         if (null == authRequest) {
-            throw new AuthException(source + "登录还没有相关配置，联系站长吧！");
+            throw new AuthException(source + "aaaaaaaaa，aaaaa！");
         }
         return authRequest;
     }
 
     /**
-     * 获取所有可用的社会化登录平台
+     * aaaaaaaaaaaaaa
      *
      * @return {@link List}
      */

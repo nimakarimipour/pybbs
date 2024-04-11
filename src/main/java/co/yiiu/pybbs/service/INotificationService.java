@@ -9,12 +9,12 @@ import java.util.Map;
  * https://atjiu.github.io
  */
 public interface INotificationService {
-    // 查询消息
+    // aaaa
     List<Map<String, Object>> selectByUserId(Integer userId, Boolean read, Integer limit);
 
     void markRead(Integer userId);
 
-    // 查询未读消息数量
+    // aaaaaaaa
     long countNotRead(Integer userId);
 
     void deleteByTopicId(Integer topicId);

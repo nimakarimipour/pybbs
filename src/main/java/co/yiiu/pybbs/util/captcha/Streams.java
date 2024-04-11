@@ -6,9 +6,9 @@ import java.io.OutputStream;
 
 public class Streams {
     /**
-     * 关闭输入流
+     * aaaaa
      *
-     * @param in 输入流
+     * @param in aaa
      */
     public static void close(InputStream in) {
         if (in != null) {
@@ -21,9 +21,9 @@ public class Streams {
     }
 
     /**
-     * 关闭输出流
+     * aaaaa
      *
-     * @param out 输出流
+     * @param out aaa
      */
     public static void close(OutputStream out) {
         if (out != null) {

@@ -26,7 +26,7 @@ public class CommentController extends BaseController {
     @Resource
     private ITopicService topicService;
 
-    // 编辑评论
+    // aaaa
     @GetMapping("/edit/{id}")
     public String edit(@PathVariable Integer id, Model model) {
         Comment comment = commentService.selectById(id);

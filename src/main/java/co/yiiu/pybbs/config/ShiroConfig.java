@@ -39,23 +39,23 @@ public class ShiroConfig {
 
     @Bean
     public ShiroFilterFactoryBean shiroFilterFactoryBean(DefaultWebSecurityManager defaultWebSecurityManager) {
-        log.info("开始配置shiroFilter...");
+        log.info("aaaashiroFilter...");
         ShiroFilterFactoryBean shiroFilterFactoryBean = new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(defaultWebSecurityManager);
 
-        //拦截器.
+        //aaa.
         Map<String, String> map = new HashMap<>();
 
-        // 配置不会被拦截的链接 顺序判断  相关静态资源
+        // aaaaaaaaaa aaaa  aaaaaa
         map.put("/static/**", "anon");
-        // 登录验证的地址不能跟打开页面的地址一样，否则shiro是先验证用户名密码，失败了才会验证验证码
+        // aaaaaaaaaaaaaaaaaaa，aashiroaaaaaaaaa，aaaaaaaaaa
         map.put("/admin/login", "anon");
         map.put("/admin/logout", "anon");
         map.put("/admin/no_auth", "anon");
 
-        //<!-- 过滤链定义，从上向下顺序执行，一般将/**放在最为下边 -->:这是一个坑呢，一不小心代码就不好使了;
+        //<!-- aaaaa，aaaaaaaa，aaa/**aaaaaa -->:aaaaaa，aaaaaaaaaaa;
 
-        //<!-- authc:所有url都必须认证通过才可以访问; user: 表示rememberMe后就可以访问 anon:所有url都都可以匿名访问 {@link org.apache.shiro.web.filter.mgt.DefaultFilter}-->
+        //<!-- authc:aaurlaaaaaaaaaaaa; user: aarememberMeaaaaaa anon:aaurlaaaaaaaa {@link org.apache.shiro.web.filter.mgt.DefaultFilter}-->
         map.put("/admin/permission/**", "perms");
         map.put("/admin/role/**", "perms");
         map.put("/admin/system/**", "perms");
@@ -70,25 +70,25 @@ public class ShiroConfig {
 
         shiroFilterFactoryBean.setFilterChainDefinitionMap(map);
 
-        // 如果不设置默认会自动寻找Web工程根目录下的"/login.jsp"页面
+        // aaaaaaaaaaaaWebaaaaaaa"/login.jsp"aa
         shiroFilterFactoryBean.setLoginUrl("/adminlogin");
-        // 登录成功后要跳转的链接
+        // aaaaaaaaaaa
         shiroFilterFactoryBean.setSuccessUrl("/admin/index");
 
-        //未授权界面;
+        //aaaaa;
         shiroFilterFactoryBean.setUnauthorizedUrl("/admin/no_auth");
 
         return shiroFilterFactoryBean;
     }
 
-    // 配置加密方式
-    // 配置了一下，这货就是验证不过，，改成手动验证算了，以后换加密方式也方便
+    // aaaaaa
+    // aaaaa，aaaaaaaa，，aaaaaaaa，aaaaaaaaaa
     @Bean
     public MyCredentialsMatcher myCredentialsMatcher() {
         return new MyCredentialsMatcher();
     }
 
-    // 安全管理器配置
+    // aaaaaaa
     @Bean
     public DefaultWebSecurityManager defaultWebSecurityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();
@@ -98,7 +98,7 @@ public class ShiroConfig {
         return securityManager;
     }
 
-    //加入注解的使用，不加入这个注解不生效
+    //aaaaaaa，aaaaaaaaaa
     @Bean
     public AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor(DefaultWebSecurityManager defaultWebSecurityManager) {
         AuthorizationAttributeSourceAdvisor authorizationAttributeSourceAdvisor = new AuthorizationAttributeSourceAdvisor();
@@ -106,13 +106,13 @@ public class ShiroConfig {
         return authorizationAttributeSourceAdvisor;
     }
 
-    // 配置记住我功能
+    // aaaaaaa
     @Bean
     @DependsOn("mybatisPlusConfig")
     public SimpleCookie rememberMeCookie() {
-        //这个参数是cookie的名称，对应前端的checkbox的name = rememberMe
+        //aaaaacookieaaa，aaaaacheckboxaname = rememberMe
         SimpleCookie simpleCookie = new SimpleCookie("rememberMe");
-        // 记住我cookie生效时间 单位秒
+        // aaacookieaaaa aaa
         int adminRememberMeMaxAge = Integer.parseInt(systemConfigService.selectAllConfig().get("admin_remember_me_max_age").toString());
         simpleCookie.setMaxAge(adminRememberMeMaxAge * 24 * 60 * 60);
         return simpleCookie;
@@ -124,7 +124,7 @@ public class ShiroConfig {
         //System.out.println("ShiroConfiguration.rememberMeManager()");
         CookieRememberMeManager cookieRememberMeManager = new CookieRememberMeManager();
         cookieRememberMeManager.setCookie(rememberMeCookie());
-        //rememberMe cookie加密的密钥 建议每个项目都不一样 默认AES算法 密钥长度(128 256 512 位)
+        //rememberMe cookieaaaaa aaaaaaaaaa aaAESaa aaaa(128 256 512 a)
         cookieRememberMeManager.setCipherKey(Base64.encode("pybbs is the best!".getBytes()));
         return cookieRememberMeManager;
     }
@@ -132,7 +132,7 @@ public class ShiroConfig {
     @Bean
     public FormAuthenticationFilter formAuthenticationFilter() {
         FormAuthenticationFilter formAuthenticationFilter = new FormAuthenticationFilter();
-        //对应前端的checkbox的name = rememberMe
+        //aaaaacheckboxaname = rememberMe
         formAuthenticationFilter.setRememberMeParam("rememberMe");
         return formAuthenticationFilter;
     }

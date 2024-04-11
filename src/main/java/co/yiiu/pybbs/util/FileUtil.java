@@ -61,12 +61,12 @@ public class FileUtil {
     }
 
     /**
-     * 上传文件
+     * aaaa
      *
-     * @param file       要上传的文件对象
-     * @param fileName   文件名，可以为空，为空的话，就生成一串uuid代替文件名
-     * @param customPath 自定义存放路径，这个地址是跟在数据库里配置的路径后面的，
-     *                   格式类似 avatar/admin 前后没有 / 前面表示头像，后面是用户的昵称，举例，如果将用户头像全都放在一个文件夹里，这里可以直接传个 avatar
+     * @param file       aaaaaaaa
+     * @param fileName   aaa，aaaa，aaaa，aaaaauuidaaaaa
+     * @param customPath aaaaaaa，aaaaaaaaaaaaaaaaaaa，
+     *                   aaaa avatar/admin aaaa / aaaaaa，aaaaaaaa，aa，aaaaaaaaaaaaaaaaa，aaaaaaaa avatar
      * @return
      */
     public String upload(MultipartFile file, String fileName, String customPath) {
@@ -75,11 +75,11 @@ public class FileUtil {
 
             if (StringUtils.isEmpty(fileName)) fileName = StringUtil.uuid();
             String suffix = "." + Objects.requireNonNull(file.getContentType()).split("/")[1];
-            // 如果存放目录不存在，则创建
+            // aaaaaaaaa，aaa
             File savePath = new File(systemConfigService.selectAllConfig().get("upload_path").toString() + customPath);
             if (!savePath.exists()) savePath.mkdirs();
 
-            // 给上传的路径拼上文件名与后缀
+            // aaaaaaaaaaaaaa
             String localPath = systemConfigService.selectAllConfig().get("upload_path").toString() + customPath + "/" + fileName + suffix;
             File file1 = new File(localPath);
             if (file1.exists()) {
@@ -88,7 +88,7 @@ public class FileUtil {
 
             file.transferTo(file1);
 
-            // 上传成功后返回访问路径
+            // aaaaaaaaaaa
             return systemConfigService.selectAllConfig().get("static_url") + customPath + "/" + fileName +
                     suffix + "?v=" + StringUtil.randomNumber(6);
         } catch (IOException e) {
@@ -99,10 +99,10 @@ public class FileUtil {
     }
 
     /**
-     * @param file       上传的文件
-     * @param fileName   文件名，带后缀
-     * @param customPath 上传到oss里的目录地址，如果只传到bucket下，请传空字符串""
-     *                   例: 现在想将file放在 2021-03-08/test/avatar 目录里，那么这里的customPath就传 2021-03-08/test/avatar
+     * @param file       aaaaa
+     * @param fileName   aaa，aaa
+     * @param customPath aaaossaaaaaa，aaaaabucketa，aaaaaa""
+     *                   a: aaaafileaa 2021-03-08/test/avatar aaa，aaaaacustomPathaa 2021-03-08/test/avatar
      * @return
      */
     public String ossUpload(MultipartFile file, String fileName, String customPath) {
@@ -130,7 +130,7 @@ public class FileUtil {
         String ossSecret = systemConfigService.selectAllConfig().get("oss_secret");
         String ossBucket = systemConfigService.selectAllConfig().get("oss_bucket");
         String ossEndPoint = systemConfigService.selectAllConfig().get("oss_end_point");
-        Date expires = new Date(new Date().getTime() + 1000 * 60 * 60); // 1小时过期
+        Date expires = new Date(new Date().getTime() + 1000 * 60 * 60); // 1aaaa
         GeneratePresignedUrlRequest generatePresignedUrlRequest = new GeneratePresignedUrlRequest(ossBucket, name);
         generatePresignedUrlRequest.setExpiration(expires);
         OSSClient client = new OSSClient(ossEndPoint, ossKey, ossSecret);
@@ -150,7 +150,7 @@ public class FileUtil {
             Configuration cfg = new Configuration(Region.region2());
             UploadManager uploadManager = new UploadManager(cfg);
             Auth auth = Auth.create(qiniuKey, qiniuSecret);
-            //默认不指定key的情况下，以文件内容的hash值作为文件名
+            //aaaaakeyaaaa，aaaaaahashaaaaaa
             String key = fileName;
             String upToken = auth.uploadToken(qiniuBucket, key);
             Response response = uploadManager.put(file.getInputStream(), key, upToken, null, null);

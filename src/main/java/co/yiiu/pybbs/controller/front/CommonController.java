@@ -25,7 +25,7 @@ public class CommonController extends BaseApiController {
     @Resource
     private FileUtil fileUtil;
 
-    // gif 验证码
+    // gif aaa
     @GetMapping("/captcha")
     public void captcha(HttpServletResponse response, HttpSession session) throws IOException {
         Captcha captcha = new GifCaptcha();

@@ -15,36 +15,36 @@ import java.util.Map;
  * https://atjiu.github.io
  */
 public interface ICommentService {
-    // 根据话题id查询评论
+    // aaaaidaaaa
     List<CommentsByTopic> selectByTopicId(Integer topicId);
 
-    // 删除话题时删除相关的评论
+    // aaaaaaaaaaaa
     void deleteByTopicId(Integer topicId);
 
-    // 根据用户id删除评论记录
+    // aaaaidaaaaaa
     void deleteByUserId(Integer userId);
 
-    // 保存评论
+    // aaaa
     Comment insert(Comment comment, Topic topic, User user);
 
     Comment selectById(Integer id);
 
     Comment selectByTgMessageId(Integer messageId);
 
-    // 更新评论
+    // aaaa
     void update(Comment comment);
 
-    // 对评论点赞
+    // aaaaa
     int vote(Comment comment, User user);
 
-    // 删除评论
+    // aaaa
     void delete(Comment comment);
 
-    // 查询用户的评论
+    // aaaaaaa
     MyPage<Map<String, Object>> selectByUserId(Integer userId, Integer pageNo, Integer pageSize);
 
     MyPage<Map<String, Object>> selectAllForAdmin(Integer pageNo, String startDate, String endDate, String username);
 
-    // 查询今天新增的话题数
+    // aaaaaaaaaa
     int countToday();
 }

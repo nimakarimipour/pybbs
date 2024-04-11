@@ -23,7 +23,7 @@ public class AdminUserService implements IAdminUserService {
     @Resource
     private AdminUserMapper adminUserMapper;
 
-    // 根据用户名查询用户
+    // aaaaaaaaa
     @Override
     public AdminUser selectByUsername(String username) {
         QueryWrapper<AdminUser> wrapper = new QueryWrapper<>();
@@ -31,7 +31,7 @@ public class AdminUserService implements IAdminUserService {
         return adminUserMapper.selectOne(wrapper);
     }
 
-    // 查询所有的后台用户
+    // aaaaaaaaa
     @Override
     public List<Map<String, Object>> selectAll() {
         return adminUserMapper.selectAll();
@@ -57,7 +57,7 @@ public class AdminUserService implements IAdminUserService {
         return adminUserMapper.selectById(id);
     }
 
-    // 根据角色id查询后台关联的用户
+    // aaaaidaaaaaaaaa
     @Override
     public List<AdminUser> selectByRoleId(Integer roleId) {
         QueryWrapper<AdminUser> wrapper = new QueryWrapper<>();

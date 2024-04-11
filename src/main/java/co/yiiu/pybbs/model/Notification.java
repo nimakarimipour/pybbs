@@ -19,13 +19,13 @@ public class Notification implements Serializable {
     private Integer id;
     private Integer topicId;
     private Integer userId;
-    // 通知对象ID
+    // aaaaID
     private Integer targetUserId;
-    // 动作: REPLY, COMMENT, COLLECT, TOPIC_UP, COMMENT_UP
+    // aa: REPLY, COMMENT, COLLECT, TOPIC_UP, COMMENT_UP
     private String action;
     private Date inTime;
     private String content;
-    // 是否已读
+    // aaaa
     @TableField("`read`")
     private Boolean read;
 

@@ -42,7 +42,7 @@ public class IndexController extends BaseController {
     @Resource
     private ICodeService codeService;
 
-    // 首页
+    // aa
     @GetMapping({"/", "/index", "/index.html"})
     public String index(@RequestParam(defaultValue = "all") String tab, @RequestParam(defaultValue = "1") Integer
             pageNo, Boolean active, Model model) {
@@ -60,7 +60,7 @@ public class IndexController extends BaseController {
 
     @GetMapping("/settings")
     public String settings(HttpSession session, Model model) {
-        // 再查一遍，保证数据的最新
+        // aaaa，aaaaaaa
         User user = userService.selectById(getUser().getId());
         model.addAttribute("user", user);
         return render("user/settings");
@@ -72,7 +72,7 @@ public class IndexController extends BaseController {
         return render("tag/tags");
     }
 
-    // 登录
+    // aa
     @GetMapping("/login")
     public String login() {
         User user = getUser();
@@ -80,7 +80,7 @@ public class IndexController extends BaseController {
         return render("login");
     }
 
-    // 注册
+    // aa
     @GetMapping("/register")
     public String register() {
         User user = getUser();
@@ -88,22 +88,22 @@ public class IndexController extends BaseController {
         return render("register");
     }
 
-    // 通知
+    // aa
     @GetMapping("/notifications")
     public String notifications() {
         return render("notifications");
     }
 
-    // 登出
+    // aa
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         User user = getUser();
         if (user != null) {
-            // 清除redis里的缓存
+            // aaredisaaaa
             userService.delRedisUser(user);
-            // 清除session里的用户信息
+            // aasessionaaaaaa
             session.removeAttribute("_user");
-            // 清除cookie里的用户token
+            // aacookieaaaatoken
             cookieUtil.clearCookie(systemConfigService.selectAllConfig().get("cookie_name").toString());
         }
         return redirect("/");
@@ -118,7 +118,7 @@ public class IndexController extends BaseController {
         return render("search");
     }
 
-    // 切换语言
+    // aaaa
     @GetMapping("changeLanguage")
     public String changeLanguage(String lang, HttpSession session, HttpServletRequest request) {
         String referer = request.getHeader("referer");
@@ -130,24 +130,24 @@ public class IndexController extends BaseController {
         return StringUtils.isEmpty(referer) ? redirect("/") : redirect(referer);
     }
 
-    // 激活帐号
+    // aaaa
     @GetMapping("/active")
     public String active(String email, String code) {
-        Assert.notNull(email, "激活邮箱不能为空");
-        Assert.notNull(code, "激活码不能为空");
+        Assert.notNull(email, "aaaaaaaa");
+        Assert.notNull(code, "aaaaaaa");
         User user = getUser();
         if (user == null) {
             user = userService.selectByEmail(email);
         } else {
-            Assert.isTrue(email.equals(user.getEmail()), "激活的邮箱跟当前用户帐号注册的邮箱不一致");
+            Assert.isTrue(email.equals(user.getEmail()), "aaaaaaaaaaaaaaaaaaaa");
         }
-        Assert.notNull(user, "激活的邮箱还没有注册过，请先注册");
+        Assert.notNull(user, "aaaaaaaaaaa，aaaa");
         Code code1 = codeService.validateCode(user.getId(), email, null, code);
-        Assert.notNull(code1, "激活链接失效或者激活码错误");
-        // 将code的状态置为已用
+        Assert.notNull(code1, "aaaaaaaaaaaaa");
+        // acodeaaaaaaa
         code1.setUsed(true);
         codeService.update(code1);
-        // 修改当前用户的状态
+        // aaaaaaaaa
         user.setActive(true);
         userService.update(user);
         return redirect("/?active=true");

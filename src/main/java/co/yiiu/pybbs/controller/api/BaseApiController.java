@@ -42,29 +42,29 @@ public class BaseApiController extends BaseController {
         return result;
     }
 
-    // 因为大部分地方用到的这个方法都是token必须要传且正确的，所以这里重载一下getApiUser方法，默认传true
+    // aaaaaaaaaaaaaaaatokenaaaaaaaa，aaaaaaaagetApiUseraa，aaatrue
     protected User getApiUser() {
         return getApiUser(true);
     }
 
-    // 接口路由从request里拿token，通过请求UserService获取用户的信息
-    // required: boolean 判断是否必须要token，因为有的接口token是非必须的，但如果传了token就可以多返回一些信息
+    // aaaaarequestaatoken，aaaaUserServiceaaaaaaa
+    // required: boolean aaaaaaatoken，aaaaaatokenaaaaa，aaaaatokenaaaaaaaaaa
     protected User getApiUser(boolean required) {
         HttpServletRequest request = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder
                 .getRequestAttributes())).getRequest();
         String token = request.getHeader("token");
         //    String token = request.getParameter("token");
-        if (required) { // token必须要
-            // 判断token是否存在，不存在要抛异常
-            ApiAssert.notEmpty(token, "token不能为空");
-            // 用token查用户信息，查不到要抛异常
+        if (required) { // tokenaaa
+            // aatokenaaaa，aaaaaaa
+            ApiAssert.notEmpty(token, "tokenaaaa");
+            // atokenaaaaa，aaaaaaa
             User user = userService.selectByToken(token);
-            ApiAssert.notNull(user, "token不正确，请在网站上登录自己的帐号，然后进入个人设置页面扫描二维码获取token");
+            ApiAssert.notNull(user, "tokenaaa，aaaaaaaaaaaa，aaaaaaaaaaaaaaaaatoken");
             return user;
-        } else { // token非必须
-            // 先判断token存在不，不存在直接返回null
+        } else { // tokenaaa
+            // aaatokenaaa，aaaaaaanull
             if (StringUtils.isEmpty(token)) return null;
-            // 如果token存在，直接查询用户信息，不管查到查不到，都直接返回
+            // aatokenaa，aaaaaaaa，aaaaaaa，aaaaa
             return userService.selectByToken(token);
         }
     }

@@ -65,12 +65,12 @@ public class TopicService implements ITopicService {
         MyPage<Map<String, Object>> page = new MyPage<>(pageNo, Integer.parseInt(systemConfigService.selectAllConfig()
                 .get("page_size").toString()));
         page = topicMapper.selectAll(page, tab);
-        // 查询话题的标签
+        // aaaaaaa
         tagService.selectTagsByTopicId(page);
         return page;
     }
 
-    // 查询话题作者其它的话题
+    // aaaaaaaaaaa
     @Override
     public List<Topic> selectAuthorOtherTopic(Integer userId, Integer topicId, Integer limit) {
         QueryWrapper<Topic> wrapper = new QueryWrapper<>();
@@ -82,7 +82,7 @@ public class TopicService implements ITopicService {
         return topicMapper.selectList(wrapper);
     }
 
-    // 查询用户的话题
+    // aaaaaaa
     @Override
     public MyPage<Map<String, Object>> selectByUserId(Integer userId, Integer pageNo, Integer pageSize) {
         MyPage<Map<String, Object>> iPage = new MyPage<>(pageNo, pageSize == null ? Integer.parseInt(systemConfigService
@@ -96,7 +96,7 @@ public class TopicService implements ITopicService {
         return page;
     }
 
-    // 保存话题
+    // aaaa
     @Override
     public Topic insert(String title, String content, String tags, User user) {
         Topic topic = new Topic();
@@ -111,27 +111,27 @@ public class TopicService implements ITopicService {
         topic.setCollectCount(0);
         topic.setCommentCount(0);
         topicMapper.insert(topic);
-        // 增加用户积分
+        // aaaaaa
         user.setScore(user.getScore() + Integer.parseInt(systemConfigService.selectAllConfig().get("create_topic_score").toString()));
         userService.update(user);
         if (!StringUtils.isEmpty(tags)) {
-            // 保存标签
+            // aaaa
             List<Tag> tagList = tagService.insertTag(Jsoup.clean(tags, Whitelist.none()));
-            // 处理标签与话题的关联
+            // aaaaaaaaaa
             topicTagService.insertTopicTag(topic.getId(), tagList);
         }
-        // 索引话题
+        // aaaa
         indexedService.indexTopic(String.valueOf(topic.getId()), topic.getTitle(), topic.getContent());
         return topic;
     }
 
-    // 根据id查询话题
+    // aaidaaaa
     @Override
     public Topic selectById(Integer id) {
         return topicMapper.selectById(id);
     }
 
-    // 根据title查询话题，防止重复话题
+    // aatitleaaaa，aaaaaa
     @Override
     public Topic selectByTitle(String title) {
         QueryWrapper<Topic> wrapper = new QueryWrapper<>();
@@ -139,7 +139,7 @@ public class TopicService implements ITopicService {
         return topicMapper.selectOne(wrapper);
     }
 
-    // 处理话题的访问量
+    // aaaaaaaa
     @Override
     public Topic updateViewCount(Topic topic, String ip) {
         topic.setView(topic.getView() + 1);
@@ -147,70 +147,70 @@ public class TopicService implements ITopicService {
         return topic;
     }
 
-    // 更新话题
+    // aaaa
     @Override
     public void update(Topic topic, String tags) {
         topicMapper.updateById(topic);
-        // 处理标签
+        // aaaa
         if (!StringUtils.isEmpty(tags)) {
-            // 旧标签每个topicCount都-1
+            // aaaaatopicCounta-1
             tagService.reduceTopicCount(topic.getId());
             if (!StringUtils.isEmpty(tags)) {
-                // 保存标签
+                // aaaa
                 List<Tag> tagList = tagService.insertTag(Jsoup.clean(tags, Whitelist.none()));
-                // 处理标签与话题的关联
+                // aaaaaaaaaa
                 topicTagService.insertTopicTag(topic.getId(), tagList);
             }
         }
-        // 索引话题
+        // aaaa
         indexedService.indexTopic(String.valueOf(topic.getId()), topic.getTitle(), topic.getContent());
     }
 
-    // 删除话题
+    // aaaa
     @Override
     public void delete(Topic topic) {
         Integer id = topic.getId();
-        // 删除相关通知
+        // aaaaaa
         notificationService.deleteByTopicId(id);
-        // 删除相关收藏
+        // aaaaaa
         collectService.deleteByTopicId(id);
-        // 删除相关的评论
+        // aaaaaaa
         commentService.deleteByTopicId(id);
-        // 将话题对应的标签 topicCount -1
+        // aaaaaaaa topicCount -1
         tagService.reduceTopicCount(id);
-        // 删除相应的关联标签
+        // aaaaaaaaa
         topicTagService.deleteByTopicId(id);
-        // 减去用户积分
+        // aaaaaa
         User user = userService.selectById(topic.getUserId());
         user.setScore(user.getScore() - Integer.parseInt(systemConfigService.selectAllConfig().get("delete_topic_score")
                 .toString()));
         userService.update(user);
-        // 删除索引
+        // aaaa
         indexedService.deleteTopicIndex(String.valueOf(topic.getId()));
-        // 最后删除话题
+        // aaaaaa
         topicMapper.deleteById(id);
     }
 
-    // 根据用户id删除帖子
+    // aaaaidaaaa
     @Override
     public void deleteByUserId(Integer userId) {
         QueryWrapper<Topic> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(Topic::getUserId, userId);
         List<Topic> topics = topicMapper.selectList(wrapper);
         topics.forEach(topic -> {
-            // 删除索引
+            // aaaa
             indexedService.deleteTopicIndex(String.valueOf(topic.getId()));
-            // 删除话题相关联的评论
+            // aaaaaaaaaa
             commentService.deleteByTopicId(topic.getId());
-            // 删除被收藏的话题记录
+            // aaaaaaaaaa
             collectService.deleteByTopicId(topic.getId());
-            // 删除关联标签及标签统计数据
-            // 旧标签每个topicCount都-1
+            // aaaaaaaaaaaaa
+            // aaaaatopicCounta-1
             tagService.reduceTopicCount(topic.getId());
-            // 删除话题关联的标签中间表数据
+            // aaaaaaaaaaaaaa
             topicTagService.deleteByTopicId(topic.getId());
         });
-        //删除话题
+        //aaaa
         topicMapper.delete(wrapper);
     }
 
@@ -224,7 +224,7 @@ public class TopicService implements ITopicService {
         return topicMapper.selectAllForAdmin(iPage, startDate, endDate, username);
     }
 
-    // 查询今天新增的话题数
+    // aaaaaaaaaa
     @Override
     public int countToday() {
         return topicMapper.countToday();
@@ -235,22 +235,22 @@ public class TopicService implements ITopicService {
     @Override
     public int vote(Topic topic, User user) {
         String upIds = topic.getUpIds();
-        // 将点赞用户id的字符串转成集合
+        // aaaaaidaaaaaaaa
         Set<String> strings = StringUtils.commaDelimitedListToSet(upIds);
-        // 把新的点赞用户id添加进集合，这里用set，正好可以去重，如果集合里已经有用户的id了，那么这次动作被视为取消点赞
+        // aaaaaaaidaaaaa，aaaset，aaaaaa，aaaaaaaaaaaida，aaaaaaaaaaaaa
         Integer userScore = user.getScore();
-        if (strings.contains(String.valueOf(user.getId()))) { // 取消点赞行为
+        if (strings.contains(String.valueOf(user.getId()))) { // aaaaaa
             strings.remove(String.valueOf(user.getId()));
             userScore -= Integer.parseInt(systemConfigService.selectAllConfig().get("up_topic_score").toString());
-        } else { // 点赞行为
+        } else { // aaaa
             strings.add(String.valueOf(user.getId()));
             userScore += Integer.parseInt(systemConfigService.selectAllConfig().get("up_topic_score").toString());
         }
-        // 再把这些id按逗号隔开组成字符串
+        // aaaaidaaaaaaaaaa
         topic.setUpIds(StringUtils.collectionToCommaDelimitedString(strings));
-        // 更新评论
+        // aaaa
         this.update(topic, null);
-        // 增加用户积分
+        // aaaaaa
         user.setScore(userScore);
         userService.update(user);
         return strings.size();

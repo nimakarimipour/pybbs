@@ -39,7 +39,7 @@ public class BaseModel {
     private static final long YEAR = 12 * MONTH;
 
     /**
-     * 格式化日期
+     * aaaaa
      *
      * @param date
      * @return
@@ -49,19 +49,19 @@ public class BaseModel {
 
         long offset = System.currentTimeMillis() - date.getTime();
         if (offset > YEAR) {
-            return (offset / YEAR) + "年前";
+            return (offset / YEAR) + "aa";
         } else if (offset > MONTH) {
-            return (offset / MONTH) + "个月前";
+            return (offset / MONTH) + "aaa";
         } else if (offset > WEEK) {
-            return (offset / WEEK) + "周前";
+            return (offset / WEEK) + "aa";
         } else if (offset > DAY) {
-            return (offset / DAY) + "天前";
+            return (offset / DAY) + "aa";
         } else if (offset > HOUR) {
-            return (offset / HOUR) + "小时前";
+            return (offset / HOUR) + "aaa";
         } else if (offset > MINUTE) {
-            return (offset / MINUTE) + "分钟前";
+            return (offset / MINUTE) + "aaa";
         } else {
-            return "刚刚";
+            return "aa";
         }
     }
 
@@ -75,7 +75,7 @@ public class BaseModel {
             }
         }
         content = MarkdownUtil.render(content);
-        // 解析内容里的视频链接
+        // aaaaaaaaaa
         content = Jsoup.clean(content, Whitelist.relaxed().addTags("code", "pre", "video", "source")
                 .addAttributes("code", "class")
                 .addAttributes("video", "class", "controls")
@@ -128,7 +128,7 @@ public class BaseModel {
         return parse.outerHtml();
     }
 
-    // 将用户点赞的id从字符串转成集合
+    // aaaaaaidaaaaaaaa
     public Set<String> getUpIds(String upIds) {
         if (StringUtils.isEmpty(upIds)) return new HashSet<>();
         return StringUtils.commaDelimitedListToSet(upIds);

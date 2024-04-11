@@ -44,7 +44,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * 错误页面统一处理
+     * aaaaaaaa
      *
      * @param request
      * @param e
@@ -53,7 +53,7 @@ public class GlobalExceptionHandler {
      */
     @ExceptionHandler(value = Exception.class)
     public ModelAndView defaultErrorHandler(HttpServletRequest request, HttpServletResponse response, Exception e) throws Exception {
-        // 当报错了，又不知道啥错的时候，把下面这行代码打开，就可以看到报错的堆信息了
+        // aaaa，aaaaaaaaa，aaaaaaaaa，aaaaaaaaaaaa
         e.printStackTrace();
 //        log.error(e.getMessage());
         if (!HttpUtil.isApiRequest(request)) {
@@ -66,7 +66,7 @@ public class GlobalExceptionHandler {
         } else /*if (accept.contains("application/json"))*/ {
             Result result = new Result();
             result.setCode(201);
-            result.setDescription("服务器出错啦~");
+            result.setDescription("aaaaaa~");
             response.setContentType("application/json;charset=utf-8");
             response.getWriter().write(Optional.ofNullable(JsonUtil.objectToJson(result)).orElse(""));
         }
@@ -74,7 +74,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * 接口错误统一处理
+     * aaaaaaaa
      *
      * @param e
      * @return
@@ -91,7 +91,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * 没有权限的请求异常处理
+     * aaaaaaaaaaa
      *
      * @param e
      * @return
@@ -110,7 +110,7 @@ public class GlobalExceptionHandler {
     }
 
     /**
-     * 没有权限的请求异常处理
+     * aaaaaaaaaaa
      *
      * @param e
      * @return
@@ -123,7 +123,7 @@ public class GlobalExceptionHandler {
         if (HttpUtil.isApiRequest(request)) {
             Result result = new Result();
             result.setCode(201);
-            result.setDescription("没有权限进行这次操作");
+            result.setDescription("aaaaaaaaaa");
             return result;
         } else {
             response.sendRedirect("/adminlogin");

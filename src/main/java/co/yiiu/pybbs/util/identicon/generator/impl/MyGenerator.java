@@ -19,7 +19,7 @@ public class MyGenerator implements IBaseGenerator {
 
         boolean[][] array = new boolean[5][5];
 
-        //初始化字符串
+        //aaaaaa
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 array[i][j] = false;

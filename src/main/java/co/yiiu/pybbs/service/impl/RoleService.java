@@ -47,13 +47,13 @@ public class RoleService implements IRoleService {
 
     @Override
     public void update(Integer id, String name, Integer[] permissionIds) {
-        // 更新role
+        // aarole
         Role role = this.selectById(id);
         role.setName(name);
         roleMapper.updateById(role);
-        // 删除role permission 的关联关系
+        // aarole permission aaaaa
         rolePermissionService.deleteByRoleId(id);
-        // 重新建立关联关系
+        // aaaaaaaa
         insertRolePermissions(role, permissionIds);
     }
 
@@ -64,15 +64,15 @@ public class RoleService implements IRoleService {
             rolePermission.setPermissionId(permissionId);
             rolePermissionService.insert(rolePermission);
         }
-        // 清除缓存
+        // aaaa
         permissionService.clearRolePermissionCache();
     }
 
     @Override
     public void delete(Integer id) {
-        // 删除关联关系
+        // aaaaaa
         rolePermissionService.deleteByRoleId(id);
-        // 删除自己
+        // aaaa
         roleMapper.deleteById(id);
     }
 }

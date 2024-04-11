@@ -13,27 +13,27 @@ import java.util.Map;
  * https://atjiu.github.io
  */
 public interface ICollectService {
-    // 查询话题被多少人收藏过
+    // aaaaaaaaaaa
     List<Collect> selectByTopicId(Integer topicId);
 
-    // 查询用户是否收藏过某个话题
+    // aaaaaaaaaaaaa
     Collect selectByTopicIdAndUserId(Integer topicId, Integer userId);
 
-    // 收藏话题
+    // aaaa
     Collect insert(Integer topicId, User user);
 
-    // 删除（取消）收藏
+    // aa（aa）aa
     void delete(Integer topicId, Integer userId);
 
-    // 根据话题id删除收藏记录
+    // aaaaidaaaaaa
     void deleteByTopicId(Integer topicId);
 
-    // 根据用户id删除收藏记录
+    // aaaaidaaaaaa
     void deleteByUserId(Integer userId);
 
-    // 查询用户收藏的话题数
+    // aaaaaaaaaa
     int countByUserId(Integer userId);
 
-    // 查询用户收藏的话题
+    // aaaaaaaaa
     MyPage<Map<String, Object>> selectByUserId(Integer userId, Integer pageNo, Integer pageSize);
 }

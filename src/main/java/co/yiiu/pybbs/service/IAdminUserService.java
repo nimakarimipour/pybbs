@@ -11,10 +11,10 @@ import java.util.Map;
  * https://atjiu.github.io
  */
 public interface IAdminUserService {
-    // 根据用户名查询用户
+    // aaaaaaaaa
     AdminUser selectByUsername(String username);
 
-    // 查询所有的后台用户
+    // aaaaaaaaa
     List<Map<String, Object>> selectAll();
 
     void update(AdminUser adminUser);
@@ -25,6 +25,6 @@ public interface IAdminUserService {
 
     AdminUser selectById(Integer id);
 
-    // 根据角色id查询后台关联的用户
+    // aaaaidaaaaaaaaa
     List<AdminUser> selectByRoleId(Integer roleId);
 }

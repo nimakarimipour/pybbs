@@ -37,13 +37,13 @@ public class NotificationApiController extends BaseApiController {
         return success();
     }
 
-    // 通知列表
+    // aaaa
     @GetMapping("/list")
     public Result list() {
         User user = getApiUser();
-        // 未读消息列表
+        // aaaaaa
         List<Map<String, Object>> notReadNotifications = notificationService.selectByUserId(user.getId(), false, 20);
-        // 已读消息列表
+        // aaaaaa
         List<Map<String, Object>> readNotifications = notificationService.selectByUserId(user.getId(), true, 20);
         Map<String, Object> map = new HashMap<>();
         map.put("notRead", notReadNotifications);

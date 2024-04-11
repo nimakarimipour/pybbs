@@ -28,7 +28,7 @@ public class MD5Util {
         try {
             messagedigest = MessageDigest.getInstance("MD5");
         } catch (NoSuchAlgorithmException e) {
-            log.error("{}初始化失败，MessageDigest不支持MD5Util, errorMessage: {}", MD5Util.class.getName(), e.getMessage());
+            log.error("{}aaaaa，MessageDigestaaaMD5Util, errorMessage: {}", MD5Util.class.getName(), e.getMessage());
         }
     }
 
@@ -36,35 +36,35 @@ public class MD5Util {
     }
 
     /**
-     * 功能：加盐版的MD5.返回格式为MD5(密码+{盐值})
+     * aa：aaaaMD5.aaaaaMD5(aa+{aa})
      *
-     * @param password 密码
-     * @param salt     盐值
+     * @param password aa
+     * @param salt     aa
      * @return String
-     * @author 郑晓鹏
-     * @date 2014年06月24日
+     * @author aaa
+     * @date 2014a06a24a
      */
     public static String getMD5StringWithSalt(String password, String salt) {
         if (password == null) {
-            throw new IllegalArgumentException("password不能为null");
+            throw new IllegalArgumentException("passwordaaanull");
         }
         if (salt.equals("") || salt.length() == 0) {
-            throw new IllegalArgumentException("salt不能为空");
+            throw new IllegalArgumentException("saltaaaa");
         }
         if ((salt.lastIndexOf('{') != -1) || (salt.lastIndexOf('}') != -1)) {
-            throw new IllegalArgumentException("salt中不能包含 { 或者 }");
+            throw new IllegalArgumentException("saltaaaaa { aa }");
         }
         return getMD5String(password + '{' + salt + '}');
     }
 
     /**
-     * 功能：得到文件的md5值。
+     * aa：aaaaamd5a。
      *
-     * @param file 文件。
+     * @param file aa。
      * @return String
-     * @throws IOException 读取文件IO异常时。
-     * @author 郑晓鹏
-     * @date 2014年06月24日
+     * @throws IOException aaaaIOaaa。
+     * @author aaa
+     * @date 2014a06a24a
      */
     public static String getFileMD5String(File file) throws IOException {
         FileInputStream in = new FileInputStream(file);
@@ -75,12 +75,12 @@ public class MD5Util {
     }
 
     /**
-     * 功能：得到一个字符串的MD5值。
+     * aa：aaaaaaaaMD5a。
      *
-     * @param str 字符串
+     * @param str aaa
      * @return String
-     * @author 郑晓鹏
-     * @date 2014年06月24日
+     * @author aaa
+     * @date 2014a06a24a
      */
     public static String getMD5String(String str) {
         return getMD5String(str.getBytes());
@@ -112,7 +112,7 @@ public class MD5Util {
     }
 
     /*
-     * 哈希摘摘要
+     * aaaaa
      */
     public static String hexdigest(byte[] paramArrayOfByte) {
         try {

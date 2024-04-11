@@ -7,7 +7,7 @@ import java.io.OutputStream;
 import static co.yiiu.pybbs.util.captcha.Randoms.num;
 
 /**
- * <p>Gif验证码类</p>
+ * <p>Gifaaaa</p>
  *
  * @author: wuhongjun
  * @version:1.0
@@ -34,8 +34,8 @@ public class GifCaptcha extends Captcha {
     @Override
     public void out(OutputStream os) {
         try {
-            GifEncoder gifEncoder = new GifEncoder();   // gif编码类，这个利用了洋人写的编码类，所有类都在附件中
-            //生成字符
+            GifEncoder gifEncoder = new GifEncoder();   // gifaaa，aaaaaaaaaaaa，aaaaaaaa
+            //aaaa
             gifEncoder.start(os);
             gifEncoder.setQuality(180);
             gifEncoder.setDelay(100);
@@ -59,19 +59,19 @@ public class GifCaptcha extends Captcha {
     }
 
     /**
-     * 画随机码图
+     * aaaaa
      *
-     * @param fontcolor 随机字体颜色
-     * @param strs      字符数组
-     * @param flag      透明度使用
+     * @param fontcolor aaaaaa
+     * @param strs      aaaa
+     * @param flag      aaaaa
      * @return BufferedImage
      */
     private BufferedImage graphicsImage(Color[] fontcolor, char[] strs, int flag) {
         BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
-        //或得图形上下文
+        //aaaaaaa
         //Graphics2D g2d=image.createGraphics();
         Graphics2D g2d = (Graphics2D) image.getGraphics();
-        //利用指定颜色填充背景
+        //aaaaaaaaaa
         g2d.setColor(Color.WHITE);
         g2d.fillRect(0, 0, width, height);
         AlphaComposite ac3;
@@ -90,9 +90,9 @@ public class GifCaptcha extends Captcha {
     }
 
     /**
-     * 获取透明度,从0到1,自动计算步长
+     * aaaaa,a0a1,aaaaaa
      *
-     * @return float 透明度
+     * @return float aaa
      */
     private float getAlpha(int i, int j) {
         int num = i + j;

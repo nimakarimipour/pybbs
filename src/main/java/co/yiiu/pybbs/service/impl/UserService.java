@@ -54,7 +54,7 @@ public class UserService implements IUserService {
     @Resource
     private ICodeService codeService;
 
-    // 根据用户名查询用户，用于获取用户的信息比对密码
+    // aaaaaaaaa，aaaaaaaaaaaaa
     @Override
     public User selectByUsername(String username) {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
@@ -62,9 +62,9 @@ public class UserService implements IUserService {
         return userMapper.selectOne(wrapper);
     }
 
-    // 递归生成token，防止token重复
-    // 理论上uuid生成的token是不可能重复的
-    // 加个逻辑放心 : )
+    // aaaatoken，aatokenaa
+    // aaauuidaaatokenaaaaaaa
+    // aaaaaa : )
     private String generateToken() {
         String token = UUID.randomUUID().toString();
         User user = this.selectByToken(token);
@@ -75,7 +75,7 @@ public class UserService implements IUserService {
     }
 
     /**
-     * 注册创建用户
+     * aaaaaa
      *
      * @param username
      * @param password
@@ -83,9 +83,9 @@ public class UserService implements IUserService {
      * @param email
      * @param bio
      * @param website
-     * @param needActiveEmail 是否需要发送激活邮件
-     *                        新注册的用户都需要
-     *                        Github注册的用户，如果能获取到邮箱，就自动激活，如果获取不到邮箱，则是未激活状态，需要用户绑定邮箱然后发送激活邮件进行激活
+     * @param needActiveEmail aaaaaaaaaa
+     *                        aaaaaaaaa
+     *                        Githubaaaaa，aaaaaaaa，aaaaa，aaaaaaaa，aaaaaaa，aaaaaaaaaaaaaaaaaaaa
      * @return
      */
     @Override
@@ -105,21 +105,21 @@ public class UserService implements IUserService {
         user.setActive(systemConfigService.selectAllConfig().get("user_need_active").equals("0"));
         userMapper.insert(user);
         if (needActiveEmail) {
-            // 发送激活邮件
+            // aaaaaa
             new Thread(() -> {
-                String title = "感谢注册%s，点击下面链接激活帐号";
-                String content = "如果不是你注册了%s，请忽略此邮件&nbsp;&nbsp;<a href='%s/active?email=%s&code=${code}'>点击激活</a>";
+                String title = "aaaa%s，aaaaaaaaaa";
+                String content = "aaaaaaaa%s，aaaaaa&nbsp;&nbsp;<a href='%s/active?email=%s&code=${code}'>aaaa</a>";
                 codeService.sendEmail(user.getId(), email, String.format(title, systemConfigService.selectAllConfig().get(
                         "base_url").toString()), String.format(content,
                         systemConfigService.selectAllConfig().get("name").toString(), systemConfigService.selectAllConfig().get(
                                 "base_url").toString(), email));
             }).start();
         }
-        // 再查一下，有些数据库里默认值保存后，类里还是null
+        // aaaa，aaaaaaaaaaaa，aaaanull
         return this.selectById(user.getId());
     }
 
-    // 递归生成用户名，防止用户名重复
+    // aaaaaaa，aaaaaaa
     private String generateUsername() {
         String username = StringUtil.randomString(6);
         if (this.selectByUsername(username) != null) {
@@ -128,10 +128,10 @@ public class UserService implements IUserService {
         return username;
     }
 
-    // 通过手机号登录/注册创建用户
+    // aaaaaaa/aaaaaa
     @Override
     public User addUserWithMobile(String mobile) {
-        // 根据手机号查询用户是否注册过
+        // aaaaaaaaaaaaaa
         User user = selectByMobile(mobile);
         if (user == null) {
             String token = this.generateToken();
@@ -146,13 +146,13 @@ public class UserService implements IUserService {
             user.setWebsite(null);
             user.setActive(true);
             userMapper.insert(user);
-            // 再查一下，有些数据库里默认值保存后，类里还是null
+            // aaaa，aaaaaaaaaaaa，aaaanull
             return this.selectById(user.getId());
         }
         return user;
     }
 
-    // 根据用户token查询用户
+    // aaaatokenaaaa
     @Override
     public User selectByToken(String token) {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
@@ -160,7 +160,7 @@ public class UserService implements IUserService {
         return userMapper.selectOne(wrapper);
     }
 
-    // 根据用户mobile查询用户
+    // aaaamobileaaaa
     @Override
     public User selectByMobile(String mobile) {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
@@ -168,7 +168,7 @@ public class UserService implements IUserService {
         return userMapper.selectOne(wrapper);
     }
 
-    // 根据用户email查询用户
+    // aaaaemailaaaa
     @Override
     public User selectByEmail(String email) {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
@@ -186,7 +186,7 @@ public class UserService implements IUserService {
         return userMapper.selectById(id);
     }
 
-    // 查询用户积分榜
+    // aaaaaaa
     @Override
     public List<User> selectTop(Integer limit) {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
@@ -194,18 +194,18 @@ public class UserService implements IUserService {
         return userMapper.selectList(wrapper);
     }
 
-    // 更新用户信息
+    // aaaaaa
     @Override
     public void update(User user) {
         userMapper.updateById(user);
         
-        // 更新session中的用户
+        // aasessionaaaa
         HttpServletRequest request = ((ServletRequestAttributes) Objects.requireNonNull(RequestContextHolder
                 .getRequestAttributes())).getRequest();
         HttpSession session = request.getSession();
         session.setAttribute("_user", user);
 
-        // 同类调用不走spring管理，无法使用aop编程调用
+        // aaaaaaspringaa，aaaaaopaaaa
         SpringContextUtil.getBean(UserService.class).delRedisUser(user);
     }
 
@@ -226,33 +226,33 @@ public class UserService implements IUserService {
         return userMapper.selectById(id);
     }
 
-    // 查询今天新增的话题数
+    // aaaaaaaaaa
     @Override
     public int countToday() {
         return userMapper.countToday();
     }
 
-    // 删除用户
+    // aaaa
     @Override
     public void deleteUser(Integer id) {
-        // 删除用户的通知
+        // aaaaaaa
         notificationService.deleteByUserId(id);
-        // 删除用户的收藏
+        // aaaaaaa
         collectService.deleteByUserId(id);
-        // 删除用户发的评论
+        // aaaaaaaa
         commentService.deleteByUserId(id);
-        // 删除用户发的帖子
+        // aaaaaaaa
         topicService.deleteByUserId(id);
-        // 删除与用户相关的code记录
+        // aaaaaaaacodeaa
         codeService.deleteByUserId(id);
-        // 删除redis里的缓存
+        // aaredisaaaa
         User user = this.selectById(id);
         SpringContextUtil.getBean(UserService.class).delRedisUser(user);
-        // 删除用户本身
+        // aaaaaa
         userMapper.deleteById(id);
     }
 
-    // 删除redis缓存
+    // aaredisaa
     @Override
     public void delRedisUser(User user) {
 
