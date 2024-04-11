@@ -23,7 +23,7 @@ def run_annotator():
     commands += ['-cp', '{}/paths.tsv'.format(OUT_DIR)]
     commands += ['-i', 'edu.Initializer']
     commands += ['-n', 'com.taint.tainting.qual.RUntainted']
-    commands += ['-cn', 'UCRTaint']
+    commands += ['-cn', 'Taint']
     commands += ["--depth", "20"]
     # Uncomment to see build output
     # commands += ['-rboserr']

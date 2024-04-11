@@ -282,21 +282,11 @@
                                 <Xmaxwarns>10000</Xmaxwarns>
                             </compilerArguments>
                             <annotationProcessorPaths>
-                                <!-- <path>
-                                    <groupId>com.google.errorprone</groupId>
-                                    <artifactId>error_prone_core</artifactId>
-                                    <version>2.20.0</version>
-                                </path> -->
                                 <path>
                                     <groupId>com.example.x</groupId>
                                     <artifactId>checker</artifactId>
                                     <version>${env.C_VERSION}</version>
                                 </path>
-                                <!-- <path>
-                                    <groupId>edu.ucr.cs.riple.annotator</groupId>
-                                    <artifactId>annotator-scanner</artifactId>
-                                    <version>1.3.9-SNAPSHOT</version>
-                                </path> -->
                             </annotationProcessorPaths>
                             <annotationProcessors>
                                 <annotationProcessor>com.taint.tainting.XTaintingChecker</annotationProcessor>
