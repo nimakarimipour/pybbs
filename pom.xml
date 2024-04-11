@@ -46,9 +46,9 @@
             <version>9+181-r4173-1</version>
         </dependency> -->
         <dependency>
-            <groupId>edu.ucr.cs.riple.taint</groupId>
-            <artifactId>ucrtainting-checker-qual</artifactId>
-            <version>${env.UCRT_VERSION}</version>
+            <groupId>com.example.x</groupId>
+            <artifactId>checker-qual</artifactId>
+            <version>${env.C_VERSION}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -288,9 +288,9 @@
                                     <version>2.20.0</version>
                                 </path> -->
                                 <path>
-                                    <groupId>edu.ucr.cs.riple.taint</groupId>
-                                    <artifactId>ucrtainting-checker</artifactId>
-                                    <version>${env.UCRT_VERSION}</version>
+                                    <groupId>com.example.x</groupId>
+                                    <artifactId>checker</artifactId>
+                                    <version>${env.C_VERSION}</version>
                                 </path>
                                 <!-- <path>
                                     <groupId>edu.ucr.cs.riple.annotator</groupId>
@@ -299,7 +299,7 @@
                                 </path> -->
                             </annotationProcessorPaths>
                             <annotationProcessors>
-                                <annotationProcessor>edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingChecker</annotationProcessor>
+                                <annotationProcessor>com.taint.tainting.XTaintingChecker</annotationProcessor>
                             </annotationProcessors>
                             <compilerArgs>
                                 <arg>-J--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED</arg>
@@ -319,10 +319,10 @@
                                 <arg>-AenablePolyTaintInference=${env.ANNOTATOR_POLY}</arg>
                                 <arg>-AenableTypeArgumentInference=${env.ANNOTATOR_TYPE_ARG}</arg>
                                 <arg>-AenableSerialization</arg>
-                                <arg>-AserializationConfigPath=/home/nima/Developer/taint-benchmarks/pybbs/annotator-out/checker.xml</arg>
+                                <arg>-AserializationConfigPath=/Users/nima/Developer/pybbs/annotator-out/checker.xml</arg>
                                 <arg>-XDcompilePolicy=simple</arg>
                                 <arg>-parameters</arg>
-                                <!-- <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:AnnotatorScanner:ERROR -XepOpt:AnnotatorScanner:ConfigPath=/home/nima/Developer/taint-benchmarks/pybbs/annotator-out/scanner.xml</arg> -->
+                                <!-- <arg>-Xplugin:ErrorProne -XepDisableAllChecks -Xep:AnnotatorScanner:ERROR -XepOpt:AnnotatorScanner:ConfigPath=/Users/nima/Developer/pybbs/annotator-out/scanner.xml</arg> -->
                             </compilerArgs>
                         </configuration>
                     </plugin>
