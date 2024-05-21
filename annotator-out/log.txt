@@ -1,4 +1,4 @@
-Total number of nodes=35
-Total number of Requested builds=24
-Total time=324384
-Total time spent on builds=218235
+Total number of nodes=77
+Total number of Requested builds=41
+Total time=498708
+Total time spent on builds=511372
