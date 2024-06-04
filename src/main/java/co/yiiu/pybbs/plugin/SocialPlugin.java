@@ -13,6 +13,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * 社会化登录相关
@@ -91,9 +92,9 @@ public class SocialPlugin {
      */
     public List<String> getAllAvailableSocialPlatform() {
         List<String> res = new LinkedList<>();
-        Map<String, String> config = systemConfigService.selectAllConfig();
-        Set<Map.Entry<String, String>> entrySet = config.entrySet();
-        for (Map.Entry<String, String> entry : entrySet) {
+        Map<String, @RUntainted String> config = systemConfigService.selectAllConfig();
+        Set<Map.Entry<String, @RUntainted String>> entrySet = config.entrySet();
+        for (Map.Entry<String, @RUntainted String> entry : entrySet) {
             String key = entry.getKey();
             if (key.startsWith("oauth_")) {
                 String type = key.split("_")[1];

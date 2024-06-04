@@ -13,6 +13,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -26,11 +27,11 @@ public class SystemConfigService implements ISystemConfigService {
     @Resource
     private SystemConfigMapper systemConfigMapper;
 
-    private static Map<String, String> SYSTEM_CONFIG;
+    private static Map<String, @RUntainted String> SYSTEM_CONFIG;
     private static Map<String, String> SYSTEM_CONFIG_WITHOUT_PASSWORD;
 
     @Override
-    public Map<String, String> selectAllConfig() {
+    public Map<String, @RUntainted String> selectAllConfig() {
         if (SYSTEM_CONFIG != null) {
             return SYSTEM_CONFIG;
         }
