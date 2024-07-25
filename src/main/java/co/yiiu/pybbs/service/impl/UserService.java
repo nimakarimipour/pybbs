@@ -24,6 +24,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -65,7 +66,7 @@ public class UserService implements IUserService {
     // 递归生成token，防止token重复
     // 理论上uuid生成的token是不可能重复的
     // 加个逻辑放心 : )
-    private String generateToken() {
+    private @RUntainted String generateToken() {
         String token = UUID.randomUUID().toString();
         User user = this.selectByToken(token);
         if (user != null) {
@@ -89,7 +90,7 @@ public class UserService implements IUserService {
      * @return
      */
     @Override
-    public User addUser(String username, String password, String avatar, String email, String bio, String website,
+    public User addUser(@RUntainted String username, String password, String avatar, String email, String bio, String website,
                         boolean needActiveEmail) {
         String token = this.generateToken();
         User user = new User();
@@ -120,7 +121,7 @@ public class UserService implements IUserService {
     }
 
     // 递归生成用户名，防止用户名重复
-    private String generateUsername() {
+    private @RUntainted String generateUsername() {
         String username = StringUtil.randomString(6);
         if (this.selectByUsername(username) != null) {
             return this.generateUsername();

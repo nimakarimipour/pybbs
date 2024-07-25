@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 
 import java.io.Serializable;
 import java.util.Date;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -19,7 +20,7 @@ public class Comment implements Serializable {
     private Integer topicId;
     private Integer userId;
     private String style; // 内容格式化，RICH，MD
-    private String content;
+    private @RUntainted String content;
     private Date inTime;
     private Integer commentId;
     // 点赞用户的id
@@ -68,11 +69,11 @@ public class Comment implements Serializable {
         this.userId = userId;
     }
 
-    public String getContent() {
+    public @RUntainted String getContent() {
         return content;
     }
 
-    public void setContent(String content) {
+    public void setContent(@RUntainted String content) {
         this.content = content;
     }
 

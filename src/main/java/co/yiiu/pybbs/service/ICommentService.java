@@ -8,6 +8,7 @@ import co.yiiu.pybbs.util.MyPage;
 
 import java.util.List;
 import java.util.Map;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -41,7 +42,7 @@ public interface ICommentService {
     void delete(Comment comment);
 
     // 查询用户的评论
-    MyPage<Map<String, Object>> selectByUserId(Integer userId, Integer pageNo, Integer pageSize);
+    MyPage<Map<String, @RUntainted Object>> selectByUserId(Integer userId, Integer pageNo, Integer pageSize);
 
     MyPage<Map<String, Object>> selectAllForAdmin(Integer pageNo, String startDate, String endDate, String username);
 

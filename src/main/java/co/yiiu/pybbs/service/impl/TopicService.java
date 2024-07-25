@@ -20,6 +20,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -61,8 +62,8 @@ public class TopicService implements ITopicService {
     }
 
     @Override
-    public MyPage<Map<String, Object>> selectAll(Integer pageNo, String tab) {
-        MyPage<Map<String, Object>> page = new MyPage<>(pageNo, Integer.parseInt(systemConfigService.selectAllConfig()
+    public MyPage<Map<String, @RUntainted Object>> selectAll(Integer pageNo, String tab) {
+        MyPage<Map<String, @RUntainted Object>> page = new MyPage<>(pageNo, Integer.parseInt(systemConfigService.selectAllConfig()
                 .get("page_size").toString()));
         page = topicMapper.selectAll(page, tab);
         // 查询话题的标签
@@ -84,11 +85,11 @@ public class TopicService implements ITopicService {
 
     // 查询用户的话题
     @Override
-    public MyPage<Map<String, Object>> selectByUserId(Integer userId, Integer pageNo, Integer pageSize) {
+    public MyPage<Map<String, @RUntainted Object>> selectByUserId(Integer userId, Integer pageNo, Integer pageSize) {
         MyPage<Map<String, Object>> iPage = new MyPage<>(pageNo, pageSize == null ? Integer.parseInt(systemConfigService
                 .selectAllConfig().get("page_size").toString()) : pageSize);
-        MyPage<Map<String, Object>> page = topicMapper.selectByUserId(iPage, userId);
-        for (Map<String, Object> map : page.getRecords()) {
+        MyPage<Map<String, @RUntainted Object>> page = topicMapper.selectByUserId(iPage, userId);
+        for (Map<String, @RUntainted Object> map : page.getRecords()) {
             Object content = map.get("content");
             map.put("content", StringUtils.isEmpty(content) ? null : SensitiveWordUtil.replaceSensitiveWord(content
                     .toString(), "*", SensitiveWordUtil.MinMatchType));
@@ -98,7 +99,7 @@ public class TopicService implements ITopicService {
 
     // 保存话题
     @Override
-    public Topic insert(String title, String content, String tags, User user) {
+    public Topic insert(String title, @RUntainted String content, String tags, User user) {
         Topic topic = new Topic();
         topic.setTitle(Jsoup.clean(title, Whitelist.simpleText()));
         topic.setStyle(systemConfigService.selectAllConfig().get("content_style"));

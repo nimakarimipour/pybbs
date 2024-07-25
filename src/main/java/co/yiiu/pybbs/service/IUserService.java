@@ -4,6 +4,7 @@ import co.yiiu.pybbs.model.User;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 
 import java.util.List;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -14,7 +15,7 @@ public interface IUserService {
     // 根据用户名查询用户，用于获取用户的信息比对密码
     User selectByUsername(String username);
 
-    User addUser(String username, String password, String avatar, String email, String bio, String website,
+    User addUser(@RUntainted String username, String password, String avatar, String email, String bio, String website,
                  boolean needActiveEmail);
 
     // 通过手机号登录/注册创建用户
