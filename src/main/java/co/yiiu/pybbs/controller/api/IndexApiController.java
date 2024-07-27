@@ -14,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.*;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -41,10 +42,10 @@ public class IndexApiController extends BaseApiController {
 
     // 首页接口
     @GetMapping({"/", "/index"})
-    public Result index(@RequestParam(defaultValue = "1") Integer pageNo, @RequestParam(defaultValue = "all") String
+    public Result index(@RequestParam(defaultValue = "1") @RUntainted Integer pageNo, @RequestParam(defaultValue = "all") String
             tab) {
-        MyPage<Map<String, Object>> page = topicService.selectAll(pageNo, tab);
-        for (Map<String, Object> map : page.getRecords()) {
+        MyPage<Map<String, @RUntainted Object>> page = topicService.selectAll(pageNo, tab);
+        for (Map<String, @RUntainted Object> map : page.getRecords()) {
             Object content = map.get("content");
             map.put("content", StringUtils.isEmpty(content) ? null : SensitiveWordUtil.replaceSensitiveWord(content
                     .toString(), "*", SensitiveWordUtil.MinMatchType));
@@ -86,7 +87,7 @@ public class IndexApiController extends BaseApiController {
 
     // 处理注册的接口
     @PostMapping("/register")
-    public Result register(@RequestBody Map<String, String> body, HttpSession session) {
+    public Result register(@RequestBody Map<String, @RUntainted String> body, HttpSession session) {
         String username = body.get("username");
         String password = body.get("password");
         String email = body.get("email");
@@ -179,7 +180,7 @@ public class IndexApiController extends BaseApiController {
     // 上传图片
     @PostMapping("/upload")
     @ResponseBody
-    public Result upload(@RequestParam("file") MultipartFile[] files, String type, HttpSession session) {
+    public Result upload(@RequestParam("file") @RUntainted MultipartFile[] files, String type, HttpSession session) {
         User user = getApiUser();
         ApiAssert.isTrue(user.getActive(), "你的帐号还没有激活，请去个人设置页面激活帐号");
         ApiAssert.notEmpty(type, "上传文件类型不能为空");

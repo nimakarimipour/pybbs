@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 
 import java.util.List;
 import java.util.Map;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -13,7 +14,7 @@ import java.util.Map;
  * https://atjiu.github.io
  */
 public interface ITagService {
-    void selectTagsByTopicId(MyPage<Map<String, Object>> page);
+    void selectTagsByTopicId(@RUntainted MyPage<Map<String, @RUntainted Object>> page);
 
     Tag selectById(Integer id);
 

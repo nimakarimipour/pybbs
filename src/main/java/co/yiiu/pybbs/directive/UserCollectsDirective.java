@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.Map;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -25,7 +26,7 @@ public class UserCollectsDirective implements TemplateDirectiveModel {
     private IUserService userService;
 
     @Override
-    public void execute(Environment environment, Map map, TemplateModel[] templateModels, TemplateDirectiveBody
+    public void execute(Environment environment, @RUntainted Map map, TemplateModel[] templateModels, TemplateDirectiveBody
             templateDirectiveBody) throws TemplateException, IOException {
         String username = String.valueOf(map.get("username"));
         Integer pageNo = Integer.parseInt(map.get("pageNo").toString());

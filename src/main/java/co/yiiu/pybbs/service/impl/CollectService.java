@@ -20,6 +20,7 @@ import javax.annotation.Resource;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -138,11 +139,11 @@ public class CollectService implements ICollectService {
 
     // 查询用户收藏的话题
     @Override
-    public MyPage<Map<String, Object>> selectByUserId(Integer userId, Integer pageNo, Integer pageSize) {
-        MyPage<Map<String, Object>> page = new MyPage<>(pageNo, pageSize == null ? Integer.parseInt(systemConfigService
+    public MyPage<Map<String, @RUntainted Object>> selectByUserId(Integer userId, @RUntainted Integer pageNo, @RUntainted Integer pageSize) {
+        MyPage<Map<String, @RUntainted Object>> page = new MyPage<>(pageNo, pageSize == null ? Integer.parseInt(systemConfigService
                 .selectAllConfig().get("page_size").toString()) : pageSize);
         page = collectMapper.selectByUserId(page, userId);
-        for (Map<String, Object> map : page.getRecords()) {
+        for (Map<String, @RUntainted Object> map : page.getRecords()) {
             Object content = map.get("content");
             map.put("content", StringUtils.isEmpty(content) ? null : SensitiveWordUtil.replaceSensitiveWord(content
                     .toString(), "*", SensitiveWordUtil.MinMatchType));

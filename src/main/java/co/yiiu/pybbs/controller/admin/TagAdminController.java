@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -49,7 +50,7 @@ public class TagAdminController extends BaseAdminController {
 
     @RequiresPermissions("tag:edit")
     @PostMapping("/edit")
-    public String update(Integer id, String name, String description, Integer topicCount, MultipartFile file) {
+    public String update(Integer id, String name, String description, Integer topicCount, @RUntainted MultipartFile file) {
         Tag tag = tagService.selectById(id);
         tag.setName(name);
         tag.setDescription(description);

@@ -6,6 +6,7 @@ import co.yiiu.pybbs.util.MyPage;
 
 import java.util.List;
 import java.util.Map;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -35,5 +36,5 @@ public interface ICollectService {
     int countByUserId(Integer userId);
 
     // 查询用户收藏的话题
-    MyPage<Map<String, Object>> selectByUserId(Integer userId, Integer pageNo, Integer pageSize);
+    MyPage<Map<String, @RUntainted Object>> selectByUserId(Integer userId, @RUntainted Integer pageNo, @RUntainted Integer pageSize);
 }

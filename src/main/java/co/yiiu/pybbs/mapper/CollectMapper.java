@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.Map;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -14,5 +15,5 @@ import java.util.Map;
  */
 public interface CollectMapper extends BaseMapper<Collect> {
 
-    MyPage<Map<String, Object>> selectByUserId(MyPage<Map<String, Object>> iPage, @Param("userId") Integer userId);
+    @RUntainted MyPage<Map<String, @RUntainted Object>> selectByUserId(MyPage<Map<String, @RUntainted Object>> iPage, @Param("userId") Integer userId);
 }

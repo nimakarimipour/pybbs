@@ -4,6 +4,7 @@ import co.yiiu.pybbs.model.SystemConfig;
 
 import java.util.List;
 import java.util.Map;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -11,7 +12,7 @@ import java.util.Map;
  * https://atjiu.github.io
  */
 public interface ISystemConfigService {
-    Map<String, String> selectAllConfig();
+    Map<String, @RUntainted String> selectAllConfig();
 
     // 根据键取值
     SystemConfig selectByKey(String key);

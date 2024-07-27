@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.Map;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -22,11 +23,11 @@ public class TopicListDirective implements TemplateDirectiveModel {
     private ITopicService topicService;
 
     @Override
-    public void execute(Environment environment, Map map, TemplateModel[] templateModels,
+    public void execute(Environment environment, @RUntainted Map map, TemplateModel[] templateModels,
                         TemplateDirectiveBody templateDirectiveBody) throws TemplateException, IOException {
         Integer pageNo = Integer.parseInt(map.get("pageNo").toString());
         String tab = map.get("tab").toString();
-        MyPage<Map<String, Object>> page = topicService.selectAll(pageNo, tab);
+        MyPage<Map<String, @RUntainted Object>> page = topicService.selectAll(pageNo, tab);
 
         DefaultObjectWrapperBuilder builder = new DefaultObjectWrapperBuilder(Configuration.VERSION_2_3_28);
         environment.setVariable("page", builder.build().wrap(page));
