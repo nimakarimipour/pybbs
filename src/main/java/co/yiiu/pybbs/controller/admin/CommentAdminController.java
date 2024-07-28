@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.Map;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -60,7 +61,7 @@ public class CommentAdminController extends BaseAdminController {
     @RequiresPermissions("comment:edit")
     @PostMapping("/edit")
     @ResponseBody
-    public Result update(Integer id, String content) {
+    public Result update(Integer id, @RUntainted String content) {
         Comment comment = commentService.selectById(id);
         comment.setContent(content);
         commentService.update(comment);

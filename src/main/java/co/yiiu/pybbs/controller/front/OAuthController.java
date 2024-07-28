@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -54,7 +55,7 @@ public class OAuthController extends BaseController {
 
         AuthRequest request = socialPlugin.getRequest(type);
 
-        AuthResponse<AuthUser> response = request.login(callback);
+        AuthResponse<@RUntainted AuthUser> response = request.login(callback);
         if (!response.ok()) {
             throw new IllegalArgumentException(response.getMsg());
         }
