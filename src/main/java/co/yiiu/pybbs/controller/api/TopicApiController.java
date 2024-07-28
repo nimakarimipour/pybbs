@@ -20,6 +20,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -77,7 +78,7 @@ public class TopicApiController extends BaseApiController {
 
     // 保存话题
     @PostMapping
-    public Result create(@RequestBody Map<String, String> body) {
+    public Result create(@RequestBody Map<String, @RUntainted String> body) {
         User user = getApiUser();
         ApiAssert.isTrue(user.getActive(), "你的帐号还没有激活，请去个人设置页面激活帐号");
         String title = body.get("title");
@@ -100,7 +101,7 @@ public class TopicApiController extends BaseApiController {
 
     // 更新话题
     @PutMapping(value = "/{id}")
-    public Result edit(@PathVariable Integer id, @RequestBody Map<String, String> body) {
+    public Result edit(@PathVariable Integer id, @RequestBody Map<String, @RUntainted String> body) {
         User user = getApiUser();
         String title = body.get("title");
         String content = body.get("content");
