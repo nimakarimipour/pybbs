@@ -13,6 +13,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -50,7 +51,7 @@ public class UserAdminController extends BaseAdminController {
     @RequiresPermissions("user:edit")
     @PostMapping("/edit")
     @ResponseBody
-    public Result update(User user) {
+    public Result update(@RUntainted User user) {
         // 如果密码不为空，给加密一下再保存
         if (!StringUtils.isEmpty(user.getPassword())) {
             user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));

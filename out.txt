@@ -1,0 +1,193 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------------< co.yiiu:pybbs >----------------------------
+[INFO] Building pybbs 5.2.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ pybbs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 8 resources
+[INFO] Copying 108 resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ pybbs ---
+[WARNING] Parameter 'compilerArguments' is deprecated: use compilerArgs instead.
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 179 source files with javac [forked debug target 11] to target/classes
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/realm/MyCredentialsMatcher.java:[22,44] [cast.unsafe] cast from "@RTainted Object" to "@RTainted char @RUntainted []" cannot be statically verified
+[INFO] 1 warning
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR]  Library: true, Poly: true, Type Argument: false, Validation: false, Side Effect: false
+/home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/CommonInterceptor.java:[54,50] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 1
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/UserInterceptor.java:[40,46] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 2
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[32,92] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+  found   : @RTainted String
+  required: @RUntainted String, index: 3
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[34,27] error: [argument] incompatible argument for parameter arg0 of HttpServletResponse.addCookie.
+  found   : @RTainted Cookie
+  required: @RUntainted Cookie, index: 4
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[59,25] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+  found   : @RTainted String
+  required: @RUntainted String, index: 5
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[62,27] error: [argument] incompatible argument for parameter arg0 of HttpServletResponse.addCookie.
+  found   : @RTainted Cookie
+  required: @RUntainted Cookie, index: 6
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/service/impl/UserService.java:[206,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 7
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/identicon/Identicon.java:[98,101] error: [argument] incompatible argument for parameter pathname of File constructor.
+  found   : @RTainted String
+  required: @RUntainted String, index: 8
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/identicon/Identicon.java:[100,119] error: [argument] incompatible argument for parameter pathname of File constructor.
+  found   : @RTainted String
+  required: @RUntainted String, index: 9
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/FileUtil.java:[79,105] error: [argument] incompatible argument for parameter pathname of File constructor.
+  found   : @RTainted String
+  required: @RUntainted String, index: 10
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/FileUtil.java:[84,34] error: [argument] incompatible argument for parameter pathname of File constructor.
+  found   : @RTainted String
+  required: @RUntainted String, index: 11
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/SensitiveWordUtil.java:[159,45] error: [argument] incompatible argument for parameter regex of String.replaceAll.
+  found   : @RTainted String
+  required: @RUntainted String, index: 12
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/SensitiveWordUtil.java:[193,45] error: [argument] incompatible argument for parameter regex of String.replaceAll.
+  found   : @RTainted String
+  required: @RUntainted String, index: 13
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[54,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 14
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[119,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 15
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[152,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 16
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/exception/GlobalExceptionHandler.java:[71,96] error: [argument] incompatible argument for parameter s of PrintWriter.write.
+  found   : @RTainted String
+  required: @RUntainted String, index: 17
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[162,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 18
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[222,71] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 19
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/OAuthController.java:[92,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object, index: 20
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/CommonController.java:[34,41] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted String
+  required: @RUntainted Object, index: 21
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/HttpUtil.java:[34,60] error: [argument] incompatible argument for parameter s of PrintWriter.write.
+  found   : @RTainted String
+  required: @RUntainted String, index: 22
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[36,106] error: [argument] incompatible argument for parameter url of DriverManager.getConnection.
+  found   : @RTainted String
+  required: @RUntainted String, index: 23
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,53] error: [argument] incompatible argument for parameter user of DriverManager.getConnection.
+  found   : @RTainted String
+  required: @RUntainted String, index: 24
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,90] error: [argument] incompatible argument for parameter password of DriverManager.getConnection.
+  found   : @RTainted String
+  required: @RUntainted String, index: 25
+[INFO] 25 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  15.396 s
+[INFO] Finished at: 2024-07-30T01:31:05-07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project pybbs: Compilation failure: Compilation failure: 
+[ERROR]  Library: true, Poly: true, Type Argument: false, Validation: false, Side Effect: false
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/CommonInterceptor.java:[54,50] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 1
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/UserInterceptor.java:[40,46] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 2
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[32,92] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 3
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[34,27] error: [argument] incompatible argument for parameter arg0 of HttpServletResponse.addCookie.
+[ERROR]   found   : @RTainted Cookie
+[ERROR]   required: @RUntainted Cookie, index: 4
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[59,25] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 5
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[62,27] error: [argument] incompatible argument for parameter arg0 of HttpServletResponse.addCookie.
+[ERROR]   found   : @RTainted Cookie
+[ERROR]   required: @RUntainted Cookie, index: 6
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/service/impl/UserService.java:[206,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 7
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/identicon/Identicon.java:[98,101] error: [argument] incompatible argument for parameter pathname of File constructor.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 8
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/identicon/Identicon.java:[100,119] error: [argument] incompatible argument for parameter pathname of File constructor.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 9
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/FileUtil.java:[79,105] error: [argument] incompatible argument for parameter pathname of File constructor.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 10
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/FileUtil.java:[84,34] error: [argument] incompatible argument for parameter pathname of File constructor.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 11
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/SensitiveWordUtil.java:[159,45] error: [argument] incompatible argument for parameter regex of String.replaceAll.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 12
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/SensitiveWordUtil.java:[193,45] error: [argument] incompatible argument for parameter regex of String.replaceAll.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 13
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[54,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 14
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[119,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 15
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[152,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 16
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/exception/GlobalExceptionHandler.java:[71,96] error: [argument] incompatible argument for parameter s of PrintWriter.write.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 17
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[162,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 18
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[222,71] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 19
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/OAuthController.java:[92,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object, index: 20
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/CommonController.java:[34,41] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted Object, index: 21
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/HttpUtil.java:[34,60] error: [argument] incompatible argument for parameter s of PrintWriter.write.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 22
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[36,106] error: [argument] incompatible argument for parameter url of DriverManager.getConnection.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 23
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,53] error: [argument] incompatible argument for parameter user of DriverManager.getConnection.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 24
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,90] error: [argument] incompatible argument for parameter password of DriverManager.getConnection.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String, index: 25
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
