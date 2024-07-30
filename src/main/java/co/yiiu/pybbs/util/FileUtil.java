@@ -23,6 +23,7 @@ import java.net.URL;
 import java.security.MessageDigest;
 import java.util.Date;
 import java.util.Objects;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.

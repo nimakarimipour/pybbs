@@ -1,0 +1,603 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------------< co.yiiu:pybbs >----------------------------
+[INFO] Building pybbs 5.2.1
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.1.0:resources (default-resources) @ pybbs ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 8 resources
+[INFO] Copying 108 resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ pybbs ---
+[WARNING] Parameter 'compilerArguments' is deprecated: use compilerArgs instead.
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 179 source files with javac [forked debug target 11] to target/classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR]  Unannotated Code Handling: true, Poly: true, Type Argument: true, Validation: false, Side Effect: false
+/home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/CommonInterceptor.java:[54,50] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/UserInterceptor.java:[40,46] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object
+[ERROR] Error in computing required fixes: (String)systemConfigService.selectAllConfig().get("cookie_domain") argument, exception:java.lang.NullPointerException: Cannot invoke "java.util.Collection.size()" because "c" is null
+At path: /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java
+Last visited tree: cookie.setDomain((String)systemConfigService.selectAllConfig().get("cookie_domain"))
+java.lang.NullPointerException: Cannot invoke "java.util.Collection.size()" because "c" is null
+	at java.base/java.util.HashSet.<init>(HashSet.java:120)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.SerializationService.generateFixesForError(SerializationService.java:163)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.SerializationService.serializeError(SerializationService.java:118)
+	at edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingChecker.detailedReportError(UCRTaintingChecker.java:95)
+	at edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingVisitor.commonAssignmentCheck(UCRTaintingVisitor.java:76)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.commonAssignmentCheck(BaseTypeVisitor.java:3037)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.checkArguments(BaseTypeVisitor.java:3604)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.visitMethodInvocation(BaseTypeVisitor.java:1811)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.visitMethodInvocation(BaseTypeVisitor.java:187)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1813)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitExpressionStatement(TreeScanner.java:502)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCExpressionStatement.accept(JCTree.java:1592)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:96)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:111)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitBlock(TreeScanner.java:272)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBlock.accept(JCTree.java:1103)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:96)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitMethod(TreeScanner.java:224)
+	at org.checkerframework.framework.source.SourceVisitor.visitMethod(SourceVisitor.java:110)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.visitMethod(BaseTypeVisitor.java:1048)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.visitMethod(BaseTypeVisitor.java:187)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodDecl.accept(JCTree.java:953)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:96)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:111)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:119)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitClass(TreeScanner.java:203)
+	at org.checkerframework.framework.source.SourceVisitor.visitClass(SourceVisitor.java:98)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.processClassTree(BaseTypeVisitor.java:617)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.visitClass(BaseTypeVisitor.java:563)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.visitClass(BaseTypeVisitor.java:187)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:860)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:60)
+	at org.checkerframework.framework.source.SourceVisitor.visit(SourceVisitor.java:86)
+	at org.checkerframework.framework.source.SourceChecker.typeProcess(SourceChecker.java:1050)
+	at org.checkerframework.common.basetype.BaseTypeChecker.typeProcess(BaseTypeChecker.java:558)
+	at org.checkerframework.javacutil.AbstractTypeProcessor$AttributionTaskListener.finished(AbstractTypeProcessor.java:188)
+	at jdk.compiler/com.sun.tools.javac.api.ClientCodeWrapper$WrappedTaskListener.finished(ClientCodeWrapper.java:854)
+	at jdk.compiler/com.sun.tools.javac.api.MultiTaskListener.finished(MultiTaskListener.java:132)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1397)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1344)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:933)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:317)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:176)
+	at jdk.compiler/com.sun.tools.javac.Main.compile(Main.java:64)
+	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:50)
+/home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[32,92] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+  found   : @RTainted String
+  required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[34,27] error: [argument] incompatible argument for parameter arg0 of HttpServletResponse.addCookie.
+  found   : @RTainted Cookie
+  required: @RUntainted Cookie
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[59,25] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+  found   : @RTainted String
+  required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[62,27] error: [argument] incompatible argument for parameter arg0 of HttpServletResponse.addCookie.
+  found   : @RTainted Cookie
+  required: @RUntainted Cookie
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/service/impl/UserService.java:[206,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/identicon/Identicon.java:[98,101] error: [argument] incompatible argument for parameter pathname of File constructor.
+  found   : @RTainted String
+  required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/identicon/Identicon.java:[100,119] error: [argument] incompatible argument for parameter pathname of File constructor.
+  found   : @RTainted String
+  required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/FileUtil.java:[79,105] error: [argument] incompatible argument for parameter pathname of File constructor.
+  found   : @RTainted String
+  required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/FileUtil.java:[84,34] error: [argument] incompatible argument for parameter pathname of File constructor.
+  found   : @RTainted String
+  required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/SensitiveWordUtil.java:[159,45] error: [argument] incompatible argument for parameter regex of String.replaceAll.
+  found   : @RTainted String
+  required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/SensitiveWordUtil.java:[193,45] error: [argument] incompatible argument for parameter regex of String.replaceAll.
+  found   : @RTainted String
+  required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[54,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[119,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[152,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/exception/GlobalExceptionHandler.java:[71,96] error: [argument] incompatible argument for parameter s of PrintWriter.write.
+  found   : @RTainted String
+  required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[162,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[222,71] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/BaseModel.java:[93,43] error: [argument] incompatible argument for parameter spec of URL constructor.
+  found   : @RTainted String
+  required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/BaseModel.java:[102,43] error: [argument] incompatible argument for parameter spec of URL constructor.
+  found   : @RTainted String
+  required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/BaseModel.java:[110,43] error: [argument] incompatible argument for parameter spec of URL constructor.
+  found   : @RTainted String
+  required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/BaseModel.java:[117,43] error: [argument] incompatible argument for parameter spec of URL constructor.
+  found   : @RTainted String
+  required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/OAuthController.java:[92,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted User
+  required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/CommonController.java:[34,41] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted String
+  required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/HttpUtil.java:[34,60] error: [argument] incompatible argument for parameter s of PrintWriter.write.
+  found   : @RTainted String
+  required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/IndexController.java:[126,54] error: [argument] incompatible argument for parameter arg0 of HttpSession.setAttribute.
+  found   : @RTainted String
+  required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/IndexController.java:[126,92] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted Locale
+  required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/IndexController.java:[128,54] error: [argument] incompatible argument for parameter arg0 of HttpSession.setAttribute.
+  found   : @RTainted String
+  required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/IndexController.java:[128,92] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+  found   : @RTainted Locale
+  required: @RUntainted Object
+[ERROR] Error in computing required fixes: "jdbc:mysql://" + host + ":" + port + "?" + query argument, exception:java.lang.NullPointerException: Cannot invoke "java.util.Collection.iterator()" because "c" is null
+At path: /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java
+Last visited tree: DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "?" + query, siteConfig.getDatasource_username(), siteConfig.getDatasource_password())
+java.lang.NullPointerException: Cannot invoke "java.util.Collection.iterator()" because "c" is null
+	at java.base/java.util.AbstractCollection.addAll(AbstractCollection.java:335)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:184)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:48)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:73)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:50)
+	at jdk.compiler/com.sun.source.util.SimpleTreeVisitor.visitBinary(SimpleTreeVisitor.java:600)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:184)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:48)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:73)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:50)
+	at jdk.compiler/com.sun.source.util.SimpleTreeVisitor.visitBinary(SimpleTreeVisitor.java:600)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:184)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:48)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:73)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:50)
+	at jdk.compiler/com.sun.source.util.SimpleTreeVisitor.visitBinary(SimpleTreeVisitor.java:600)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:184)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:48)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:73)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:50)
+	at jdk.compiler/com.sun.source.util.SimpleTreeVisitor.visitBinary(SimpleTreeVisitor.java:600)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:184)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:48)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:73)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:50)
+	at jdk.compiler/com.sun.source.util.SimpleTreeVisitor.visitBinary(SimpleTreeVisitor.java:600)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.SerializationService.generateFixesForError(SerializationService.java:163)
+	at edu.ucr.cs.riple.taint.ucrtainting.serialization.SerializationService.serializeError(SerializationService.java:118)
+	at edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingChecker.detailedReportError(UCRTaintingChecker.java:95)
+	at edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingVisitor.commonAssignmentCheck(UCRTaintingVisitor.java:76)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.commonAssignmentCheck(BaseTypeVisitor.java:3037)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.checkArguments(BaseTypeVisitor.java:3604)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.visitMethodInvocation(BaseTypeVisitor.java:1811)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.visitMethodInvocation(BaseTypeVisitor.java:187)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1813)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:96)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitVariable(TreeScanner.java:243)
+	at org.checkerframework.framework.source.SourceVisitor.visitVariable(SourceVisitor.java:104)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.visitVariable(BaseTypeVisitor.java:1578)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.visitVariable(BaseTypeVisitor.java:187)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCVariableDecl.accept(JCTree.java:1045)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:96)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:111)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitBlock(TreeScanner.java:272)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBlock.accept(JCTree.java:1103)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:96)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitTry(TreeScanner.java:435)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCTry.accept(JCTree.java:1460)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:96)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:111)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitBlock(TreeScanner.java:272)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBlock.accept(JCTree.java:1103)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:96)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitMethod(TreeScanner.java:224)
+	at org.checkerframework.framework.source.SourceVisitor.visitMethod(SourceVisitor.java:110)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.visitMethod(BaseTypeVisitor.java:1048)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.visitMethod(BaseTypeVisitor.java:187)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodDecl.accept(JCTree.java:953)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:96)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:111)
+	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:119)
+	at jdk.compiler/com.sun.source.util.TreeScanner.visitClass(TreeScanner.java:203)
+	at org.checkerframework.framework.source.SourceVisitor.visitClass(SourceVisitor.java:98)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.processClassTree(BaseTypeVisitor.java:617)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.visitClass(BaseTypeVisitor.java:563)
+	at org.checkerframework.common.basetype.BaseTypeVisitor.visitClass(BaseTypeVisitor.java:187)
+	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:860)
+	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:60)
+	at org.checkerframework.framework.source.SourceVisitor.visit(SourceVisitor.java:86)
+	at org.checkerframework.framework.source.SourceChecker.typeProcess(SourceChecker.java:1050)
+	at org.checkerframework.common.basetype.BaseTypeChecker.typeProcess(BaseTypeChecker.java:558)
+	at org.checkerframework.javacutil.AbstractTypeProcessor$AttributionTaskListener.finished(AbstractTypeProcessor.java:188)
+	at jdk.compiler/com.sun.tools.javac.api.ClientCodeWrapper$WrappedTaskListener.finished(ClientCodeWrapper.java:854)
+	at jdk.compiler/com.sun.tools.javac.api.MultiTaskListener.finished(MultiTaskListener.java:132)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1397)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1344)
+	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:933)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:317)
+	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:176)
+	at jdk.compiler/com.sun.tools.javac.Main.compile(Main.java:64)
+	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:50)
+/home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[36,106] error: [argument] incompatible argument for parameter url of DriverManager.getConnection.
+  found   : @RTainted String
+  required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,53] error: [argument] incompatible argument for parameter user of DriverManager.getConnection.
+  found   : @RTainted String
+  required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,90] error: [argument] incompatible argument for parameter password of DriverManager.getConnection.
+  found   : @RTainted String
+  required: @RUntainted String
+[INFO] 33 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  13.107 s
+[INFO] Finished at: 2024-07-30T02:34:31-07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project pybbs: Compilation failure: Compilation failure: 
+[ERROR]  Unannotated Code Handling: true, Poly: true, Type Argument: true, Validation: false, Side Effect: false
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/CommonInterceptor.java:[54,50] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/interceptor/UserInterceptor.java:[40,46] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object
+[ERROR] Error in computing required fixes: (String)systemConfigService.selectAllConfig().get("cookie_domain") argument, exception:java.lang.NullPointerException: Cannot invoke "java.util.Collection.size()" because "c" is null
+[ERROR] At path: /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java
+[ERROR] Last visited tree: cookie.setDomain((String)systemConfigService.selectAllConfig().get("cookie_domain"))
+[ERROR] java.lang.NullPointerException: Cannot invoke "java.util.Collection.size()" because "c" is null
+[ERROR] 	at java.base/java.util.HashSet.<init>(HashSet.java:120)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.SerializationService.generateFixesForError(SerializationService.java:163)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.SerializationService.serializeError(SerializationService.java:118)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingChecker.detailedReportError(UCRTaintingChecker.java:95)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingVisitor.commonAssignmentCheck(UCRTaintingVisitor.java:76)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.commonAssignmentCheck(BaseTypeVisitor.java:3037)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.checkArguments(BaseTypeVisitor.java:3604)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.visitMethodInvocation(BaseTypeVisitor.java:1811)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.visitMethodInvocation(BaseTypeVisitor.java:187)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1813)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+[ERROR] 	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.visitExpressionStatement(TreeScanner.java:502)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCExpressionStatement.accept(JCTree.java:1592)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+[ERROR] 	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:96)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:111)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.visitBlock(TreeScanner.java:272)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBlock.accept(JCTree.java:1103)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+[ERROR] 	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:96)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.visitMethod(TreeScanner.java:224)
+[ERROR] 	at org.checkerframework.framework.source.SourceVisitor.visitMethod(SourceVisitor.java:110)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.visitMethod(BaseTypeVisitor.java:1048)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.visitMethod(BaseTypeVisitor.java:187)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodDecl.accept(JCTree.java:953)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+[ERROR] 	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:96)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:111)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:119)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.visitClass(TreeScanner.java:203)
+[ERROR] 	at org.checkerframework.framework.source.SourceVisitor.visitClass(SourceVisitor.java:98)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.processClassTree(BaseTypeVisitor.java:617)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.visitClass(BaseTypeVisitor.java:563)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.visitClass(BaseTypeVisitor.java:187)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:860)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:60)
+[ERROR] 	at org.checkerframework.framework.source.SourceVisitor.visit(SourceVisitor.java:86)
+[ERROR] 	at org.checkerframework.framework.source.SourceChecker.typeProcess(SourceChecker.java:1050)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeChecker.typeProcess(BaseTypeChecker.java:558)
+[ERROR] 	at org.checkerframework.javacutil.AbstractTypeProcessor$AttributionTaskListener.finished(AbstractTypeProcessor.java:188)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.api.ClientCodeWrapper$WrappedTaskListener.finished(ClientCodeWrapper.java:854)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.api.MultiTaskListener.finished(MultiTaskListener.java:132)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1397)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1344)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:933)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:317)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:176)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.Main.compile(Main.java:64)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:50)
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[32,92] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[34,27] error: [argument] incompatible argument for parameter arg0 of HttpServletResponse.addCookie.
+[ERROR]   found   : @RTainted Cookie
+[ERROR]   required: @RUntainted Cookie
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[59,25] error: [argument] incompatible argument for parameter domain of Cookie.setDomain.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/CookieUtil.java:[62,27] error: [argument] incompatible argument for parameter arg0 of HttpServletResponse.addCookie.
+[ERROR]   found   : @RTainted Cookie
+[ERROR]   required: @RUntainted Cookie
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/service/impl/UserService.java:[206,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/identicon/Identicon.java:[98,101] error: [argument] incompatible argument for parameter pathname of File constructor.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/identicon/Identicon.java:[100,119] error: [argument] incompatible argument for parameter pathname of File constructor.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/FileUtil.java:[79,105] error: [argument] incompatible argument for parameter pathname of File constructor.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/FileUtil.java:[84,34] error: [argument] incompatible argument for parameter pathname of File constructor.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/SensitiveWordUtil.java:[159,45] error: [argument] incompatible argument for parameter regex of String.replaceAll.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/SensitiveWordUtil.java:[193,45] error: [argument] incompatible argument for parameter regex of String.replaceAll.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[54,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[119,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/SettingsApiController.java:[152,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/exception/GlobalExceptionHandler.java:[71,96] error: [argument] incompatible argument for parameter s of PrintWriter.write.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[162,42] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/api/IndexApiController.java:[222,71] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/BaseModel.java:[93,43] error: [argument] incompatible argument for parameter spec of URL constructor.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/BaseModel.java:[102,43] error: [argument] incompatible argument for parameter spec of URL constructor.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/BaseModel.java:[110,43] error: [argument] incompatible argument for parameter spec of URL constructor.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/BaseModel.java:[117,43] error: [argument] incompatible argument for parameter spec of URL constructor.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/OAuthController.java:[92,38] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted User
+[ERROR]   required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/CommonController.java:[34,41] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/util/HttpUtil.java:[34,60] error: [argument] incompatible argument for parameter s of PrintWriter.write.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/IndexController.java:[126,54] error: [argument] incompatible argument for parameter arg0 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/IndexController.java:[126,92] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted Locale
+[ERROR]   required: @RUntainted Object
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/IndexController.java:[128,54] error: [argument] incompatible argument for parameter arg0 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/controller/front/IndexController.java:[128,92] error: [argument] incompatible argument for parameter arg1 of HttpSession.setAttribute.
+[ERROR]   found   : @RTainted Locale
+[ERROR]   required: @RUntainted Object
+[ERROR] Error in computing required fixes: "jdbc:mysql://" + host + ":" + port + "?" + query argument, exception:java.lang.NullPointerException: Cannot invoke "java.util.Collection.iterator()" because "c" is null
+[ERROR] At path: /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java
+[ERROR] Last visited tree: DriverManager.getConnection("jdbc:mysql://" + host + ":" + port + "?" + query, siteConfig.getDatasource_username(), siteConfig.getDatasource_password())
+[ERROR] java.lang.NullPointerException: Cannot invoke "java.util.Collection.iterator()" because "c" is null
+[ERROR] 	at java.base/java.util.AbstractCollection.addAll(AbstractCollection.java:335)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:184)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:48)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:73)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:50)
+[ERROR] 	at jdk.compiler/com.sun.source.util.SimpleTreeVisitor.visitBinary(SimpleTreeVisitor.java:600)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:184)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:48)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:73)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:50)
+[ERROR] 	at jdk.compiler/com.sun.source.util.SimpleTreeVisitor.visitBinary(SimpleTreeVisitor.java:600)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:184)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:48)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:73)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:50)
+[ERROR] 	at jdk.compiler/com.sun.source.util.SimpleTreeVisitor.visitBinary(SimpleTreeVisitor.java:600)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:184)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:48)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:73)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:50)
+[ERROR] 	at jdk.compiler/com.sun.source.util.SimpleTreeVisitor.visitBinary(SimpleTreeVisitor.java:600)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:184)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.DefaultTypeChangeVisitor.visitBinary(DefaultTypeChangeVisitor.java:48)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:73)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.visitors.FixComputer.defaultAction(FixComputer.java:50)
+[ERROR] 	at jdk.compiler/com.sun.source.util.SimpleTreeVisitor.visitBinary(SimpleTreeVisitor.java:600)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBinary.accept(JCTree.java:2166)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.SerializationService.generateFixesForError(SerializationService.java:163)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.serialization.SerializationService.serializeError(SerializationService.java:118)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingChecker.detailedReportError(UCRTaintingChecker.java:95)
+[ERROR] 	at edu.ucr.cs.riple.taint.ucrtainting.UCRTaintingVisitor.commonAssignmentCheck(UCRTaintingVisitor.java:76)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.commonAssignmentCheck(BaseTypeVisitor.java:3037)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.checkArguments(BaseTypeVisitor.java:3604)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.visitMethodInvocation(BaseTypeVisitor.java:1811)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.visitMethodInvocation(BaseTypeVisitor.java:187)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodInvocation.accept(JCTree.java:1813)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+[ERROR] 	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:96)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.visitVariable(TreeScanner.java:243)
+[ERROR] 	at org.checkerframework.framework.source.SourceVisitor.visitVariable(SourceVisitor.java:104)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.visitVariable(BaseTypeVisitor.java:1578)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.visitVariable(BaseTypeVisitor.java:187)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCVariableDecl.accept(JCTree.java:1045)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+[ERROR] 	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:96)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:111)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.visitBlock(TreeScanner.java:272)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBlock.accept(JCTree.java:1103)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+[ERROR] 	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:96)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.visitTry(TreeScanner.java:435)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCTry.accept(JCTree.java:1460)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+[ERROR] 	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:96)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:111)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.visitBlock(TreeScanner.java:272)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCBlock.accept(JCTree.java:1103)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+[ERROR] 	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:96)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.visitMethod(TreeScanner.java:224)
+[ERROR] 	at org.checkerframework.framework.source.SourceVisitor.visitMethod(SourceVisitor.java:110)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.visitMethod(BaseTypeVisitor.java:1048)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.visitMethod(BaseTypeVisitor.java:187)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCMethodDecl.accept(JCTree.java:953)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:86)
+[ERROR] 	at org.checkerframework.framework.source.SourceVisitor.scan(SourceVisitor.java:92)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:410)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.scan(BaseTypeVisitor.java:187)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:96)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.scan(TreeScanner.java:111)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.scanAndReduce(TreeScanner.java:119)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreeScanner.visitClass(TreeScanner.java:203)
+[ERROR] 	at org.checkerframework.framework.source.SourceVisitor.visitClass(SourceVisitor.java:98)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.processClassTree(BaseTypeVisitor.java:617)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.visitClass(BaseTypeVisitor.java:563)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeVisitor.visitClass(BaseTypeVisitor.java:187)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.tree.JCTree$JCClassDecl.accept(JCTree.java:860)
+[ERROR] 	at jdk.compiler/com.sun.source.util.TreePathScanner.scan(TreePathScanner.java:60)
+[ERROR] 	at org.checkerframework.framework.source.SourceVisitor.visit(SourceVisitor.java:86)
+[ERROR] 	at org.checkerframework.framework.source.SourceChecker.typeProcess(SourceChecker.java:1050)
+[ERROR] 	at org.checkerframework.common.basetype.BaseTypeChecker.typeProcess(BaseTypeChecker.java:558)
+[ERROR] 	at org.checkerframework.javacutil.AbstractTypeProcessor$AttributionTaskListener.finished(AbstractTypeProcessor.java:188)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.api.ClientCodeWrapper$WrappedTaskListener.finished(ClientCodeWrapper.java:854)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.api.MultiTaskListener.finished(MultiTaskListener.java:132)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1397)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.flow(JavaCompiler.java:1344)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.main.JavaCompiler.compile(JavaCompiler.java:933)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:317)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.main.Main.compile(Main.java:176)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.Main.compile(Main.java:64)
+[ERROR] 	at jdk.compiler/com.sun.tools.javac.Main.main(Main.java:50)
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[36,106] error: [argument] incompatible argument for parameter url of DriverManager.getConnection.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,53] error: [argument] incompatible argument for parameter user of DriverManager.getConnection.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] /home/nima/Developer/taint-benchmarks/pybbs/src/main/java/co/yiiu/pybbs/config/DataSourceHelper.java:[37,90] error: [argument] incompatible argument for parameter password of DriverManager.getConnection.
+[ERROR]   found   : @RTainted String
+[ERROR]   required: @RUntainted String
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

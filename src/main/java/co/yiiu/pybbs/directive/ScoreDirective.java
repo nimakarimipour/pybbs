@@ -10,6 +10,7 @@ import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -27,7 +28,7 @@ public class ScoreDirective implements TemplateDirectiveModel {
             templateDirectiveBody) throws TemplateException, IOException {
         Integer limit = Integer.parseInt(map.get("limit").toString());
         if (limit > 100) limit = 100;
-        List<User> users = userService.selectTop(limit);
+        List<@RUntainted User> users = userService.selectTop(limit);
 
         DefaultObjectWrapperBuilder builder = new DefaultObjectWrapperBuilder(Configuration.VERSION_2_3_28);
         environment.setVariable("users", builder.build().wrap(users));
