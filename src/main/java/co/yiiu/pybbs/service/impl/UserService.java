@@ -24,6 +24,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
+import edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted;
 
 /**
  * Created by tomoya.
@@ -56,7 +57,7 @@ public class UserService implements IUserService {
 
     // 根据用户名查询用户，用于获取用户的信息比对密码
     @Override
-    public User selectByUsername(String username) {
+    public @RUntainted User selectByUsername(String username) {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(User::getUsername, username);
         return userMapper.selectOne(wrapper);
@@ -89,7 +90,7 @@ public class UserService implements IUserService {
      * @return
      */
     @Override
-    public User addUser(String username, String password, String avatar, String email, String bio, String website,
+    public @RUntainted User addUser(String username, String password, String avatar, String email, String bio, String website,
                         boolean needActiveEmail) {
         String token = this.generateToken();
         User user = new User();
@@ -130,7 +131,7 @@ public class UserService implements IUserService {
 
     // 通过手机号登录/注册创建用户
     @Override
-    public User addUserWithMobile(String mobile) {
+    public @RUntainted User addUserWithMobile(String mobile) {
         // 根据手机号查询用户是否注册过
         User user = selectByMobile(mobile);
         if (user == null) {
@@ -154,7 +155,7 @@ public class UserService implements IUserService {
 
     // 根据用户token查询用户
     @Override
-    public User selectByToken(String token) {
+    public @RUntainted User selectByToken(String token) {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(User::getToken, token);
         return userMapper.selectOne(wrapper);
@@ -162,7 +163,7 @@ public class UserService implements IUserService {
 
     // 根据用户mobile查询用户
     @Override
-    public User selectByMobile(String mobile) {
+    public @RUntainted User selectByMobile(String mobile) {
         QueryWrapper<User> wrapper = new QueryWrapper<>();
         wrapper.lambda().eq(User::getMobile, mobile);
         return userMapper.selectOne(wrapper);
@@ -177,7 +178,7 @@ public class UserService implements IUserService {
     }
 
     @Override
-    public User selectById(Integer id) {
+    public @RUntainted User selectById(Integer id) {
         return userMapper.selectById(id);
     }
 
@@ -196,7 +197,7 @@ public class UserService implements IUserService {
 
     // 更新用户信息
     @Override
-    public void update(User user) {
+    public void update(@RUntainted User user) {
         userMapper.updateById(user);
         
         // 更新session中的用户
