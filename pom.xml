@@ -315,6 +315,7 @@
                                 <arg>-Anowarns</arg>
                                 <arg>-nowarn</arg>
                                 <arg>-AannotatedPackages=co.yiiu.pybbs</arg>
+				<arg>-AenableSideEffect</arg>
                                 <arg>-AenableLibraryCheck=${env.ANNOTATOR_LIBRARY}</arg>
                                 <arg>-AenablePolyTaintInference=${env.ANNOTATOR_POLY}</arg>
                                 <arg>-AenableTypeArgumentInference=${env.ANNOTATOR_TYPE_ARG}</arg>
