@@ -1,0 +1,44 @@
+import subprocess
+import os
+import shutil
+from pathlib import Path
+
+VERSION = '1.3.9-TAINT-SNAPSHOT'
+REPO = subprocess.check_output(['git', 'rev-parse', '--show-toplevel']).strip().decode('utf-8')
+OUT_DIR = '{}/annotator-out'.format(REPO)
+ANNOTATOR_JAR = "{}/.m2/repository/edu/ucr/cs/riple/annotator/annotator-core/{}/annotator-core-{}.jar".format(str(Path.home()), VERSION, VERSION)
+
+
+def prepare():
+    os.makedirs(OUT_DIR, exist_ok=True)
+    with open('{}/paths.tsv'.format(OUT_DIR), 'w') as o:
+        o.write("{}\t{}\n".format('{}/checker.xml'.format(OUT_DIR), '{}/scanner.xml'.format(OUT_DIR)))
+
+
+def run_annotator():
+    prepare()
+    commands = []
+    commands += ["java", "-jar", ANNOTATOR_JAR]
+    commands += ['-d', OUT_DIR]
+    commands += ['-bc', 'cd {} && ./annotator-command.sh'.format(REPO)]
+    commands += ['-cp', '{}/paths.tsv'.format(OUT_DIR)]
+    commands += ['-i', 'edu.ucr.Initializer']
+    commands += ['-n', 'edu.ucr.cs.riple.taint.ucrtainting.qual.RUntainted']
+    commands += ['-cn', 'UCRTaint']
+    commands += ["--depth", "15"]
+    # Uncomment to see build output
+#     commands += ['-rboserr']
+    # Comment to inject root at a time
+    commands += ['-ch']
+    # Uncomment to disable cache
+    # commands += ['-dc']
+    # Uncomment to disable outer loop
+#     commands += ['-dlo']
+    # Uncomment to disable parallel processing
+    commands += ['--disable-parallel-processing']
+    print(commands)
+
+    subprocess.call(commands)
+
+
+run_annotator()
